@@ -20,16 +20,56 @@
                         </q-btn>
                     </div>
                 </div>
-                <div class="row justify-center">
-                    <div class="col-xs-12 col-sm-6 col-md-5 border desktop-only self-center" v-for="route in routes">
-                        <q-card-section class="text-center card-container shadow-24">
-                            <q-btn class="route-btn" @click="$router.push(route.url.trim('/'))" outline color="red">
-                                <h4>{{route.length}}</h4>
-                            </q-btn>
-                            <h6 class="white text-justify" slot="subtitle">
-                                {{route.shortDescription}}</h6>
-                        </q-card-section>
+                <div class="row justify-between desktop-only second-header">
+                    <q-list separator class="col-md-4">
+                        <q-item clickable v-for="route in routes">
+                            <q-item-section v-if="selected == route.id" @click="selected = route.id" class="">
+                                <p class="text-bold service gray-bg selected shadow-16 text-blue"
+                                    v-anime="{ translateX: { value: ['-30px', '0px'], duration: 4000, }}">
+                                    {{route.length}}
+                                </p>
+                            </q-item-section>
+                            <q-item-section v-else="selected == route.id" @click="selected = route.id">
+                                <p class="text-bold route">
+                                    {{route.length}}
+                                </p>
+                            </q-item-section>
+                        </q-item>
+                    </q-list>
+
+                    <div class="col-sm-6 col-md-4 col-lg-3 space-right">
+                        <q-card dark bordered class="card">
+                            <q-card-section>
+                                <div class="text-h4 text-bold text-blue">{{routes[selected].length}}</div>
+                            </q-card-section>
+
+                            <q-separator dark inset />
+                            <q-card-section class="sub text-blue">
+                                <span class="">
+                                    {{routes[selected].shortDescription}}
+                                </span>
+                            </q-card-section>
+                        </q-card>
+                        <q-btn to="/contact" color="white" size="lg" outline rounded no-caps
+                            class="quote-btn shadow-24 float-right gray-bg">
+                            More Info
+                        </q-btn>
                     </div>
+                    <!-- <div class="col-xs-12 col-sm-6 col-md-5 border desktop-only self-center" v-for="route in routes">
+                    <q-card class="text-center card-container shadow-24">
+                        <q-card-section>
+                            <q-btn class="q-pa-md" @click="$router.push(route.url.trim('/'))" outline color="red">
+                                <span class="text-h4">{{route.length}}</span>
+                            </q-btn>
+                        </q-card-section>
+                        <q-card-section class="text-center q-mt-lg">
+                            <span class="white text-body1">
+                                {{route.shortDescription}}</span>
+                        </q-card-section>
+                    </q-card>
+                </div> -->
+                </div>
+                <div class="row justify-center mobile-only">
                     <div class="col-xs-12 col-sm-6 col-md-5 mobile-border mobile-only" v-for="route in routes">
                         <q-card-section class="text-center card-container shadow-24">
                             <q-btn class="route-btn" @click="$router.push(route.url.trim('/'))" outline color="red">
@@ -52,7 +92,6 @@
                     <h5>83642</h5> -->
             </div>
 
-
         </div>
     </q-layout>
 </template>
@@ -67,6 +106,7 @@
         name: 'Register',
         data() {
             return {
+                selected: 0
             }
         },
         computed: {
@@ -89,6 +129,18 @@
 </script>
 
 <style scoped>
+    .selected {
+        background-color: rgba(255, 255, 255, 0.87);
+
+        padding: 1rem;
+        border-radius: 15px;
+    }
+
+    .card {
+        margin: 1rem;
+        background-color: rgba(255, 255, 255, 0.87);
+    }
+
     .mob {
         margin-bottom: 1rem;
     }

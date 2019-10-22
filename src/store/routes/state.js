@@ -1,6 +1,7 @@
 export default {
   routes: [
     {
+      id: 0,
       earlyReg: '$50',
       reg: '$60',
       url: '/9-mile',
@@ -41,6 +42,7 @@ export default {
         'New route for 2019 for those who felt that 19 miles was just a bit too far!  Gentle flat and fun route though farmland and along canals with one rest stop at half way point.  This route is for everyone: road bike, no problem; cruiser bike, no issue; mountain bike, ditto; unicycle, check…….(provided your balance is good enough) !'
     },
     {
+      id: 1,
       earlyReg: '$65',
       reg: '$75',
       url: '/19-mile',
@@ -84,6 +86,7 @@ export default {
         'Completely redesigned route for 2019.  Unlike previous years this route takes riders eastward through scenic rolling farmland and returns along winding canals with two rest stops along the way. Every effort was made to add some greater scenic variety to this route for 2019 while maintaining a flat and mellow course.'
     },
     {
+      id: 2,
       earlyReg: '$65',
       reg: '$75',
       url: '/35-mile',
@@ -129,6 +132,7 @@ export default {
         'Destination route to Melba and then back to Kuna. Gentle rolling hills through farmland. This is a course that will delight those who want to establish a new 40k personal best. But you surely didn’t train all that time to come to Ride For Hope Idaho just to get it over with as fast as you can; did you?! Stop and smell the roses, converse with your riding partners, and don’t forget to experience a fancy porta-john at one of the three rest stops you will encounter along the route!'
     },
     {
+      id: 3,
       earlyReg: '$75',
       reg: '$85',
       url: '/metric',
@@ -174,6 +178,7 @@ export default {
         'At 67 miles long, this is a ride for true bikers (i.e. no longer embarrassed to wear spandex and know that STRAVA isn’t a new type of  pasta). The route Includes rolling hills, scenic overlooks, vineyards and 4 rest stops. The course meets up with the last half of the Century route (so you will have additional riders to share your challenge with along the way). You will continue northwest toward Marsing and then turn back toward Kuna and pedal, pedal, pedal, to Lake Shore Drive skirting Lake Lowell on your way back to the finish line where festivities and food await.  Just remember, no matter how slow you go, you are still lapping everybody on the couch!'
     },
     {
+      id: 4,
       earlyReg: '$75',
       reg: '$85',
       url: '/Century',

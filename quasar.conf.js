@@ -53,7 +53,8 @@ module.exports = function (ctx) {
         'QCardSection',
         'QCardActions',
         'QBtnDropdown',
-        'QExpansionItem'
+        'QExpansionItem',
+        'QSeparator'
 
       ],
 
