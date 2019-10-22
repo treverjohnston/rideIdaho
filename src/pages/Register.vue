@@ -1,30 +1,21 @@
 <template>
     <q-layout class="black">
         <div class="row wrap justify-center">
-            <div class="col-xs-11 col-md-10 black-back shadow-24 text-center">
-                <hr class="ihr">
-                <h3 class="desktop-only">Online Registration for 2019 is now closed</h3>
-                <h4 class="mobile-only">Online Registration for 2019 is now closed</h4>
-                <!-- <h3 class="desktop-only">Registration opens January 1, 2019</h3>
-                <h4 class="mobile-only">Registration opens January 1, 2019</h4> -->
+            <div class="col-xs-11 col-md-10 black-back shadow-24 text-center q-pa-lg">
                 <!-- <hr class="ihr"> -->
-                <h5>You can still register at packet pick up, and at the ride!</h5>
+                <!-- <h3 class="desktop-only">Online Registration for 2019 is now closed</h3>
+                <h4 class="mobile-only">Online Registration for 2019 is now closed</h4> -->
+                <h3 class="desktop-only">Registration opens January 1, 2019</h3>
+                <h4 class="mobile-only">Registration opens January 1, 2019</h4>
                 <hr class="ihr">
-                <div class="row justify-center margin">
-                    <div class="col-xs-12 col-md-6 text-center">
-                        <q-btn class="btn spacers mobile-only mob" @click="$router.push('/packet')" no-caps>Packet Pick
-                            Up
-                        </q-btn>
-                        <q-btn class="btn spacers desktop-only" @click="$router.push('/packet')" no-caps>Packet Pick
-                            Up
-                        </q-btn>
-                    </div>
-                </div>
+                <h5>For now, check out our different rides!</h5>
+                <hr class="ihr">
+
                 <div class="row justify-between desktop-only second-header">
                     <q-list separator class="col-md-4">
                         <q-item clickable v-for="route in routes">
                             <q-item-section v-if="selected == route.id" @click="selected = route.id" class="">
-                                <p class="text-bold service gray-bg selected shadow-16 text-blue"
+                                <p class="text-bold service gray-bg selected shadow-16 "
                                     v-anime="{ translateX: { value: ['-30px', '0px'], duration: 4000, }}">
                                     {{route.length}}
                                 </p>
@@ -37,14 +28,14 @@
                         </q-item>
                     </q-list>
 
-                    <div class="col-sm-6 col-md-4 col-lg-3 space-right">
+                    <div class="col-sm-6 col-md-6 col-lg-6 space-right">
                         <q-card dark bordered class="card">
                             <q-card-section>
-                                <div class="text-h4 text-bold text-blue">{{routes[selected].length}}</div>
+                                <div class="text-h4 text-bold ">{{routes[selected].length}}</div>
                             </q-card-section>
 
                             <q-separator dark inset />
-                            <q-card-section class="sub text-blue">
+                            <q-card-section class="sub ">
                                 <span class="">
                                     {{routes[selected].shortDescription}}
                                 </span>
@@ -130,15 +121,18 @@
 
 <style scoped>
     .selected {
-        background-color: rgba(255, 255, 255, 0.87);
-
+        /* background-color: rgba(255, 255, 255, 0.87); */
+        border: 3px solid rgb(197, 14, 14);
+        color: black;
         padding: 1rem;
         border-radius: 15px;
     }
 
     .card {
         margin: 1rem;
-        background-color: rgba(255, 255, 255, 0.87);
+        /* background-color: rgba(255, 255, 255, 0.87); */
+        border: 1px solid rgba(150, 0, 0, 0.699);
+        color: black;
     }
 
     .mob {
