@@ -21,17 +21,19 @@
       <div class="col-xs-12">
         <div class="text-center">
           <div class="promo text-center desktop-only">
-            <h5 class="light-paragraph">SUPPORTING HEALTHCARE FOR THE MEDICALLY UNDERSERVED</h5>
+            <div class="light-paragraph text-h5">SUPPORTING HEALTHCARE FOR THE MEDICALLY UNDERSERVED</div>
             <hr>
             <h1 class="text-bold">Ride For Hope Idaho</h1>
-            <h3 class="text-bold">2019 Event Date: Saturday, June 8</h3>
-            <h3 class="text-bold">Kuna, ID</h3>
+            <div class="text-bold text-h3">2019 Event Date: Saturday, June 8</div>
+            <div class="text-bold text-h3">Kuna, ID</div>
             <hr>
-            <h5 class="q-title">Online registration ends 6/6/2019. Last day to register and be guarenteed a T-Shirt:
-              5/30/19</h5>
-            <h5 class="q-title">Day of ride registration available.</h5>
-            <h5 class="q-title">Discount offered for teams of 5 or more and for families. Contact for more details.
-            </h5>
+            <div class="q-title text-h5">Online registration ends 6/6/2019. Last day to register and be guarenteed a
+              T-Shirt:
+              5/30/19</div>
+            <div class="q-title text-h5">Day of ride registration available.</div>
+            <div class="q-title text-h5">Discount offered for teams of 5 or more and for families. Contact for more
+              details.
+            </div>
             <hr>
             <q-btn @click="launch('https://bigkbbqidaho.com/')" class="cbtnm shadow-24 text-center">Catered By
               Big K BBQ
@@ -107,13 +109,17 @@
         <hr class="routeshr">
       </div>
       <div class="col-xs-12 col-sm-6 col-md-5 border desktop-only self-center" v-for="route in routes">
-        <q-card-section class="text-center card-container shadow-24">
-          <q-btn class="route-btn" @click="$router.push(route.url.trim('/'))" outline color="red">
-            <h4>{{route.length}}</h4>
-          </q-btn>
-          <h6 class="white text-justify">
-            {{route.shortDescription}}</h6>
-        </q-card-section>
+        <q-card class="text-center card-container shadow-24">
+          <q-card-section>
+            <q-btn class="route-btn" @click="$router.push(route.url.trim('/'))" outline color="red">
+              <span class="text-h3 q-pa-sm">{{route.length}}</span>
+            </q-btn>
+          </q-card-section>
+          <q-card-section class="text-justify">
+            <span class="white text-body1">
+              {{route.shortDescription}}</span>
+          </q-card-section>
+        </q-card>
       </div>
       <div class="col-xs-11 col-sm-6 col-md-5 mobile-border mobile-only" v-for="route in routes">
         <q-card-section class="text-center card-container shadow-24">
@@ -191,29 +197,6 @@
   export default {
     name: "index",
     components: {
-      QLayout,
-      QToolbar,
-      QToolbarTitle,
-      QBtn,
-      QIcon,
-      QList,
-      QItem,
-      QTab,
-      QTabs,
-      QParallax,
-
-
-
-      QRouteTab,
-
-
-
-
-
-
-      QVideo,
-
-      QCarousel
     },
     data() {
       return {

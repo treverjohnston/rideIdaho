@@ -1,5 +1,5 @@
 <template>
-  <q-layout ref="layout" class="back ride-back" view="lHh Lpr fff" :left-class="{'bg-grey-2': true}">
+  <q-layout ref="layout" class="back ride-back" view="lHh Lpr fff">
     <!-- <q-toolbar class="head desktop-only">
       <q-btn @click="$router.push('/')">
         <img src="statics/logos/RFHIdahoLogo.png" alt="logo" class="mini">
@@ -8,227 +8,233 @@
         Ride For Hope Idaho
       </q-toolbar-title>
       <q-btn outline color="red"
-        @click="launch('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventStore.aspx%3FfEID%3D71518%26mSource%3DimAOverview')">
+        @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventStore.aspx%3FfEID%3D71518%26mSource%3DimAOverview')">
         Just
         Donate
       </q-btn>
     </q-toolbar> -->
     <q-toolbar class="head mobile-only">
-      <q-btn class="mobile-only" flat @click="$refs.layout.toggleLeft()">
+      <q-btn class="mobile-only" flat @click="leftDrawerOpen = !leftDrawerOpen">
         <q-icon name="menu" />
       </q-btn>
       <q-btn @click="$router.push('/')">
         <img src="statics/logos/RFHIdahoLogo.png" alt="logo" class="mini">
       </q-btn>
       <q-btn outline color="red"
-        @click="launch('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventStore.aspx%3FfEID%3D71518%26mSource%3DimAOverview')">
+        @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventStore.aspx%3FfEID%3D71518%26mSource%3DimAOverview')">
         Just
         Donate
       </q-btn>
       <q-btn v-if="openRegistration" class="mobile-only" outline
-        @click="launch('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')"
+        @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')"
         color="red">Register
       </q-btn>
       <q-btn v-else class="mobile-only" outline @click="$router.push('/register')" color="red">Register
       </q-btn>
       <!-- <q-btn class="mobile-only">
-        <img class="meridian-mobile" @click="launch('http://www.meridian-cycles.com/')" src="statics/logos/meridian.png"
+        <img class="meridian-mobile" @click="openURL('http://www.meridian-cycles.com/')" src="statics/logos/meridian.png"
           alt="Meridian Cycles logo">
       </q-btn> -->
     </q-toolbar>
 
     <q-tabs align="center" class="shadow-2 tabs head desktop-only">
-      <q-route-tab class="tab" label="Home" name="home" to="/" />
-      <q-tab v-if="openRegistration" class="tab" color="red" label="Register" name="reg"
-        @click="launch('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')" />
-      <q-route-tab v-else class="tab" color="red" label="Register" name="register" to="register" />
+      <q-route-tab stretch flat class="tab" label="Home" name="home" to="/" />
+      <q-tab stretch flat v-if="openRegistration" class="tab text-red" color="red" label="Register" name="reg"
+        @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')" />
+      <q-route-tab v-else stretch flat class="tab text-red" color="red" label="Register" name="register"
+        to="register" />
       <!-- <q-tab class="tab" slot="title" label="Rider Fundraising" name="fundraising"
-        @click="launch('https://www.imathlete.com/#/legacy?url=%2Fdonate%2FRideForHopeIdaho%3Fz%3D1517453663070')" /> -->
+        @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fdonate%2FRideForHopeIdaho%3Fz%3D1517453663070')" /> -->
       <!-- <q-tab class="tab involved" align="left" name="rider"> -->
       <q-btn-dropdown stretch flat label="Rider Info" name="rider">
         <q-list>
           <q-item>
-            <q-btn-dropdown auto-close stretch flat label="Routes" name="rider">
+            <q-btn-dropdown auto-close stretch flat label="Routes" name="rider" class="width_100 tab inner-tab">
               <q-list>
-                <q-tabs class="">
-                  <q-route-tab class="tab" label="9 Mile" name="routes" to="9-mile" />
+                <q-tabs>
+                  <q-route-tab class="tab inner-tab" label="9 Mile" name="rider" to="9-mile" />
                 </q-tabs>
                 <q-tabs>
-                  <q-route-tab class="tab" @click="collapse" label="19 Mile" name="routes" to="19-mile" />
+                  <q-route-tab class="tab inner-tab" label="19 Mile" name="rider" to="19-mile" />
                 </q-tabs>
                 <q-tabs>
-                  <q-route-tab class="tab" @click="collapse" label="35 Mile" name="routes" to="35-mile" />
+                  <q-route-tab class="tab inner-tab" label="35 Mile" name="rider" to="35-mile" />
                 </q-tabs>
                 <q-tabs>
-                  <q-route-tab class="tab" @click="collapse" label="Metric Century" name="routes" to="metric" />
+                  <q-route-tab class="tab inner-tab" label="Metric Century" name="rider" to="metric" />
                 </q-tabs>
                 <q-tabs>
-                  <q-route-tab class="tab" @click="collapse" label="Century" name="routes" to="Century" />
+                  <q-route-tab class="tab inner-tab" label="Century" name="rider" to="Century" />
                 </q-tabs>
               </q-list>
             </q-btn-dropdown>
           </q-item>
         </q-list>
-        <q-item>
-          <q-tabs>
+        <q-item v-close-popup>
+          <q-tabs class="width_100">
             <q-tab v-if="openRegistration"
-              @click="launch('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')"
-              name="home" class="tab" color="red" label="Register" />
-            <q-route-tab v-else @click="collapse" name="register" class="tab" color="red" label="Register"
+              @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')"
+              name="home" class="tab inner-tab width_100 text-red" color="red" label="Register" />
+            <q-route-tab v-else name="register" class="tab inner-tab width_100 text-red" color="red" label="Register"
               to="register" />
           </q-tabs>
         </q-item>
-        <q-item-section>
-          <q-route-tab @click="collapse" class="tab" label="Packet Pick Up" name="rider" to="packet" />
-        </q-item-section>
-        <q-item-section>
-          <q-route-tab @click="collapse" class="tab" label="Rules Of The Road" name="rider" to="rules" />
-        </q-item-section>
-        <q-item-section>
-          <q-route-tab @click="collapse" class="tab" label="Start Times And Directions" name="rider" to="ride" />
-        </q-item-section>
-        <q-item-section>
-          <q-route-tab @click="collapse" class="tab" label="How Climbs Are Categorized" name="rider" to="climbs" />
-        </q-item-section>
-        <q-item-section>
-          <q-route-tab @click="collapse" class="tab" label="Team Ride For Hope Idaho Information" name="rider"
-            to="team" />
-        </q-item-section>
+        <q-item v-close-popup>
+          <q-tabs class="width_100">
+            <q-route-tab class="tab inner-tab" label="Packet Pick Up" name="rider" to="packet" />
+          </q-tabs>
+        </q-item>
+        <q-item v-close-popup>
+          <q-tabs class="width_100">
+            <q-route-tab class="tab inner-tab" label="Rules Of The Road" name="rider" to="rules" />
+          </q-tabs>
+        </q-item>
+        <q-item v-close-popup>
+          <q-tabs class="width_100">
+            <q-route-tab class="tab inner-tab" label="Start Times And Directions" name="rider" to="ride" />
+          </q-tabs>
+        </q-item>
+        <q-item v-close-popup>
+          <q-tabs class="width_100">
+            <q-route-tab class="tab inner-tab" label="How Climbs Are Categorized" name="rider" to="climbs" />
+          </q-tabs>
+        </q-item>
+        <q-item v-close-popup>
+          <q-tabs class="width_100">
+            <q-route-tab class="tab inner-tab" label="Team Ride For Hope Idaho Information" name="rider" to="team" />
+          </q-tabs>
+        </q-item>
       </q-btn-dropdown>
-      <!-- </q-tab> -->
-      <q-tab class="tab involved" label="Merchandise" name="marchandise">
-        <q-btn-dropdown fit ref="popover" class="involved">
-          <q-item-section>
-            <q-route-tab @click="collapse" class="tab" label="Jerseys and More" name="merchandise" to="merchandise" />
-          </q-item-section>
-          <q-item-section>
-            <q-route-tab @click="collapse" class="tab" label="Raffle Items" name="raffle" to="raffle" />
-          </q-item-section>
-        </q-btn-dropdown>
-      </q-tab>
-      <!-- <q-route-tab class="tab" slot="title" label="Volunteer" name="volunteers" to="volunteers" /> -->
+      <q-btn-dropdown auto-close stretch flat label="Merchandise" name="merchandise" class="">
+        <q-item>
+          <q-tabs class="width_100">
+            <q-route-tab class="tab inner-tab" label="Jerseys and More" name="merchandise" to="merchandise" />
+          </q-tabs>
+        </q-item>
+        <q-item>
+          <q-tabs class="width_100">
+            <q-route-tab class="tab inner-tab" label="Raffle Items" name="merchandise" to="raffle" />
+          </q-tabs>
+        </q-item>
+      </q-btn-dropdown>
       <q-route-tab class="tab" label="Sponsors" name="sponsors" to="sponsors" />
-      <q-tab class="tab involved" label="Galleries" name="gallery">
-        <q-btn-dropdown fit ref="popover" class="involved">
-          <q-item-section>
-            <q-route-tab @click="collapse" class="tab" label="2018 Gallery" name="gallery" to="2018-gallery" />
-          </q-item-section>
-          <q-item-section>
-            <q-route-tab @click="collapse" class="tab" label="Past Rides" name="gallery" to="gallery" />
-          </q-item-section>
-        </q-btn-dropdown>
-      </q-tab>
+      <q-btn-dropdown stretch flat auto-close class="" label="Galleries" name="gallery">
+        <q-item>
+          <q-tabs class="width_100">
+            <q-route-tab class="tab inner-tab" label="2018 Gallery" name="gallery" to="2018-gallery" />
+          </q-tabs>
+        </q-item>
+        <q-item>
+          <q-tabs class="width_100">
+            <q-route-tab class="tab inner-tab" label="Past Rides" name="gallery" to="gallery" />
+          </q-tabs>
+        </q-item>
+      </q-btn-dropdown>
       <q-route-tab class="tab" label="About" name="about" to="about" />
       <q-route-tab class="tab" label="Contact" name="contact" to="contact" />
     </q-tabs>
 
-    <div class="mobile-only left-tab">
-      <q-list class="mobile-only" no-border link inset-delimiter>
-        <q-item to="/">
-          <q-item-section class="side" label="Home" />
-          <hr class="tabhr">
-        </q-item>
-        <q-item to="register">
-          <q-item-section v-if="openRegistration"
-            @click="launch('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')"
-            class="side register" label="Register" />
-          <q-item-section v-else class="side register" label="Register" />
+    <q-drawer v-model="leftDrawerOpen" class="mobile-only left-tab">
+      <q-list class="mobile-only" link>
+        <q-item clickable @click.native="push('/')" v-ripple>
+          <q-item-section>Home</q-item-section>
         </q-item>
         <hr class="tabhrs">
-        <!-- <q-item-section
-          @click="launch('https://www.imathlete.com/#/legacy?url=%2Fdonate%2FRideForHopeIdaho%3Fz%3D1517453663070')"
+        <q-item to="register">
+          <q-item-section v-if="openRegistration"
+            @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')"
+            class="side register" label="Register">Register</q-item-section>
+          <q-item-section v-else class="side register" label="Register" @click.native="push('/register')">Register
+          </q-item-section>
+        </q-item>
+        <hr class="tabhrs">
+        <!-- <q-item
+          @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fdonate%2FRideForHopeIdaho%3Fz%3D1517453663070')"
           class="side" label="Rider Fundraising" />
         <hr class="tabhr"> -->
         </q-expansion-item>
         <q-expansion-item class="side-collapse" label="Rider Information">
-          <q-expansion-item class="side-collapse" label="Routes">
-            <q-item to="9-mile">
-              <q-item-section class="small-side" label="9 Mile" />
-            </q-item>
-            <hr class="tabhrs">
-            <q-item to="19-mile">
-              <q-item-section class="small-side" label="19 Mile" />
-            </q-item>
-            <hr class="tabhrs">
-            <q-item to="35-mile">
-              <q-item-section class="small-side" label="35 Mile" />
-            </q-item>
-            <hr class="tabhrs">
-            <q-item to="metric">
-              <q-item-section class="small-side" label="Metric Century" />
-            </q-item>
-            <hr class="tabhrs">
-            <q-item to="Century">
-              <q-item-section class="small-side" label="Century" />
-            </q-item>
-          </q-expansion-item>
+          <q-list>
+            <hr class="tabhr">
+            <q-expansion-item class="margin-left-1" label="Routes">
+              <hr class="tabhr">
+              <q-item class="small-side" @click.native="push('/9-mile')">
+                9 Mile </q-item>
+              <hr class="tabhrs">
+              <q-item class="small-side" @click.native="push('19-mile')">
+                19 Mile </q-item>
+              <hr class="tabhrs">
+              <q-item class="small-side" @click.native="push('35-mile')">
+                35 Mile </q-item>
+              <hr class="tabhrs">
+              <q-item class="small-side" @click.native="push('metric')">
+                Metric Century </q-item>
+              <hr class="tabhrs">
+              <q-item class="small-side" @click.native="push('Century')">
+                Century </q-item>
+            </q-expansion-item>
+          </q-list>
           <hr class="tabhrs">
           <q-item to="register">
             <q-item-section v-if="openRegistration"
-              @click="launch('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')"
-              class="small-side register" label="Register" />
-            <q-item-section v-else class="small-side register" label="Register" />
+              @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')"
+              class="small-side register" label="Register">Register</q-item-section>
+            <q-item-section v-else class="small-side register" label="Register">Register</q-item-section>
           </q-item>
           <hr class="tabhrs">
-          <q-item to="packet">
-            <q-item-section class="small-side" label="Packet Pick Up" />
-          </q-item>
+          <q-item class="small-side" @click.native="push('packet')">
+            Packet Pick Up </q-item>
           <hr class="tabhr">
-          <q-item to="rules">
-            <q-item-section class="small-side" label="Rules Of The Road" />
-          </q-item>
+          <q-item class="small-side" @click.native="push('rules')">
+            Rules of the Road </q-item>
           <hr class="tabhrs">
-          <q-item to="ride">
-            <q-item-section class="small-side" label="Start Time/Directions" />
-          </q-item>
+          <q-item class="small-side" @click.native="push('ride')">
+            Start Time/Directions </q-item>
           <hr class="tabhr">
-          <q-item to="climbs">
-            <q-item-section class="small-side" label="How Climbs Are Categorized" />
-          </q-item>
+          <q-item class="small-side" @click.native="push('climbs')">
+            How Climbs are Categorized </q-item>
           <hr class="tabhr">
-          <q-item to="team">
-            <q-item-section class="small-side" label="Team Ride For Hope Idaho Information" />
+          <q-item class="small-side" @click.native="push('team')">
+            Team Ride For Hope Idaho Information
           </q-item>
         </q-expansion-item>
         <hr class="tabhr">
         <q-expansion-item class="side-collapse" label="Merchandise">
-          <q-item to="merchandise" class="left">
-            <q-item-section class="small-side" label="Jerseys and More" />
-          </q-item>
+          <hr class="tabhr">
+          <q-item class="small-side left" @click.native="push('merchandise')">
+            Jerseys and More </q-item>
           <hr class="tabhrs">
-          <q-item to="raffle" class="left">
-            <q-item-section class="small-side" label="Raffle Items" />
-          </q-item>
+          <q-item class="small-side left" @click.native="push('raffle')">
+            Raffle Items </q-item>
         </q-expansion-item>
         <hr class="tabhr">
         <!-- <q-item to="volunteers">
-          <q-item-section class="side" label="Volunteer" />
+          <q-item class="side" label="Volunteer" />
           <hr class="tabhr">
         </q-item> -->
-        <q-item to="sponsors">
-          <q-item-section class="side" label="Sponsors" />
-          <hr class="tabhr">
+        <q-item @click.native="push('sponsors')">
+          Sponsors
         </q-item>
+        <hr class="tabhr">
         <q-expansion-item class="side-collapse" label="Galleries">
-          <q-item to="2018-gallery">
-            <q-item-section class="small-side" label="2018 Gallery" />
-          </q-item>
+          <hr class="tabhr">
+          <q-item class="small-side" @click.native="push('2018-gallery')">
+            2018 Gallery </q-item>
           <hr class="tabhrs">
-          <q-item to="gallery">
-            <q-item-section class="small-side" label="Past Gallery" />
-          </q-item>
+          <q-item class="small-side" @click.native="push('gallery')">
+            Past Gallery </q-item>
         </q-expansion-item>
         <hr class="tabhr">
-        <q-item to="about">
-          <q-item-section class="side" label="About" />
-          <hr class="tabhr">
+        <q-item class="side" @click.native="push('about')">
+          About
         </q-item>
-        <q-item to="contact">
-          <q-item-section class="side" label="Contact" />
-          <hr class="tabhr">
+        <hr class="tabhr">
+        <q-item class="side" @click.native="push('contact')">
+          Contact
         </q-item>
+        <hr class="tabhr">
       </q-list>
-    </div>
+    </q-drawer>
     <router-view />
     <!-- Footer -->
     <div class="footer text-center text-bold">
@@ -247,26 +253,26 @@
               <hr class="hr">
             </div>
             <div class="col-xs-6 col-md-3 self-center">
-              <q-btn flat @click="launch('https://www.strava.com/clubs/302822')" flat>
+              <q-btn flat @click="openURL('https://www.strava.com/clubs/302822')" flat>
                 <img class="strava" src="statics/logos/strava.png" alt="strava logo">
               </q-btn>
             </div>
             <div class="col-xs-6 col-md-3 mobile-only self-center">
-              <q-btn flat @click="launch('https://www.facebook.com/rideforhopeidaho/')" flat>
-                <q-icon class="fb" size="5.75rem" name="fa-facebook-square" />
+              <q-btn flat @click="openURL('https://www.facebook.com/rideforhopeidaho/')" flat>
+                <q-icon class="fb" size="5.75rem" name="fas fa-facebook-square" />
               </q-btn>
             </div>
-            <q-btn flat class="col-md-3 self-center" @click="launch('//www.ebenezerwebsites.com/')">
+            <q-btn flat class="col-md-3 self-center" @click="openURL('//www.ebenezerwebsites.com/')">
               <img class="ebenezer" src="../assets/ebenezer.png" alt="Ebenezer Websites Logo">
             </q-btn>
             <!-- <div v-scroll-fire="animate" class="col-md-3 self-center" id="bar">
-              <q-btn flat data-x="360" class="el" @click="launch('http://www.meridian-cycles.com/')">
+              <q-btn flat data-x="360" class="el" @click="openURL('http://www.meridian-cycles.com/')">
                 <img class="meridian-big" src="statics/logos/meridian.png" alt="Meridian Cycles logo">
               </q-btn>
             </div> -->
             <div class="col-md-3 desktop-only self-center">
-              <q-btn flat @click="launch('https://www.facebook.com/rideforhopeidaho/')" flat>
-                <q-icon class="fb" size="5.75rem" name="fa-facebook-square" />
+              <q-btn flat @click="openURL('https://www.facebook.com/rideforhopeidaho/')">
+                <q-icon class="fb" size="5.75rem" name="fab fa-facebook-square" />
               </q-btn>
             </div>
             <div class="col-xs-12">
@@ -278,13 +284,13 @@
                   </small>
                 </div>
                 <div class="col-xs-12">
-                  <q-btn flat @click="launch('https://www.cycleforindependence.org/')">
+                  <q-btn flat @click="openURL('https://www.cycleforindependence.org/')">
                     <img class="meridian-big" src="statics/logos/cfi.jpg" alt="Cycle for independence logo">
                   </q-btn>
                 </div>
                 <div class="col-xs-12">
                   <q-btn flat
-                    @click="launch('http://web.alsa.org/site/TR?sid=8540&type=fr_informational&pg=informational&fr_id=13510')">
+                    @click="openURL('http://web.alsa.org/site/TR?sid=8540&type=fr_informational&pg=informational&fr_id=13510')">
                     <img class="meridian-big" src="statics/logos/als.png" alt="ALS Team Challenge logo">
                   </q-btn>
                 </div>
@@ -303,7 +309,7 @@
           <!-- <q-btn flat class="">
             <img class="ebenezer" src="../assets/ebenezer.png" alt="Ebenezer Websites Logo">
           </q-btn> -->
-          <!-- <q-btn flat class="" @click="launch('//www.ebenezerwebsites.com/')">
+          <!-- <q-btn flat class="" @click="openURL('//www.ebenezerwebsites.com/')">
             <img class="ebenezer" src="../assets/ebenezer.png" alt="Ebenezer Websites Logo">
           </q-btn> -->
         </div>
@@ -315,7 +321,7 @@
 
 <script>
   import anime from "animejs";
-  import { date } from 'quasar'
+  import { date, openURL } from 'quasar'
 
   export default {
     name: "index",
@@ -323,6 +329,7 @@
     },
     data() {
       return {
+        leftDrawerOpen: false,
         showVid: false,
         showSplash: false,
         showSwal: false,
@@ -348,11 +355,13 @@
       }
     },
     methods: {
-      launch(url) {
-        openURL(url);
+      push(tab) {
+        this.$router.push(tab)
+        this.leftDrawerOpen = false;
       },
       collapse() {
         this.$refs.popover.close();
+        this.$refs.dropdown.hide();
         this.$refs.popoverRoutes.close();
         this.$refs.routePopB.close();
       },
@@ -398,10 +407,10 @@
           .then((value) => {
             switch (value) {
               case 'sponsor':
-                this.launch('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')
+                this.openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')
                 break;
               case 'give':
-                this.launch('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')
+                this.openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')
                 break;
             }
           })
@@ -418,10 +427,10 @@
           .then((value) => {
             switch (value) {
               case 'sponsor':
-                this.launch('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')
+                this.openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')
                 break;
               case 'give':
-                this.launch('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')
+                this.openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')
                 break;
             }
           })
@@ -438,7 +447,7 @@
           .then((value) => {
             switch (value) {
               case 'site':
-                this.launch('https://www.google.com/maps/dir/10+barrel+brewing+boise')
+                this.openURL('https://www.google.com/maps/dir/10+barrel+brewing+boise')
                 break;
               case 'dismiss':
                 break;
@@ -536,6 +545,10 @@
 </script>
 
 <style scoped>
+  .width_100 {
+    width: 100%
+  }
+
   .full-vid {
     width: 100%;
   }
@@ -751,11 +764,6 @@
     font-weight: 400;
   }
 
-  .q-btn-dropdown {
-    background-color: rgba(17, 17, 17, 0.88);
-    color: white;
-  }
-
   .tabhr {
     border-color: black;
     width: 100%;
@@ -775,6 +783,11 @@
     font-weight: 400;
     color: black;
     font-size: 1.5rem;
+    margin-left: 1rem;
+  }
+
+  .margin-left-1 {
+    margin-left: 1rem;
   }
 
   .side {
@@ -861,7 +874,13 @@
 
   .tab {
     text-transform: none;
-    /* background: rgba(8, 8, 8, 0.705); */
+    background-color: transparent;
+    color: white;
+  }
+
+  .inner-tab {
+    background-color: black;
+    color: white;
   }
 
   .logo-container {
