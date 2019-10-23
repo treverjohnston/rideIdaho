@@ -17,11 +17,6 @@
 
 <script>
     import VueGallery from 'vue-gallery';
-    import {
-        QLayout,
-        // QGalleryCarousel
-
-    } from 'quasar'
     export default {
         name: 'Gallery',
         data() {
@@ -30,8 +25,6 @@
             }
         },
         components: {
-            QLayout,
-            // QGalleryCarousel,
             'gallery': VueGallery
         },
         computed: {
@@ -41,7 +34,7 @@
         },
         mounted() {
             if (this.$store.state.gallery.newGallery.length <= 1) {
-                this.$store.commit('addToNewGallery');
+                this.$store.commit('gallery/addToNewGallery');
             }
         }
     }

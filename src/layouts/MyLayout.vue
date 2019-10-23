@@ -259,7 +259,7 @@
             </div>
             <div class="col-xs-6 col-md-3 mobile-only self-center">
               <q-btn flat @click="openURL('https://www.facebook.com/rideforhopeidaho/')" flat>
-                <q-icon class="fb" size="5.75rem" name="fas fa-facebook-square" />
+                <q-icon class="fb" size="5.75rem" name="fab fa-facebook-square" />
               </q-btn>
             </div>
             <q-btn flat class="col-md-3 self-center" @click="openURL('//www.ebenezerwebsites.com/')">
@@ -320,7 +320,6 @@
 </template>
 
 <script>
-  import anime from "animejs";
   import { date, openURL } from 'quasar'
 
   export default {
@@ -355,6 +354,7 @@
       }
     },
     methods: {
+      openURL,
       push(tab) {
         this.$router.push(tab)
         this.leftDrawerOpen = false;
@@ -371,30 +371,7 @@
       sesame() {
         this.showSplash = true;
       },
-      animate() {
-        anime({
-          targets: "#bar .el",
-          translateX: function (el) {
-            return 0;
-          },
-          translateY: function (el, i) {
-            return 0;
-          },
-          scale: function (el, i, l) {
-            return 1.25;
-          },
-          duration: function () {
-            return anime.random(500, 800);
-          },
-          duration: function () {
-            return anime.random(800, 1100);
-          },
-          delay: function () {
-            return anime.random(0, 500);
-          },
-          direction: "reverse"
-        });
-      },
+
       funSwal() {
         return swal({
           title: 'Rider Fundraising',

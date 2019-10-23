@@ -11,12 +11,12 @@
                         <h4 class="mobile-only">Ride Day Information</h4>
                         <p>Registration opens at 6:00 AM</p>
                         <!-- <p>*Please be at the start line ready to ride at least 15 minutes before posted start time.</p> -->
-                        <hr class="ihr">
+                        <hr class="width_90">
                         <span v-for="route in routes">
                             <h5>{{route.length}} Start Time</h5>
                             <p>{{route.startTime}}</p>
                         </span>
-                        <hr class="ihr">
+                        <hr class="width_90">
                         <p>*Please be at the start line ready to ride at least 15 minutes before posted start time.</p>
                     </div>
                     <div class="col-xs-10">
@@ -103,7 +103,7 @@
         background-color: rgba(0, 128, 128, 0.6);
     }
 
-    .ihr {
+    .width_90 {
         width: 90%;
     }
 

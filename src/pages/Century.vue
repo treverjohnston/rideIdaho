@@ -41,10 +41,10 @@
                         <div class="row wrap justify-center">
                             <div class="light-paragraph text-center col-xs-11 col-md-11 spacers">
                                 <p>Ride Day Registration opens at 6:00 AM</p>
-                                <hr class="ihr" />
+                                <hr class="width_90" />
                                 <h4>{{route.length}} Start Time</h4>
                                 <h5>{{route.startTime}}</h5>
-                                <hr class="ihr" />
+                                <hr class="width_90" />
                                 <p>
                                     *Please be at the start line ready to ride at least 15 minutes
                                     before posted start time.
@@ -79,7 +79,7 @@
                                 <div class="row justify-center">
                                     <h5 class="col-xs-12">Quick Links To Other Routes</h5>
                                     <div class="col-xs-12">
-                                        <hr class="ihr">
+                                        <hr class="width_90">
                                     </div>
                                     <q-btn v-for="otherRoute in routes" v-if="otherRoute.length != route.length"
                                         class="col-xs-4 btn spacers" @click="$router.push(otherRoute.url.trim('/'))"
@@ -93,7 +93,7 @@
                                 <div class="row justify-center">
                                     <h5 class="col-xs-12">Resources</h5>
                                     <div class="col-xs-12">
-                                        <hr class="ihr">
+                                        <hr class="width_90">
                                     </div>
                                     <q-btn class="btn spacers" @click="$router.push('climbs')" no-caps>Information About
                                         Climbs</q-btn>
@@ -136,7 +136,7 @@
                                 <div class="row justify-center white">
                                     <h5 class="col-xs-12 text-center">Quick Links To Other Routes</h5>
                                     <div class="col-xs-12">
-                                        <hr class="ihr">
+                                        <hr class="width_90">
                                     </div>
                                     <q-btn v-for="otherRoute in routes" v-if="otherRoute.length != route.length"
                                         class="col-xs-4 btn spacers" @click="$router.push(otherRoute.url.trim('/'))"
@@ -150,7 +150,7 @@
                                 <div class="row justify-center white">
                                     <h5 class="col-xs-12 text-center">Resources</h5>
                                     <div class="col-xs-12">
-                                        <hr class="ihr">
+                                        <hr class="width_90">
                                     </div>
                                     <div class="col-xs-11 text-center">
                                         <q-btn class="btn spacers" @click="$router.push('climbs')" no-caps>Information

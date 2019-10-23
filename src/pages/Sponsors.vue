@@ -11,7 +11,7 @@
                     </div>
                 </div> -->
                 <div class="row wrap justify-center text-center">
-                    <div v-scroll-fire="animate" class="col-xs-11 col-md-8 spacers">
+                    <div class="col-xs-11 col-md-8 spacers">
                         <h2 class="text-bold shadow desktop-only">Veni Vidi Vici Sponsors</h2>
                         <!-- <h2 class="text-bold shadow desktop-only">($5000+)</h2> -->
                         <h4 class="text-bold shadow mobile-only">Veni Vidi Vici Sponsors</h4>
@@ -24,7 +24,7 @@
                             Hope Sponsor</q-btn>
                         <div v-for="sponsor in l1" class="mid row wrap justify-center">
                             <div id="bar" class="col-xs-12 col-md-12">
-                                <q-btn flat class="el" data-x="360" @click="launch(sponsor.link)">
+                                <q-btn flat class="el" data-x="360" @click="openURL(sponsor.link)">
                                     <img class="responsive gold desktop-only" :src="sponsor.logo" alt="sponsor.name">
                                     <img class="responsive gold-mobile mobile-only" :src="sponsor.logo"
                                         alt="sponsor.name">
@@ -44,7 +44,7 @@
                         <hr color="red" class="hr">
                         <div class="mid row wrap justify-center">
                             <!-- <div id="bar" class="col-xs-12 col-md-10">
-                                <q-btn flat class="el" data-x="360" @click="launch('https://www.lylepearson.com/')">
+                                <q-btn flat class="el" data-x="360" @click="openURL('https://www.lylepearson.com/')">
                                     <img class="responsive silver-big desktop-only" src="~/statics/sponsors/lyle.jpg"
                                         alt="Lyle Pearson">
                                     <img class="responsive silver-big-mobile mobile-only"
@@ -53,7 +53,7 @@
                             </div> -->
 
                             <div v-for="sponsor in l2" class="col-xs-12 col-md-9 self-center">
-                                <q-btn v-if="sponsor.logo != ''" flat @click="launch(sponsor.link)">
+                                <q-btn v-if="sponsor.logo != ''" flat @click="openURL(sponsor.link)">
                                     <img class="responsive silver silver-space desktop-only" :src="sponsor.logo"
                                         :alt="sponsor.name">
                                     <img class="responsive silver-big-mobile mobile-only" :src="sponsor.logo"
@@ -74,7 +74,7 @@
                         <hr color="red" class="hr">
                         <div class="mid row wrap justify-center">
                             <div v-for="sponsor in l3" class="col-xs-8 col-md-6 self-center">
-                                <q-btn v-if="sponsor.logo != ''" flat @click="launch(sponsor.link)">
+                                <q-btn v-if="sponsor.logo != ''" flat @click="openURL(sponsor.link)">
                                     <img class="responsive carp" :src="sponsor.logo" :alt="sponsor.name">
                                 </q-btn>
                                 <q-btn flat color="black" no-caps v-else>
@@ -105,7 +105,7 @@
                                 </q-btn>
                             </div>
                             <!-- <div v-for="sponsor in l4" class="col-xs-6 col-md-6 self-center last margin">
-                                <q-btn outline color="white" no-caps flat @click="launch(sponsor.link)">
+                                <q-btn outline color="white" no-caps flat @click="openURL(sponsor.link)">
                                     <img class="responsive carp" :src="sponsor.logo" :alt="sponsor.name">
                                    
                                 </q-btn>
@@ -144,30 +144,12 @@
 </template>
 
 <script>
-    import anime from "animejs";
-    import {
-        QLayout,
-        QInput,
-        QBtn,
-
-        openURL,
-        ScrollFire,
-
-    } from 'quasar'
+    import { openURL } from 'quasar'
     export default {
         name: 'Sponsors',
         data() {
             return {
             }
-        },
-        directives: {
-            ScrollFire
-        },
-        components: {
-            QLayout,
-            QInput,
-            QBtn,
-            QGallery
         },
         computed: {
             pictures() {
@@ -190,33 +172,7 @@
             },
         },
         methods: {
-            launch(url) {
-                openURL(url)
-            },
-            animate() {
-                anime({
-                    targets: "#bar .el",
-                    translateX: function (el) {
-                        return 0;
-                    },
-                    translateY: function (el, i) {
-                        return 0;
-                    },
-                    scale: function (el, i, l) {
-                        return 1.25;
-                    },
-                    duration: function () {
-                        return anime.random(500, 800);
-                    },
-                    duration: function () {
-                        return anime.random(800, 1100);
-                    },
-                    delay: function () {
-                        return anime.random(0, 500);
-                    },
-                    direction: "reverse"
-                });
-            }
+            openURL
         }
     }
 </script>

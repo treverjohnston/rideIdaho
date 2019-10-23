@@ -6,7 +6,7 @@
                     <div class="col-xs-11 col-md-8 text-center">
                         <h3 class="desktop-only">Rules of the Road</h3>
                         <h4 class="mobile-only">Rules of the Road</h4>
-                        <hr class="ihr">
+                        <hr class="width_90">
                         <h4 class="desktop-only text-italic">
                             Be Predictable
                         </h4>
@@ -16,7 +16,7 @@
                         <p>Make your intentions clear to everyone on the road. Ride in a straight line and don’t swerve
                             between
                             parked cars. Signal turns, and check behind you well before turning or changing lanes.</p>
-                        <hr class="ihr">
+                        <hr class="width_90">
                         <h4 class="desktop-only text-italic">
                             Be Conspicuous
                         </h4>
@@ -28,7 +28,7 @@
                             reflectors when visibility is poor. Make eye contact with others and don’t ride on
                             sidewalks.
                         </p>
-                        <hr class="ihr">
+                        <hr class="width_90">
                         <h4 class="desktop-only text-italic">
                             Think Ahead
                         </h4>
@@ -40,7 +40,7 @@
                             and ride outside the door zone of parked cars. Look out for debris, potholes, and other road
                             hazards. Cross railroad tracks at right angles.
                         </p>
-                        <hr class="ihr">
+                        <hr class="width_90">
                         <h4 class="desktop-only text-italic">
                             Ride Ready
                         </h4>
@@ -52,7 +52,7 @@
                             release levers are closed. Carry tools and supplies that are appropriate for your ride. Wear
                             a helmet.
                         </p>
-                        <hr class="ihr">
+                        <hr class="width_90">
 
                     </div>
                     <!-- <div class="col-xs-11 col-md-4 text-center">
@@ -64,11 +64,11 @@
                         </div>
                     </div>
                     <div class="col-xs-11 col-md-8 ">
-                        <hr class="ihr">
+                        <hr class="width_90">
 
                         <h3 class="desktop-only text-center">Idaho Biking Laws</h3>
                         <h4 class="mobile-only text-center">Idaho Biking Laws</h4>
-                        <hr class="ihr">
+                        <hr class="width_90">
                         <dl>
                             <dt> 49-714: TRAFFIC LAWS APPLY TO PERSONS ON BICYCLES AND OTHER HUMAN-POWERED VEHICLES —
                                 DUE CARE
@@ -83,7 +83,7 @@
                             <dd>(2) Every operator or rider of a bicycle or human-powered vehicle shall exercise due
                                 care.</dd>
                         </dl>
-                        <hr class="ihr">
+                        <hr class="width_90">
 
                         <dl>
                             <dt>49-717: POSITION ON HIGHWAY
@@ -107,7 +107,7 @@
                                 traffic
                                 lanes may ride as near the left-hand curb or edge of the roadway as practicable.</dd>
                         </dl>
-                        <hr class="ihr">
+                        <hr class="width_90">
                         <dl>
                             <dt>49-718: RIDING TWO ABREAST
                             </dt>
@@ -118,7 +118,7 @@
                                 roadway,
                                 shall ride within a single lane.</dd>
                         </dl>
-                        <hr class="ihr">
+                        <hr class="width_90">
 
                         <dl>
                             <dt> 49-720: STOPPING — TURN AND STOP SIGNALS.
@@ -155,7 +155,7 @@
                                 hand and arm need not be given if the hand is needed in the control or operation of the
                                 bicycle.</dd>
                         </dl>
-                        <hr class="ihr">
+                        <hr class="width_90">
 
                         <dt>49-721: BICYCLES ON SIDEWALKS.
 
@@ -177,7 +177,7 @@
                             circumstances.
                         </dd>
                         </dl>
-                        <hr class="ihr">
+                        <hr class="width_90">
                         <h6 class="text-center">For a complete list of Idaho biking laws, visit
                             <a href="https://legislature.idaho.gov/statutesrules/idstat/Title49/T49CH7/"
                                 target="_blanks">https://legislature.idaho.gov</a>
@@ -262,7 +262,7 @@
         background-color: rgba(0, 128, 128, 0.6);
     }
 
-    .ihr {
+    .width_90 {
         width: 90%;
     }
 

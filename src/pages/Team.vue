@@ -21,7 +21,7 @@
                         <h3 class="desktop-only">Team Ride For Hope Idaho</h3>
                         <h4 class="mobile-only">Team Ride For Hope Idaho</h4>
                         <p>Interested in joining Team Ride For Hope Idaho?</p>
-                        <hr class="ihr">
+                        <hr class="width_90">
                         <p>Take a look at our club on Strava or view our Facebook page</p>
                         <div class="row justify-center">
                             <div class="col-xs-6">
@@ -31,7 +31,7 @@
                             </div>
                             <div class="col-xs-6 self-center">
                                 <q-btn flat @click="launch('https://www.facebook.com/rideforhopeidaho/')" flat>
-                                    <q-icon class="fb" size="10rem" name="fa-facebook-square" />
+                                    <q-icon class="fb" size="10rem" name="fab fa-facebook-square" />
                                 </q-btn>
                             </div>
                             <div class="col-xs-12">
@@ -50,9 +50,9 @@
                     <div class="col-xs-10 text-center">
                         <h3 class="desktop-only">Requirements</h3>
                         <h4 class="mobile-only">Requirements</h4>
-                        <hr class="ihr">
+                        <hr class="width_90">
                         <p>
-                            You must attend every Saturday training ride. (Begins March 3 -- We leave from Meridian
+                            You must attend every Saturday training ride. (We leave from Meridian
                             Cycles)
                         </p>
                         <p>You must commit to another charity ride. (i.e. Cycle for Independence)</p>
@@ -122,11 +122,11 @@
     }
 
     .right {
-        margin-right: 1rem;
+        margin-left: 1rem;
     }
 
     .left {
-        margin-left: 1rem;
+        margin-right: 1rem;
     }
 
     .fb {
@@ -158,7 +158,7 @@
         background-color: rgba(0, 128, 128, 0.6);
     }
 
-    .ihr {
+    .width_90 {
         width: 90%;
     }
 

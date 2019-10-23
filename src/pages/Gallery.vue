@@ -11,11 +11,6 @@
 
 <script>
     import VueGallery from 'vue-gallery';
-    import {
-        QLayout,
-        // QGalleryCarousel
-
-    } from 'quasar'
     export default {
         name: 'Gallery',
         data() {
@@ -24,8 +19,6 @@
             }
         },
         components: {
-            QLayout,
-            // QGalleryCarousel,
             'gallery': VueGallery
         },
         computed: {
@@ -36,7 +29,7 @@
         mounted() {
             // this.$refs.gallery.toggleQuickView()
             if (this.$store.state.gallery.gallery.length <= 1) {
-                this.$store.dispatch('getPictures')
+                this.$store.dispatch('gallery/getPictures')
             }
         }
     }

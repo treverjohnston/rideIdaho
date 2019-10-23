@@ -54,7 +54,8 @@ module.exports = function (ctx) {
         'QCardActions',
         'QBtnDropdown',
         'QExpansionItem',
-        'QSeparator'
+        'QSeparator',
+        'QImg'
 
       ],
 

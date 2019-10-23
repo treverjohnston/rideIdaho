@@ -4,7 +4,7 @@
             <div class="col-xs-11 col-md-8 text-center">
                 <h3 class="desktop-only">Fundraising</h3>
                 <h4 class="mobile-only">Fundraising</h4>
-                <hr class="ihr">
+                <hr class="width_90">
                 <p>Check back soon for information about Fundraising</p>
                 <q-btn>Fundraise</q-btn>
             </div>
@@ -75,7 +75,7 @@
         background-color: rgba(0, 128, 128, 0.6);
     }
 
-    .ihr {
+    .width_90 {
         width: 90%;
     }
 
