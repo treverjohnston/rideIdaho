@@ -1,42 +1,6 @@
 <template>
   <q-layout ref="layout" class="back ride-back" view="lHh Lpr fff">
-    <!-- <q-toolbar class="head desktop-only">
-      <q-btn @click="$router.push('/')">
-        <img src="statics/logos/RFHIdahoLogo.png" alt="logo" class="mini">
-      </q-btn>
-      <q-toolbar-title class="desktop-only">
-        Ride For Hope Idaho
-      </q-toolbar-title>
-      <q-btn outline color="red"
-        @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventStore.aspx%3FfEID%3D71518%26mSource%3DimAOverview')">
-        Just
-        Donate
-      </q-btn>
-    </q-toolbar> -->
-    <q-toolbar class="head mobile-only">
-      <q-btn class="mobile-only" flat @click="leftDrawerOpen = !leftDrawerOpen">
-        <q-icon name="menu" />
-      </q-btn>
-      <q-btn @click="$router.push('/')">
-        <img src="statics/logos/RFHIdahoLogo.png" alt="logo" class="mini">
-      </q-btn>
-      <q-btn outline color="red"
-        @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventStore.aspx%3FfEID%3D71518%26mSource%3DimAOverview')">
-        Just
-        Donate
-      </q-btn>
-      <q-btn v-if="openRegistration" class="mobile-only" outline
-        @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')"
-        color="red">Register
-      </q-btn>
-      <q-btn v-else class="mobile-only" outline @click="$router.push('/register')" color="red">Register
-      </q-btn>
-      <!-- <q-btn class="mobile-only">
-        <img class="meridian-mobile" @click="openURL('http://www.meridian-cycles.com/')" src="statics/logos/meridian.png"
-          alt="Meridian Cycles logo">
-      </q-btn> -->
-    </q-toolbar>
-
+    <!-- DESKTOP TABS START -->
     <q-tabs align="center" class="shadow-2 tabs head desktop-only">
       <q-route-tab stretch flat class="tab" label="Home" name="home" to="/" />
       <q-tab stretch flat v-if="openRegistration" class="tab text-red" color="red" label="Register" name="reg"
@@ -130,7 +94,32 @@
       <q-route-tab class="tab" label="About" name="about" to="about" />
       <q-route-tab class="tab" label="Contact" name="contact" to="contact" />
     </q-tabs>
-
+    <!-- DESKTOP TABS END -->
+    <!--  -->
+    <!--  -->
+    <!--  -->
+    <!-- MOBILE TOOLBAR START -->
+    <q-toolbar class="head mobile-only">
+      <q-btn class="mobile-only" flat @click="leftDrawerOpen = !leftDrawerOpen">
+        <q-icon name="menu" />
+      </q-btn>
+      <q-btn @click="$router.push('/')">
+        <img src="statics/logos/RFHIdahoLogo.png" alt="logo" class="mini">
+      </q-btn>
+      <q-btn outline color="red"
+        @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventStore.aspx%3FfEID%3D71518%26mSource%3DimAOverview')">
+        Just
+        Donate
+      </q-btn>
+      <q-btn v-if="openRegistration" class="mobile-only" outline
+        @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')"
+        color="red">Register
+      </q-btn>
+      <q-btn v-else class="mobile-only" outline @click="$router.push('/register')" color="red">Register
+      </q-btn>
+    </q-toolbar>
+    <!-- MOBILE TOOLBAR END -->
+    <!-- MOBILE DRAWER START -->
     <q-drawer v-model="leftDrawerOpen" class="mobile-only left-tab">
       <q-list class="mobile-only" link>
         <q-item clickable @click.native="push('/')" v-ripple>
@@ -145,10 +134,6 @@
           </q-item-section>
         </q-item>
         <hr class="tabhrs">
-        <!-- <q-item
-          @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fdonate%2FRideForHopeIdaho%3Fz%3D1517453663070')"
-          class="side" label="Rider Fundraising" />
-        <hr class="tabhr"> -->
         </q-expansion-item>
         <q-expansion-item class="side-collapse" label="Rider Information">
           <q-list>
@@ -205,10 +190,6 @@
             Raffle Items </q-item>
         </q-expansion-item>
         <hr class="tabhr">
-        <!-- <q-item to="volunteers">
-          <q-item class="side" label="Volunteer" />
-          <hr class="tabhr">
-        </q-item> -->
         <q-item @click.native="push('sponsors')">
           Sponsors
         </q-item>
@@ -232,7 +213,14 @@
         <hr class="tabhr">
       </q-list>
     </q-drawer>
+    <!-- MOBILE DRAWER END -->
+
+    <!-- ROUTER VIEW -->
     <router-view />
+    <!-- ROUTER VIEW -->
+
+
+
     <!-- Footer -->
     <div class="footer text-center text-bold">
       <div class="row justify-center">
