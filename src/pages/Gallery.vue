@@ -1,25 +1,20 @@
 <template>
     <q-layout class="gallery">
         <div class="row justify-center">
-            <gallery :images="pictures" :index="index" @close="index = null"></gallery>
-            <div class="image col-xs-5 col-sm-5 col-md-3 col-lg-2" v-for="image, imageIndex in pictures"
-                @click="index = imageIndex"
-                :style="{ backgroundImage: 'url(' + image + ')', width: '300px', height: '200px' }"></div>
+            <q-carousel swipeable animated v-model="slide" thumbnails infinite class="col-xs-11 carousel">
+                <q-carousel-slide v-for="img in pictures" :name="img.id" :img-src="img.url" />\
+            </q-carousel>
         </div>
     </q-layout>
 </template>
 
 <script>
-    import VueGallery from 'vue-gallery';
     export default {
         name: 'Gallery',
         data() {
             return {
-                index: null
+                slide: 1
             }
-        },
-        components: {
-            'gallery': VueGallery
         },
         computed: {
             pictures() {
@@ -27,7 +22,6 @@
             }
         },
         mounted() {
-            // this.$refs.gallery.toggleQuickView()
             if (this.$store.state.gallery.gallery.length <= 1) {
                 this.$store.dispatch('gallery/getPictures')
             }
@@ -43,12 +37,9 @@
        align-content: center; */
     }
 
-    .image {
-        float: left;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        border: 1px solid #ebebeb;
-        margin: 5px;
+    .carousel {
+        height: 90vh;
+        width: 100%;
+        padding: 1rem;
     }
 </style>

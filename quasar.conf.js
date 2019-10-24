@@ -55,8 +55,10 @@ module.exports = function (ctx) {
         'QBtnDropdown',
         'QExpansionItem',
         'QSeparator',
-        'QImg'
-
+        'QImg',
+        'QCarousel',
+        'QCarouselControl',
+        'QCarouselSlide'
       ],
 
       directives: [

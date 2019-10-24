@@ -333,13 +333,6 @@
       };
     },
     computed: {
-      home() {
-        if (this.$route.path == "/") {
-          return true;
-        } else {
-          return false;
-        }
-      },
       routes() {
         return this.$store.state.routes.routes;
       },
@@ -356,127 +349,6 @@
         this.$router.push(tab)
         this.leftDrawerOpen = false;
       },
-      collapse() {
-        this.$refs.popover.close();
-        this.$refs.dropdown.hide();
-        this.$refs.popoverRoutes.close();
-        this.$refs.routePopB.close();
-      },
-      showVideos() {
-        this.showVid = true;
-      },
-      sesame() {
-        this.showSplash = true;
-      },
-
-      funSwal() {
-        return swal({
-          title: 'Rider Fundraising',
-          text: 'This year, each participant has the goal of raising $250 in additional funds for Ride For Hope Idaho. If you wish to simply donate, you can either choose one of these riders to donate to, or just donate to the ride in general.',
-          buttons: {
-            sponsor: { text: "Sponsor a Rider", value: "sponsor" },
-            give: { text: "Give to Ride For Hope Idaho", value: "give" }
-          }
-        })
-          .then((value) => {
-            switch (value) {
-              case 'sponsor':
-                this.openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')
-                break;
-              case 'give':
-                this.openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')
-                break;
-            }
-          })
-      },
-      donSwal() {
-        return swal({
-          title: 'Donate',
-          text: 'This year, each participant has the goal of raising $250 in additional funds for Ride For Hope Idaho. If you wish to simply donate, you can either choose one of these riders to donate to, or just donate to the ride in general.',
-          buttons: {
-            sponsor: { text: "Sponsor a Rider", value: "sponsor" },
-            give: { text: "Give to Ride For Hope Idaho", value: "give" }
-          }
-        })
-          .then((value) => {
-            switch (value) {
-              case 'sponsor':
-                this.openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')
-                break;
-              case 'give':
-                this.openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')
-                break;
-            }
-          })
-      },
-      charitySwal() {
-        return swal({
-          title: 'January 31, 2019 Charity Day',
-          text: 'Join us at 10 Barrel Brewing Co. January 31st, 2019 for a charity night. All proceeds from 5-9 are donated to charity! Between 2017 and 2018 this charity night has raised over $4000!',
-          buttons: {
-            site: { text: "10 Barrel Brewing Co.", value: "site" },
-            dismiss: { text: "Dismiss", value: "dismiss" }
-          }
-        })
-          .then((value) => {
-            switch (value) {
-              case 'site':
-                this.openURL('https://www.google.com/maps/dir/10+barrel+brewing+boise')
-                break;
-              case 'dismiss':
-                break;
-            }
-          })
-      },
-      packetSwal() {
-        return swal({
-          title: 'Packet Pick Up',
-          text: 'Friday, June 7 from 2pm-8pm at Meridian Cycles',
-          buttons: {
-            site: { text: "More Information", value: "site" },
-            dismiss: { text: "Dismiss", value: "dismiss" }
-          }
-        })
-          .then((value) => {
-            switch (value) {
-              case 'site':
-                this.$router.push('packet')
-                break;
-              case 'dismiss':
-                break;
-            }
-          })
-      },
-      welcomeSwal() {
-        return swal({
-          title: 'Thank You!',
-          text: 'Thank you to all of the amazing volunteers and riders who helped make the 2018 Ride For Hope Idaho the most successful ever! The fun is not over yet though! Join us July 16th at Payette Brewing Company for a charity night benefiting Ride For Hope Idaho!',
-          buttons: {
-            dismiss: { text: "Dismiss", value: "dismiss" }
-          }
-        })
-          .then((value) => {
-            switch (value) {
-              case 'dismiss':
-                break;
-            }
-          })
-      },
-      registerSwal() {
-        return swal({
-          title: 'Early Registration Ending Soon!',
-          text: 'Early Registration ends 4/30/2019. Sign up now to take advantage of a discount!',
-          buttons: {
-            dismiss: { text: "Dismiss", value: "dismiss" }
-          }
-        })
-          .then((value) => {
-            switch (value) {
-              case 'dismiss':
-                break;
-            }
-          })
-      }
     },
     directives: {
     },
@@ -494,25 +366,11 @@
         this.showSwal = true;
       }
       if (this.showSwal) {
-        this.charitySwal();
-      }
-      if (this.earlyRegistration) {
-        // setTimeout(this.registerSwal(), 500);
-        this.registerSwal();
 
       }
-      // Conditions to display swal
-      // let dayPass = false;
-      // let timeStamp = Date.now()
-      // let m = date.formatDate(timeStamp, 'MM')
-      // let d = date.formatDate(timeStamp, 'DD')
-      // let y = date.formatDate(timeStamp, 'YYYY')
-      // if(d == '10' || d == '11' || d == '12' || d == '13' || d == '14' || d == '15' || d == '16'){
-      //   dayPass = true;
-      // } 
-      // if (m == '07' && dayPass && y == '2018') {
-      // this.welcomeSwal();
-      // }
+      if (this.earlyRegistration) {
+
+      }
     },
 
   };
