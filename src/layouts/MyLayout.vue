@@ -43,13 +43,10 @@
         @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')" />
       <q-route-tab v-else stretch flat class="tab text-red" color="red" label="Register" name="register"
         to="register" />
-      <!-- <q-tab class="tab" slot="title" label="Rider Fundraising" name="fundraising"
-        @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fdonate%2FRideForHopeIdaho%3Fz%3D1517453663070')" /> -->
-      <!-- <q-tab class="tab involved" align="left" name="rider"> -->
       <q-btn-dropdown stretch flat label="Rider Info" name="rider">
         <q-list>
           <q-item>
-            <q-btn-dropdown auto-close stretch flat label="Routes" name="rider" class="width_100 tab inner-tab">
+            <q-btn-dropdown flat auto-close stretch label="Routes" name="rider" class="width_100 tab inner-tab">
               <q-list>
                 <q-tabs>
                   <q-route-tab class="tab inner-tab" label="9 Mile" name="rider" to="9-mile" />

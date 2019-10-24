@@ -11,7 +11,7 @@
                     <q-list separator class="col-md-4">
                         <q-item clickable v-for="route in routes">
                             <q-item-section v-if="selected == route.id" @click="selected = route.id" class="">
-                                <p class="text-bold service gray-bg selected shadow-16 text-white"
+                                <p class="text-bold service selected shadow-16 text-white"
                                     v-anime="{ translateX: { value: ['-30px', '0px'], duration: 4000, }}">
                                     {{route.length}}
                                 </p>
@@ -98,7 +98,7 @@
     }
 
     .selected {
-        /* background-color: rgba(255, 255, 255, 0.87); */
+        background-color: rgba(75, 75, 75, 0.39);
         border: 3px solid rgb(197, 14, 14);
         color: black;
         padding: 1rem;
