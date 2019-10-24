@@ -54,6 +54,7 @@
 </template>
 
 <script>
+    import { openURL } from 'quasar'
     export default {
         name: 'Ride',
         data() {
@@ -63,10 +64,7 @@
         },
 
         methods: {
-            launch(url) {
-                openURL(url);
-            },
-
+            openURL
         }
     }
 </script>

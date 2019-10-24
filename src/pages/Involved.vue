@@ -29,21 +29,11 @@
 </template>
 
 <script>
-    import {
-        QLayout,
-        QBtn,
-        QParallax
-    } from 'quasar'
     export default {
         name: 'Involved',
         data() {
             return {}
         },
-        components: {
-            QLayout,
-            QBtn,
-            QParallax
-        }
     }
 </script>
 
@@ -61,9 +51,11 @@
     .bottom {
         color: white;
     }
+
     .left {
         color: white;
     }
+
     .right {
         color: white;
     }

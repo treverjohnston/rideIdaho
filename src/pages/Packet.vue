@@ -5,7 +5,6 @@
                 <h3 class="desktop-only">Packet Pick Up</h3>
                 <h4 class="mobile-only">Packet Pick Up</h4>
                 <hr class="width_90">
-                <!-- <h5>Check back later for 2019 Packet Pick Up times!</h5> -->
                 <h5>
                     <b>Date: </b>Friday, June 7</h5>
                 <h5>
@@ -23,42 +22,12 @@
 </template>
 
 <script>
-    import {
-        QLayout,
-        QInput,
-        QBtn,
-
-        QParallax,
-        openURL,
-
-
-    } from 'quasar'
     export default {
         name: 'Ride',
         data() {
-            return {
-                name: '',
-                email: '',
-                phone: '',
-                subject: '',
-                message: ''
-            }
-        },
-
-        components: {
-            QLayout,
-            QInput,
-            QBtn,
-
-            QParallax,
-
-
+            return {}
         },
         methods: {
-            launch(url) {
-                openURL(url);
-            },
-
         }
     }
 </script>

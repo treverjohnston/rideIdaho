@@ -19,12 +19,12 @@
                     </div>
                     <div class="col-xs-10 col-md-4 text-center self-center">
                         <q-card-media
-                            @click="launch('//www.ktvb.com/news/health/free-primary-health-clinic-wants-to-take-on-more-patients/482912341')"
+                            @click="openURL('//www.ktvb.com/news/health/free-primary-health-clinic-wants-to-take-on-more-patients/482912341')"
                             class="mobile-only" overlay-postion="full">
                             <img src="../statics/video_pics/ktvb.jpg" alt="Genesis Info Video" class="responsive">
                         </q-card-media>
                         <q-btn flat
-                            @click="launch('//www.ktvb.com/news/health/free-primary-health-clinic-wants-to-take-on-more-patients/482912341')"
+                            @click="openURL('//www.ktvb.com/news/health/free-primary-health-clinic-wants-to-take-on-more-patients/482912341')"
                             class="shadow-24 two desktop-only ">
                             <img src="../statics/video_pics/ktvb.jpg" alt="Genesis Info Video" class="responsive">
                             <!-- <div class="otwo desktop-only">
@@ -56,41 +56,15 @@
 </template>
 
 <script>
-    import {
-        QLayout,
-        QInput,
-        QBtn,
-
-        QParallax,
-        openURL,
-
-
-        QCard,
-
-    } from 'quasar'
+    import { openURL } from 'quasar'
     export default {
         name: 'Ride',
         data() {
             return {
             }
         },
-
-        components: {
-            QLayout,
-            QInput,
-            QBtn,
-
-            QParallax,
-
-
-            QCard,
-
-        },
         methods: {
-            launch(url) {
-                openURL(url);
-            },
-
+            openURL
         }
     }
 </script>

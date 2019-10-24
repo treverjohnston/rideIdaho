@@ -15,41 +15,14 @@
 </template>
 
 <script>
-    import {
-        QLayout,
-        QInput,
-        QBtn,
-
-        QParallax,
-        openURL,
-
-    } from 'quasar'
+    import { openURL } from 'quasar'
     export default {
         name: 'Ride',
         data() {
-            return {
-                name: '',
-                email: '',
-                phone: '',
-                subject: '',
-                message: ''
-            }
-        },
-
-        components: {
-            QLayout,
-            QInput,
-            QBtn,
-
-            QParallax,
-
-
+            return {}
         },
         methods: {
-            launch(url) {
-                openURL(url);
-            },
-
+            openURL
         }
     }
 </script>

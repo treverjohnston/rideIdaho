@@ -25,12 +25,12 @@
                         <p>Take a look at our club on Strava or view our Facebook page</p>
                         <div class="row justify-center">
                             <div class="col-xs-6">
-                                <q-btn flat @click="launch('https://www.strava.com/clubs/302822')" flat>
+                                <q-btn flat @click="openURL('https://www.strava.com/clubs/302822')" flat>
                                     <img class="strava responsive" src="statics/logos/strava2.png" alt="strava logo">
                                 </q-btn>
                             </div>
                             <div class="col-xs-6 self-center">
-                                <q-btn flat @click="launch('https://www.facebook.com/rideforhopeidaho/')" flat>
+                                <q-btn flat @click="openURL('https://www.facebook.com/rideforhopeidaho/')" flat>
                                     <q-icon class="fb" size="10rem" name="fab fa-facebook-square" />
                                 </q-btn>
                             </div>
@@ -64,44 +64,15 @@
 </template>
 
 <script>
-    import {
-        QLayout,
-        QInput,
-        QBtn,
-
-        QParallax,
-        openURL,
-
-
-        QIcon
-    } from 'quasar'
+    import { openURL } from 'quasar'
     export default {
-        name: 'Ride',
+        name: 'Team',
         data() {
             return {
-                name: '',
-                email: '',
-                phone: '',
-                subject: '',
-                message: ''
             }
         },
-
-        components: {
-            QLayout,
-            QInput,
-            QBtn,
-
-            QParallax,
-
-
-            QIcon
-        },
         methods: {
-            launch(url) {
-                openURL(url);
-            },
-
+            openURL
         }
     }
 </script>

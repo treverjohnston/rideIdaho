@@ -59,13 +59,7 @@
 
 <script>
     import { required, email, alpha, alphaNum } from 'vuelidate/lib/validators'
-    import {
-        QLayout,
-        QInput,
-        QBtn,
-
-        QParallax
-    } from 'quasar'
+    import { openURL } from 'quasar'
     export default {
         name: 'Contact',
         data() {
@@ -83,14 +77,8 @@
             subject: { required },
             message: { required }
         },
-        components: {
-            QLayout,
-            QInput,
-            QBtn,
-
-            QParallax
-        },
         methods: {
+            openURL,
             sendEmail() {
                 this.$v.name.$touch()
                 this.$v.email.$touch()

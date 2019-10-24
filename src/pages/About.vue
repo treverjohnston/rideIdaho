@@ -140,13 +140,13 @@
                         </div>
                         <div class="row justify-center">
                             <div class="col-md-6 col-xs-5 self-center">
-                                <q-btn @click="launch('https://genesiscommunityhealth.com/about-us/')" flat>
+                                <q-btn @click="openURL('https://genesiscommunityhealth.com/about-us/')" flat>
                                     <img class="responsive check" src="statics/logos/gch.png"
                                         alt="Genesis Community Health Logo">
                                 </q-btn>
                             </div>
                             <div class="col-md-6 col-xs-5 self-center">
-                                <q-btn @click="launch('https://boiserm.org/')" flat>
+                                <q-btn @click="openURL('https://boiserm.org/')" flat>
                                     <img class="responsive check" src="statics/logos/brm.png"
                                         alt="Boise Rescue Mission Logo">
                                 </q-btn>
@@ -165,16 +165,7 @@
 
 <script>
     import anime from "animejs";
-    import {
-        QLayout,
-
-        QBtn,
-
-        Ripple,
-
-        QIcon,
-        openURL,
-    } from "quasar";
+    import { openURL } from 'quasar'
     export default {
         name: "About",
         data() {
@@ -182,22 +173,8 @@
                 width: 500
             };
         },
-        components: {
-            QLayout,
-
-            QBtn,
-
-            QIcon,
-            openURL,
-        },
-        directives: {
-
-            Ripple
-        },
         methods: {
-            launch(url) {
-                openURL(url);
-            },
+            openURL,
             animate() {
                 anime({
                     targets: '#number input',

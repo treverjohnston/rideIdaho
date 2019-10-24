@@ -20,7 +20,7 @@
             <div class="row wrap justify-center">
               <div class="col-xs-11 text-center spacers">
                 <q-btn v-if="openRegistration" no-caps class="btn spacers"
-                  @click="launch('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')">
+                  @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')">
                   Register
                   Now
                 </q-btn>
@@ -50,11 +50,6 @@
                 </p>
               </div>
             </div>
-            <!-- <div class="row wrap justify-center">
-              <h6 class="light-paragraph text-center col-xs-11 spacers description text-justify">
-                {{route.description}}
-              </h6>
-            </div> -->
             <div class="row justify-center">
               <div class="col-xs-11 col-md-11 text-center border spacers">
                 <div class="row justify-center">
@@ -114,7 +109,8 @@
                         frameborder="0"></iframe>
                     </q-card-media>
                     <div align="center" class="white small" label="View More Map Options">
-                      <q-btn v-for="link in route.otherMaps" :class="route.btnClass" @click="launch(link.link)" no-caps>
+                      <q-btn v-for="link in route.otherMaps" :class="route.btnClass" @click="openURL(link.link)"
+                        no-caps>
                         {{link.title}}</q-btn>
                     </div>
                   </div>
@@ -163,20 +159,7 @@
 </template>
 
 <script>
-  import {
-    QLayout,
-    QInput,
-    QBtn,
-
-    openURL,
-
-    QCard,
-
-    QCardActions,
-    QParallax,
-
-    QItem,
-  } from "quasar";
+  import { openURL } from "quasar";
   export default {
     name: "Nine",
     data() {
@@ -191,19 +174,6 @@
         }
       });
     },
-    components: {
-      QLayout,
-      QInput,
-      QBtn,
-
-
-      QCard,
-
-      QCardActions,
-      QParallax,
-
-      QItem,
-    },
     computed: {
       pictures() {
         return this.$store.state.gallery.pictures;
@@ -216,9 +186,7 @@
       }
     },
     methods: {
-      launch(url) {
-        openURL(url);
-      }
+      openURL
     }
   };
 </script>

@@ -55,9 +55,6 @@
                         <hr class="width_90">
 
                     </div>
-                    <!-- <div class="col-xs-11 col-md-4 text-center">
-                        <img class="img" src="statics/rules.jpg" alt="Rules of the Road Funny Picture">
-                    </div> -->
                     <div class="col-xs-12">
                         <div class="spacer">
                             <img class="ride" src="statics/logos/RFHIdahoLogo.png" alt="ride for hope logo">
@@ -190,42 +187,15 @@
 </template>
 
 <script>
-    import {
-        QLayout,
-        QInput,
-        QBtn,
-
-        QParallax,
-        openURL,
-
-
-    } from 'quasar'
+    import { openURL } from 'quasar'
     export default {
-        name: 'Ride',
+        name: 'Rules',
         data() {
             return {
-                name: '',
-                email: '',
-                phone: '',
-                subject: '',
-                message: ''
             }
         },
-
-        components: {
-            QLayout,
-            QInput,
-            QBtn,
-
-            QParallax,
-
-
-        },
         methods: {
-            launch(url) {
-                openURL(url);
-            },
-
+            openURL
         }
     }
 </script>

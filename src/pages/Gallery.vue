@@ -33,8 +33,6 @@
     .gallery {
         background-color: black;
         padding: 1rem 0 1rem 0;
-        /* align-items: center;
-       align-content: center; */
     }
 
     .carousel {

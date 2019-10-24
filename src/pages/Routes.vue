@@ -8,22 +8,12 @@
                     <q-card-section slot="overlay" class="text-center">
                         <h2>2018 Routes</h2>
                         <q-btn
-                            @click="launch('https://docs.wixstatic.com/ugd/a44970_c113c732a6f2426a9e905f46e2c30034.pdf')"
+                            @click="openURL('https://docs.wixstatic.com/ugd/a44970_c113c732a6f2426a9e905f46e2c30034.pdf')"
                             class="maps shadow-24" big no-caps>Click Here for Map Options: STRAVA/Map My
                             Ride/Garmin/Ride with GPS</q-btn>
 
                     </q-card-section>
                 </q-card-media>
-                <!-- <q-parallax src="statics/ride/IMGP9819.JPG.jpg" :height="300">
-                    <div slot="loading">
-                        <h2>2018 Routes</h2>
-                        <q-btn @click="launch('https://docs.wixstatic.com/ugd/a44970_c113c732a6f2426a9e905f46e2c30034.pdf')" class="maps shadow-24"
-                            big no-caps>Click Here for Map Options: STRAVA/Map My Ride/Garmin/Ride with GPS</q-btn>
-                    </div>
-                    <h2>2018 Routes</h2>
-                    <q-btn @click="launch('https://docs.wixstatic.com/ugd/a44970_c113c732a6f2426a9e905f46e2c30034.pdf')" class="maps shadow-24"
-                        big no-caps>Click Here for Map Options: STRAVA/Map My Ride/Garmin/Ride with GPS</q-btn>
-                </q-parallax> -->
             </div>
 
             <div class="promo text-center text-italic text-bold mobile-only col-xs-12">
@@ -31,12 +21,13 @@
                     <div slot="loading">
                         <h4>2018 Routes</h4>
                         <q-btn
-                            @click="launch('https://docs.wixstatic.com/ugd/a44970_c113c732a6f2426a9e905f46e2c30034.pdf')"
+                            @click="openURL('https://docs.wixstatic.com/ugd/a44970_c113c732a6f2426a9e905f46e2c30034.pdf')"
                             class="maps shadow-24" big no-caps>Click Here for Map Options: STRAVA/Map My
                             Ride/Garmin/Ride with GPS</q-btn>
                     </div>
                     <h4>2018 Routes</h4>
-                    <q-btn @click="launch('https://docs.wixstatic.com/ugd/a44970_c113c732a6f2426a9e905f46e2c30034.pdf')"
+                    <q-btn
+                        @click="openURL('https://docs.wixstatic.com/ugd/a44970_c113c732a6f2426a9e905f46e2c30034.pdf')"
                         class="maps shadow-24" big no-caps>Click Here for Map Options: STRAVA/Map My Ride/Garmin/Ride
                         with GPS</q-btn>
                 </q-parallax>
@@ -59,36 +50,12 @@
 </template>
 
 <script>
-    import {
-        QLayout,
-        QCard,
-
-
-
-
-        QCardActions,
-        QBtn,
-        openURL,
-
-        QParallax
-    } from 'quasar'
+    import { openURL } from 'quasar'
     export default {
         name: 'About',
         data() {
             return {
             }
-        },
-        components: {
-            QLayout,
-            QCard,
-
-
-
-
-            QCardActions,
-            QBtn,
-
-            QParallax
         },
         computed: {
             routes() {
@@ -96,9 +63,7 @@
             }
         },
         methods: {
-            launch(url) {
-                openURL(url)
-            },
+            openURL
         }
     }
 </script>

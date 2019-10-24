@@ -37,25 +37,11 @@
 </template>
 
 <script>
-    import {
-        QLayout,
-        QInput,
-        QBtn,
-
-        QParallax,
-        openURL,
-
-
-    } from 'quasar'
+    import { openURL } from 'quasar'
     export default {
         name: 'Ride',
         data() {
             return {
-                name: '',
-                email: '',
-                phone: '',
-                subject: '',
-                message: ''
             }
         },
         computed: {
@@ -63,21 +49,8 @@
                 return this.$store.state.routes.routes;
             },
         },
-
-        components: {
-            QLayout,
-            QInput,
-            QBtn,
-
-            QParallax,
-
-
-        },
         methods: {
-            launch(url) {
-                openURL(url);
-            },
-
+            openURL
         }
     }
 </script>

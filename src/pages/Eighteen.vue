@@ -20,7 +20,7 @@
             <div class="row wrap justify-center">
               <div class="col-xs-11 text-center spacers">
                 <q-btn v-if="openRegistration" no-caps class="btn spacers"
-                  @click="launch('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')">
+                  @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')">
                   Register
                   Now
                 </q-btn>
@@ -114,7 +114,8 @@
                         frameborder="0"></iframe>
                     </q-card-media>
                     <div align="center" class="white small" label="View More Map Options">
-                      <q-btn v-for="link in route.otherMaps" :class="route.btnClass" @click="launch(link.link)" no-caps>
+                      <q-btn v-for="link in route.otherMaps" :class="route.btnClass" @click="openURL(link.link)"
+                        no-caps>
                         {{link.title}}</q-btn>
                     </div>
                   </div>
@@ -163,37 +164,11 @@
 </template>
 
 <script>
-  import {
-    QLayout,
-    QInput,
-    QBtn,
-
-    openURL,
-
-    QCard,
-
-    QCardActions,
-    QParallax,
-
-    QItem,
-  } from "quasar";
+  import { openURL } from "quasar";
   export default {
     name: "Nineteen",
     data() {
       return { route: [] };
-    },
-    components: {
-      QLayout,
-      QInput,
-      QBtn,
-
-
-      QCard,
-
-      QCardActions,
-      QParallax,
-
-      QItem,
     },
     mounted() {
       this.$store.state.routes.routes.forEach(route => {
@@ -214,9 +189,7 @@
       }
     },
     methods: {
-      launch(url) {
-        openURL(url);
-      }
+      openURL
     }
   };
 </script>

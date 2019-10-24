@@ -1,5 +1,4 @@
 <template>
-  <!-- Below this is all of the home page stuff not related to navbars and such -->
   <div>
     <div class="row justify-center">
       <div id="video_overlays" class="absolute text-center">
@@ -35,7 +34,7 @@
               details.
             </div>
             <hr>
-            <q-btn @click="launch('https://bigkbbqidaho.com/')" class="cbtnm shadow-24 text-center">Catered By
+            <q-btn @click="openURL('https://bigkbbqidaho.com/')" class="cbtnm shadow-24 text-center">Catered By
               Big K BBQ
             </q-btn>
             <!-- <h6 class="q-title">A special thanks to
@@ -66,20 +65,7 @@
           <h6 class="q-title">Day of ride registration available.</h6>
           <h6 class="q-title">Discount offered for teams of 5 or more and for families. Contact for more details.</h6>
           <hr>
-          <q-btn @click="launch('https://bigkbbqidaho.com/')" class="cbtnm shadow-24 text-center">Catered By
-            Big K BBQ
-          </q-btn>
-          <!-- <h6 class="q-title">A special thanks to
-              <a class="noHighlight" href="https://www.imagocaeli.com/" target="_blank">Imago Caeli</a> for all 2018
-              Ride For Hope Idaho video!</h6>
-            <q-btn v-if="showSwal" @click="charitySwal()" class="cbtnm shadow-24 text-center ">10 Barrel Brewing Co.
-              Charity Day</q-btn>
-            <q-btn @click="$router.push('2018-gallery')" class="cbtnm shadow-24 text-center">2018 Video and Gallery
-            </q-btn> -->
         </div>
-
-        <!-- <q-btn @click="$router.push('2018-gallery')" class="cbtnm shadow-24 text-center">2018 Gallery and Video</q-btn> -->
-        <!-- <q-btn @click="packetSwal()" class="cbtnm shadow-24 text-center">Packet Pick Up Information</q-btn> -->
       </div>
     </div>
     <div class="spacer row wrap">
@@ -133,7 +119,7 @@
     </div>
     <div class="row wrap justify-center gen">
       <div class="text-center col-xs-12 col-md-4 self-center">
-        <q-btn @click="launch('https://genesiscommunityhealth.com/about-us/')" flat>
+        <q-btn @click="openURL('https://genesiscommunityhealth.com/about-us/')" flat>
           <img class="gch responsive" src="statics/logos/gch.png" alt="genesis community health logo">
         </q-btn>
       </div>
@@ -150,7 +136,7 @@
         <q-btn class="cbtnm" @click="$router.push('charities')">Learn More</q-btn>
       </div>
       <div class="text-center col-xs-12 col-md-4 self-center">
-        <q-btn @click="launch('https://boiserm.org/')" flat>
+        <q-btn @click="openURL('https://boiserm.org/')" flat>
           <img class="responsive check" src="statics/logos/brm.png" alt="Boise Rescue Mission Logo">
         </q-btn>
       </div>
@@ -160,44 +146,10 @@
 </template>
 
 <script>
-  import anime from "animejs";
-  import {
-    dom,
-    event,
-    openURL,
-    QLayout,
-    QToolbar,
-    QToolbarTitle,
-    QBtn,
-    QIcon,
-    QList,
-    QItem,
-    QTab,
-    QTabs,
-    QParallax,
-
-
-
-    QRouteTab,
-
-
-
-
-
-    Ripple,
-
-    ScrollFire,
-
-    QVideo,
-
-    date,
-    QCarousel
-  } from "quasar";
+  import { openURL } from "quasar";
 
   export default {
     name: "index",
-    components: {
-    },
     data() {
       return {
         showVid: false,
@@ -225,157 +177,8 @@
       }
     },
     methods: {
-      launch(url) {
-        openURL(url);
-      },
-      collapse() {
-        this.$refs.popover.close();
-        this.$refs.popoverRoutes.close();
-        this.$refs.routePopB.close();
-      },
-      showVideos() {
-        this.showVid = true;
-      },
-      sesame() {
-        this.showSplash = true;
-      },
-      animate() {
-        anime({
-          targets: "#bar .el",
-          translateX: function (el) {
-            return 0;
-          },
-          translateY: function (el, i) {
-            return 0;
-          },
-          scale: function (el, i, l) {
-            return 1.25;
-          },
-          duration: function () {
-            return anime.random(500, 800);
-          },
-          duration: function () {
-            return anime.random(800, 1100);
-          },
-          delay: function () {
-            return anime.random(0, 500);
-          },
-          direction: "reverse"
-        });
-      },
-      funSwal() {
-        return swal({
-          title: 'Rider Fundraising',
-          text: 'This year, each participant has the goal of raising $250 in additional funds for Ride For Hope Idaho. If you wish to simply donate, you can either choose one of these riders to donate to, or just donate to the ride in general.',
-          buttons: {
-            sponsor: { text: "Sponsor a Rider", value: "sponsor" },
-            give: { text: "Give to Ride For Hope Idaho", value: "give" }
-          }
-        })
-          .then((value) => {
-            switch (value) {
-              case 'sponsor':
-                this.launch('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')
-                break;
-              case 'give':
-                this.launch('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')
-                break;
-            }
-          })
-      },
-      donSwal() {
-        return swal({
-          title: 'Donate',
-          text: 'This year, each participant has the goal of raising $250 in additional funds for Ride For Hope Idaho. If you wish to simply donate, you can either choose one of these riders to donate to, or just donate to the ride in general.',
-          buttons: {
-            sponsor: { text: "Sponsor a Rider", value: "sponsor" },
-            give: { text: "Give to Ride For Hope Idaho", value: "give" }
-          }
-        })
-          .then((value) => {
-            switch (value) {
-              case 'sponsor':
-                this.launch('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')
-                break;
-              case 'give':
-                this.launch('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')
-                break;
-            }
-          })
-      },
-      charitySwal() {
-        return swal({
-          title: 'January 31, 2019 Charity Day',
-          text: 'Join us at 10 Barrel Brewing Co. January 31st, 2019 for a charity night. All proceeds from 5-9 are donated to charity! Between 2017 and 2018 this charity night has raised over $4000!',
-          buttons: {
-            site: { text: "10 Barrel Brewing Co.", value: "site" },
-            dismiss: { text: "Dismiss", value: "dismiss" }
-          }
-        })
-          .then((value) => {
-            switch (value) {
-              case 'site':
-                this.launch('https://www.google.com/maps/dir/10+barrel+brewing+boise')
-                break;
-              case 'dismiss':
-                break;
-            }
-          })
-      },
-      packetSwal() {
-        return swal({
-          title: 'Packet Pick Up',
-          text: 'Friday, June 7 from 2pm-8pm at Meridian Cycles',
-          buttons: {
-            site: { text: "More Information", value: "site" },
-            dismiss: { text: "Dismiss", value: "dismiss" }
-          }
-        })
-          .then((value) => {
-            switch (value) {
-              case 'site':
-                this.$router.push('packet')
-                break;
-              case 'dismiss':
-                break;
-            }
-          })
-      },
-      welcomeSwal() {
-        return swal({
-          title: 'Thank You!',
-          text: 'Thank you to all of the amazing volunteers and riders who helped make the 2018 Ride For Hope Idaho the most successful ever! The fun is not over yet though! Join us July 16th at Payette Brewing Company for a charity night benefiting Ride For Hope Idaho!',
-          buttons: {
-            dismiss: { text: "Dismiss", value: "dismiss" }
-          }
-        })
-          .then((value) => {
-            switch (value) {
-              case 'dismiss':
-                break;
-            }
-          })
-      },
-      registerSwal() {
-        return swal({
-          title: 'Early Registration Ending Soon!',
-          text: 'Early Registration ends 4/30/2019. Sign up now to take advantage of a discount!',
-          buttons: {
-            dismiss: { text: "Dismiss", value: "dismiss" }
-          }
-        })
-          .then((value) => {
-            switch (value) {
-              case 'dismiss':
-                break;
-            }
-          })
-      }
-    },
-    directives: {
-    },
-    mounted() { }
-
+      openURL
+    }
   };
 </script>
 

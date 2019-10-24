@@ -71,6 +71,7 @@
 </template>
 
 <script>
+    import { openURL } from 'quasar'
     export default {
         name: 'Register',
         data() {
@@ -84,9 +85,7 @@
             }
         },
         methods: {
-            launch(url) {
-                openURL(url);
-            },
+            openURL
 
         }
     }

@@ -12,28 +12,11 @@
 </template>
 
 <script>
-    import {
-        QLayout,
-        QBtn,
-        openURL
-    } from 'quasar'
+    import { openURL } from 'quasar'
     export default {
         name: 'Donate',
         data() {
             return {}
-        },
-        components: {
-            QLayout,
-            QBtn
-        },
-        created() {
-            // let script = document.createElement('script')
-
-            // script.setAttribute('type', 'text/javascript');
-            // script.setAttribute('src', 'https://embed.idonate.com/idonate.js')
-            // document.body.appendChild(script)
-
-
         },
         computed: {
             routes() {
@@ -41,9 +24,7 @@
             }
         },
         methods: {
-            launch(url) {
-                openURL(url)
-            },
+            openURL
         }
     }
 </script>
