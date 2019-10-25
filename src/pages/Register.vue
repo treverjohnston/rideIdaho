@@ -2,8 +2,8 @@
     <q-page class="black">
         <div class="row wrap justify-center">
             <div class="col-xs-11 col-md-10 black-back shadow-24 text-center q-pa-lg">
-                <h3 class="desktop-only">Registration opens January 1, 2019</h3>
-                <h4 class="mobile-only">Registration opens January 1, 2019</h4>
+                <h3 class="desktop-only">Registration opens January 1, 2020</h3>
+                <h4 class="mobile-only">Registration opens January 1, 2020</h4>
                 <hr class="width_90">
                 <h5>For now, check out our different rides!</h5>
 

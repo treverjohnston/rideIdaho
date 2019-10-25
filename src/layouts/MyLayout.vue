@@ -342,24 +342,6 @@
     directives: {
     },
     mounted() {
-
-      let charityPass = false;
-      let timeStamp = Date.now()
-      let m = date.formatDate(timeStamp, 'MM')
-      let d = date.formatDate(timeStamp, 'DD')
-      let y = date.formatDate(timeStamp, 'YYYY')
-      if (d == '17' || d == '18' || d == '19' || d == '20' || d == '21' || d == '22' || d == '23' || d == '24' || d == '25' || d == '26' || d == '27' || d == '28' || d == '29' || d == '30' || d == '31') {
-        charityPass = true;
-      }
-      if (m == '01' && charityPass && y == '2019') {
-        this.showSwal = true;
-      }
-      if (this.showSwal) {
-
-      }
-      if (this.earlyRegistration) {
-
-      }
     },
 
   };

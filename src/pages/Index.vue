@@ -7,12 +7,10 @@
         <img class="mini self-center text-center vid-logo mobile-only" src="statics/logos/RFHIdahoLogo.png"
           alt="RFHI Logo">
       </div>
-      <video class="fit" style="width: 100%;" id="player" :src="video" poster="./statics/backgrounds/header.jpg"
-        type="video/mp4" playsinline="playsinline" muted="muted" autoplay="autoplay" loop="loop">Your browser does not
+      <video class="fit" style="width: 100%;" id="player" :src="video" type="video/mp4" playsinline="playsinline"
+        muted="muted" autoplay="autoplay" loop="loop">Your browser does not
         support this
         streaming content.
-        <img src="statics/backgrounds/header.jpg" style="width: 100%" alt="mobile background of riders"
-          class="mobile-only responsive">
       </video>
     </div>
 
@@ -23,12 +21,10 @@
             <div class="light-paragraph text-h5">SUPPORTING HEALTHCARE FOR THE MEDICALLY UNDERSERVED</div>
             <hr>
             <h1 class="text-bold">Ride For Hope Idaho</h1>
-            <div class="text-bold text-h3">2019 Event Date: Saturday, June 8</div>
+            <div class="text-bold text-h3">2020 Event Date: Saturday, June 20</div>
             <div class="text-bold text-h3">Kuna, ID</div>
             <hr>
-            <div class="q-title text-h5">Online registration ends 6/6/2019. Last day to register and be guarenteed a
-              T-Shirt:
-              5/30/19</div>
+            <div class="q-title text-h5">Online registration ends 6/18/2020.</div>
             <div class="q-title text-h5">Day of ride registration available.</div>
             <div class="q-title text-h5">Discount offered for teams of 5 or more and for families. Contact for more
               details.
@@ -40,14 +36,14 @@
           <div class="text-h6 light-paragraph">SUPPORTING HEALTHCARE FOR THE MEDICALLY UNDERSERVED</div>
           <hr>
           <div class="text-h4 text-bold">Ride For Hope Idaho</div>
-          <div class="text-h5">2019 Event Date:</div>
-          <div class="text-h5">Saturday, June 8</div>
+          <div class="text-h5">2020 Event Date:</div>
+          <div class="text-h5">Saturday, June 20</div>
           <div class="text-h5">Kuna, ID</div>
           <hr>
-          <h6 class="q-title">Online registration ends 6/6/2019. Last day to register and be guarenteed a T-Shirt:
-            5/30/19</h6>
-          <h6 class="q-title">Day of ride registration available.</h6>
-          <h6 class="q-title">Discount offered for teams of 5 or more and for families. Contact for more details.</h6>
+          <div class="text-h6 q-title">Online registration ends 6/18/2020.</div>
+          <div class="text-h6 q-title">Day of ride registration available.</div>
+          <div class="text-h6 q-title">Discount offered for teams of 5 or more and for families. Contact for more
+            details.</div>
           <hr>
         </div>
       </div>
@@ -114,11 +110,12 @@
       </div>
       <div class="text-italic text-center light-paragraph col-xs-12 col-md-4 self-center text" data-x="80">
         <h6>
-          This year we are proud to support Genesis Community Health. Genesis Community
-          Health is an integrated
-          healthcare facility providing primary medical care, basic dental, mental health, specialty referral and
-          medication
-          to the low-income and uninsured.
+          Ride For Hope Idaho is proud to support Genesis Community Health. Genesis Community
+          Health is an integrated healthcare facility providing primary medical care, basic dental, mental
+          health, specialty referral and medication to the low-income and uninsured in the Treasure
+          Valley. The clinic is staffed by volunteers and healthcare providers who donate their time and
+          services to care for those who otherwise do not have access to healthcare. The clinic depends
+          heavily upon charitable contributions and volunteers to continue to provide these services.
         </h6>
       </div>
       <div class="col-xs-12 col-md-4 text-center self-center">
