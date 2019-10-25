@@ -34,31 +34,15 @@
               details.
             </div>
             <hr>
-            <q-btn @click="openURL('https://bigkbbqidaho.com/')" class="cbtnm shadow-24 text-center">Catered By
-              Big K BBQ
-            </q-btn>
-            <!-- <h6 class="q-title">A special thanks to
-                <a class="noHighlight" href="https://www.imagocaeli.com/" target="_blank">Imago Caeli</a>
-                for all 2018
-                Ride For Hope Idaho video!</h6>
-              <q-btn @click="$router.push('2018-gallery')" class="cbtnm shadow-24 text-center">2018 Video and Gallery
-              </q-btn> -->
-            <q-btn v-if="showSwal" @click="charitySwal()" class="cbtnm shadow-24 text-center ">10 Barrel Brewing
-              Co.
-              Charity Day</q-btn>
-          </div>
-          <div>
-            <!-- <q-btn @click="$refs.charityModal.open()" class="cbtnm shadow-24 text-center">Packet Pick Up Information</q-btn> -->
-            <!-- <q-btn @click="$router.push('ride')" class="cbtnm shadow-24 text-center desktop-only">Ride Day Information</q-btn> -->
           </div>
         </div>
         <div class="promo text-center mobile-only">
-          <h6 class="light-paragraph">SUPPORTING HEALTHCARE FOR THE MEDICALLY UNDERSERVED</h6>
+          <div class="text-h6 light-paragraph">SUPPORTING HEALTHCARE FOR THE MEDICALLY UNDERSERVED</div>
           <hr>
-          <h4 class="text-bold">Ride For Hope Idaho</h4>
-          <h5 class="">2019 Event Date:</h5>
-          <h5>Saturday, June 8</h5>
-          <h5 class="">Kuna, ID</h5>
+          <div class="text-h4 text-bold">Ride For Hope Idaho</div>
+          <div class="text-h5">2019 Event Date:</div>
+          <div class="text-h5">Saturday, June 8</div>
+          <div class="text-h5">Kuna, ID</div>
           <hr>
           <h6 class="q-title">Online registration ends 6/6/2019. Last day to register and be guarenteed a T-Shirt:
             5/30/19</h6>
@@ -79,7 +63,8 @@
       <div class="text-center col-xs-12 col-md-4">
         <img class="ride self-center xs-gutter" src="statics/logos/RFHIdahoLogo.png" alt="ride for hope logo">
       </div>
-      <h6 class="text-italic text-center light-paragraph col-xs-10 col-md-4 self-center text">
+      <h6 class="text-italic text-center light-paragraph col-xs-10 col-md-4 self-center text"
+        v-scroll-fire="fadeInImage">
         <b>Ride For Hope Idaho</b> is committed to ensuring that 100% of participant fees and donations go directly
         to charity.
         This unique commitment is made possible by charitable contributions from local sponsors which cover the
@@ -92,12 +77,12 @@
         <q-card-section>
           <h2>Routes</h2>
         </q-card-section>
-        <hr class="routeshr">
+        <hr class="routeshr" v-scroll-fire="fadeInImage">
       </div>
       <div class="col-xs-12 col-sm-6 col-md-5 border desktop-only self-center" v-for="route in routes">
-        <q-card class="text-center card-container shadow-24">
+        <q-card :id="route.id" class="text-center card-container shadow-24 grow not-loaded">
           <q-card-section>
-            <q-btn class="route-btn" @click="$router.push(route.url.trim('/'))" outline color="red">
+            <q-btn class="route-btn grow" @click="$router.push(route.url.trim('/'))" outline color="red">
               <span class="text-h3 q-pa-sm">{{route.length}}</span>
             </q-btn>
           </q-card-section>
@@ -108,13 +93,17 @@
         </q-card>
       </div>
       <div class="col-xs-11 col-sm-6 col-md-5 mobile-border mobile-only" v-for="route in routes">
-        <q-card-section class="text-center card-container shadow-24">
-          <q-btn class="route-btn" @click="$router.push(route.url.trim('/'))" outline color="red">
-            <h4>{{route.length}}</h4>
-          </q-btn>
-          <h6 class="white text-justify">
-            {{route.shortDescription}}</h6>
-        </q-card-section>
+        <q-card class="text-center card-container shadow-24">
+          <q-card-section>
+            <q-btn class="route-btn" @click="$router.push(route.url.trim('/'))" outline color="red">
+              <span class="text-h4">{{route.length}}</span>
+            </q-btn>
+          </q-card-section>
+          <q-card-section>
+            <span class="white text-justify text-h6">
+              {{route.shortDescription}}</span>
+          </q-card-section>
+        </q-card>
       </div>
     </div>
     <div class="row wrap justify-center gen">
@@ -125,20 +114,15 @@
       </div>
       <div class="text-italic text-center light-paragraph col-xs-12 col-md-4 self-center text" data-x="80">
         <h6>
-          This year we are proud to support Genesis Community Health and Boise Rescue Mission. Genesis Community
+          This year we are proud to support Genesis Community Health. Genesis Community
           Health is an integrated
           healthcare facility providing primary medical care, basic dental, mental health, specialty referral and
           medication
-          to the low-income and uninsured. Boise Rescue Mission provides programs and services including addiction
-          recovery
-          and food and shelter for homeless men, women and children.
+          to the low-income and uninsured.
         </h6>
-        <q-btn class="cbtnm" @click="$router.push('charities')">Learn More</q-btn>
       </div>
-      <div class="text-center col-xs-12 col-md-4 self-center">
-        <q-btn @click="openURL('https://boiserm.org/')" flat>
-          <img class="responsive check" src="statics/logos/brm.png" alt="Boise Rescue Mission Logo">
-        </q-btn>
+      <div class="col-xs-12 col-md-4 text-center self-center">
+        <q-btn class="cbtnm" @click="$router.push('charities')">Learn More</q-btn>
       </div>
     </div>
   </div>
@@ -159,13 +143,6 @@
       };
     },
     computed: {
-      home() {
-        if (this.$route.path == "/") {
-          return true;
-        } else {
-          return false;
-        }
-      },
       routes() {
         return this.$store.state.routes.routes;
       },
@@ -177,7 +154,13 @@
       }
     },
     methods: {
-      openURL
+      openURL,
+      fadeInImage() {
+        this.routes.forEach(route => {
+          var el = document.getElementById(route.id)
+          el.classList.add('loaded')
+        });
+      }
     }
   };
 </script>
@@ -299,11 +282,6 @@
   .vid-mobile {
     width: 100vw;
     /* height: 100vh; */
-  }
-
-  .brm-video {
-    background-color: black;
-    color: white;
   }
 
   .video {

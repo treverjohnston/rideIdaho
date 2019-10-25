@@ -90,7 +90,6 @@
                   </div>
                   <q-btn class="btn spacers" @click="$router.push('climbs')" no-caps>Information About Climbs</q-btn>
                   <q-btn class="btn spacers" @click="$router.push('rules')" no-caps>Rules Of The Road</q-btn>
-
                 </div>
               </div>
             </div>
@@ -98,23 +97,18 @@
           <div class="col-xs-12 col-lg-7 top-marg">
             <div class="row wrap justify-center">
               <q-card class="route col-xs-11 col-md-11 shadow-24">
-                <q-transition appear enter="zoomIn" leave="fadeOut">
-                  <div>
-                    <q-card-media class="desktop-only">
-                      <iframe id="mapmyfitness_route" :src="route.frame" height="650px" width="100%"
-                        frameborder="0"></iframe>
-                    </q-card-media>
-                    <q-card-media class="mobile-only">
-                      <iframe id="mapmyfitness_route" :src="route.frameMobile" height="650px" width="100%"
-                        frameborder="0"></iframe>
-                    </q-card-media>
-                    <div align="center" class="white small" label="View More Map Options">
-                      <q-btn v-for="link in route.otherMaps" :class="route.btnClass" @click="openURL(link.link)"
-                        no-caps>
-                        {{link.title}}</q-btn>
-                    </div>
-                  </div>
-                </q-transition>
+                <q-card-section class="desktop-only">
+                  <iframe id="mapmyfitness_route" :src="route.frame" height="650px" width="100%"
+                    frameborder="0"></iframe>
+                </q-card-section>
+                <q-card-section class="mobile-only">
+                  <iframe id="mapmyfitness_route" :src="route.frameMobile" height="650px" width="100%"
+                    frameborder="0"></iframe>
+                </q-card-section>
+                <div align="center" class="white small" label="View More Map Options">
+                  <q-btn v-for="link in route.otherMaps" :class="route.btnClass" @click="openURL(link.link)" no-caps>
+                    {{link.title}}</q-btn>
+                </div>
               </q-card>
             </div>
             <div class="row wrap justify-center">

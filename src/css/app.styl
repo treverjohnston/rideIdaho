@@ -150,8 +150,8 @@
 
   .q-item {
     font-size: 2rem;
-    color: black;
-    background-color:black;
+    // color: black;
+    // background-color:black;
     text-align: center;
     padding: 0;
     font-weight: 400;
@@ -182,4 +182,22 @@
 
   .color {
     border: 1px solid white;
+  }
+
+  .not-loaded {
+    opacity: 0;
+
+    -webkit-transition: opacity 1s ease-in;
+    -moz-transition: opacity 1s ease-in;
+    -ms-transition: opacity 1s ease-in;
+    -o-transition: opacity 1s ease-in;
+    transition: opacity 1s ease-in;
+  }
+
+  .loaded {
+    opacity: 1;
+  }
+
+  .black-bg{
+    background-color: black;
   }

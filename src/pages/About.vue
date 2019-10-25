@@ -106,27 +106,21 @@
                             This year we are proud to support
                             <b>
                                 <em>Genesis Community Health</em>
-                            </b> and
-                            <b>
-                                <em>Boise Rescue Mission</em>
-                            </b>.
+                            </b> .
                             <b>
                                 <em>Genesis Community Health</em>
                             </b> is an integrated healthcare facility providing primary medical care, basic dental,
                             mental health,
                             specialty referral and medication to the low-income and uninsured.
-                            <b>
-                                <em>Boise Rescue Mission</em>
-                            </b> provides programs and services including addiction recovery and food and shelter for
-                            homeless
-                            men, women and children. </p>
-                        <p class="text-justify">
-                            We are determined to continue along our upward fundraising trajectory. We can’t do it alone.
-                            We need your help. Collectively
-                            we can make a difference. Please join us in helping the most vulnerable in our Treasure
-                            Valley
-                            Community.
-                        </p>
+
+                            <p class="text-justify">
+                                We are determined to continue along our upward fundraising trajectory. We can’t do it
+                                alone.
+                                We need your help. Collectively
+                                we can make a difference. Please join us in helping the most vulnerable in our Treasure
+                                Valley
+                                Community.
+                            </p>
                     </div>
                     <div class="paragroup offset-md-1 col-md-11 top-marg text-center">
                         <div class="row justify-center">
@@ -145,16 +139,7 @@
                                         alt="Genesis Community Health Logo">
                                 </q-btn>
                             </div>
-                            <div class="col-md-6 col-xs-5 self-center">
-                                <q-btn @click="openURL('https://boiserm.org/')" flat>
-                                    <img class="responsive check" src="statics/logos/brm.png"
-                                        alt="Boise Rescue Mission Logo">
-                                </q-btn>
-                            </div>
                         </div>
-                    </div>
-                    <div class="col-xs-12 space">
-
                     </div>
                 </div>
             </div>

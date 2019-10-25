@@ -3,7 +3,7 @@
         <div class="row wrap justify-center ">
 
             <div class="promo text-center text-italic text-bold desktop-only col-xs-12">
-                <q-card-media class="header" overlay-position="full">
+                <q-card-section class="header" overlay-position="full">
                     <img src="../statics/road.jpg" class="responsive" alt="picture">
                     <q-card-section slot="overlay" class="text-center">
                         <h2>2018 Routes</h2>
@@ -13,7 +13,7 @@
                             Ride/Garmin/Ride with GPS</q-btn>
 
                     </q-card-section>
-                </q-card-media>
+                </q-card-section>
             </div>
 
             <div class="promo text-center text-italic text-bold mobile-only col-xs-12">
@@ -36,9 +36,9 @@
         <div class="row wrap justify-center">
             <q-card v-for="card in routes" class="route col-xs-11 col-sm-5 shadow-24">
                 <div>
-                    <q-card-media>
+                    <q-card-section>
                         <img :src="card.pic">
-                    </q-card-media>
+                    </q-card-section>
                     <q-card-actions align="center">
                         <q-btn @click="$router.push(`${card.url}`)" class="r-btn" no-caps>{{card.length}} Route Map
                         </q-btn>

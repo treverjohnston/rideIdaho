@@ -1,11 +1,11 @@
 <template>
     <q-layout class="black">
-        <div class="row justify-center xs-gutter brm-video">
-            <div class="col-xs-11 col-sm-10 black-back">
+        <div class="row justify-center">
+            <div class="col-xs-11 col-sm-10 white-back">
                 <div class="row justify-center">
 
                     <div class="col-xs-10 text-center">
-                        <big>Learn More About Genesis Community Health</big>
+                        <div class="text-h4">Learn More About Genesis Community Health</div>
                     </div>
                     <div class="col-xs-12 col-md-4 text-center">
                         <iframe src="https://player.vimeo.com/video/214745227" width="100%" height="300" frameborder="0"
@@ -18,11 +18,11 @@
                         <hr class="s">
                     </div>
                     <div class="col-xs-10 col-md-4 text-center self-center">
-                        <q-card-media
+                        <q-card-section
                             @click="openURL('//www.ktvb.com/news/health/free-primary-health-clinic-wants-to-take-on-more-patients/482912341')"
                             class="mobile-only" overlay-postion="full">
                             <img src="../statics/video_pics/ktvb.jpg" alt="Genesis Info Video" class="responsive">
-                        </q-card-media>
+                        </q-card-section>
                         <q-btn flat
                             @click="openURL('//www.ktvb.com/news/health/free-primary-health-clinic-wants-to-take-on-more-patients/482912341')"
                             class="shadow-24 two desktop-only ">
@@ -35,19 +35,6 @@
                     <div class="col-xs-12 col-md-4 text-center">
                         <iframe src="https://player.vimeo.com/video/217763499" width="100%" height="300" frameborder="0"
                             webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="row justify-center xs-gutter video">
-                    <div class="col-xs-10 text-center self-center">
-                        <big>Learn More About Boise Rescue Mission</big>
-                    </div>
-                    <div class="col-xs-12 col-md-4 text-center self-center">
-                        <iframe width="100%" height="300" src="https://www.youtube.com/embed/xH7_FBH2oiU?rel=0"
-                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                    <div class="col-xs-12 col-md-4 text-center self-center">
-                        <iframe width="100%" height="300" src="https://www.youtube.com/embed/SQRwGpdWsRQ?rel=0"
-                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>

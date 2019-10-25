@@ -15,13 +15,13 @@
                         <img src="statics/logos/RFHIdahoLogo.png" class="responsive img" alt="Ride for hope idaho logo">
                     </div>
                     <div class="col-xs-5 self-center">
-                        <q-input v-model="name" float-label="Name" name="name" type="text" />
-                        <q-input v-model="email" float-label="Email" name="email" type="email" />
-                        <q-input v-model="phone" float-label="Phone" name="phone" type="tel" />
-                        <q-input v-model="subject" float-label="Subject" name="subject" type="text" />
-                        <q-input v-model="message" type="textarea" name="message" float-label="Message"
-                            :max-height="100" :min-rows="5" />
-                        <q-btn @click="sendEmail" outline color="black">Send</q-btn>
+                        <q-input v-model="name" label="Name" name="name" type="text" />
+                        <q-input v-model="email" label="Email" name="email" type="email" />
+                        <q-input v-model="phone" label="Phone" name="phone" type="tel" />
+                        <q-input v-model="subject" label="Subject" name="subject" type="text" />
+                        <q-input v-model="message" type="textarea" name="message" label="Message" :max-height="100"
+                            :min-rows="5" />
+                        <q-btn @click="sendEmail" outline color="black" class="q-mt-sm">Send</q-btn>
                         <div class="hidden">
                             <input type="text" name="name" v-model="name">
                             <input type="email" name="_replyto" v-model="email">
@@ -33,13 +33,13 @@
                 </div>
                 <div class="row wrap justify-center mobile-only">
                     <div class="col-xs-11">
-                        <q-input v-model="name" float-label="Name" name="name" />
-                        <q-input v-model="email" float-label="Email" name="email" />
-                        <q-input v-model="phone" float-label="Phone" name="phone" />
-                        <q-input v-model="subject" float-label="Subject" name="subject" />
-                        <q-input v-model="message" type="textarea" name="message" float-label="Message"
-                            :max-height="100" :min-rows="5" />
-                        <q-btn @click="sendEmail" outline color="black">Send</q-btn>
+                        <q-input v-model="name" label="Name" name="name" />
+                        <q-input v-model="email" label="Email" name="email" />
+                        <q-input v-model="phone" label="Phone" name="phone" />
+                        <q-input v-model="subject" label="Subject" name="subject" />
+                        <q-input v-model="message" type="textarea" name="message" label="Message" :max-height="100"
+                            :min-rows="5" />
+                        <q-btn @click="sendEmail" outline color="black" class="q-mt-sm">Send</q-btn>
                         <div class="hidden">
                             <input type="text" name="name" v-model="name">
                             <input type="email" name="_replyto" v-model="email">
@@ -85,9 +85,9 @@
                 this.$v.subject.$touch()
                 this.$v.message.$touch()
                 if (this.$v.name.$error || this.$v.email.$error || this.$v.subject.$error || this.$v.message.$error) {
-                    Toast.create({
+                    Notify.create({
                         html: 'Something went wrong, please try again. Be sure to check all fields are filled out correctly.',
-                        bgColor: 'red'
+                        color: 'red'
                     })
                     return
                 }

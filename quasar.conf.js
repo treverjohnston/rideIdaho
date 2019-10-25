@@ -58,12 +58,14 @@ module.exports = function (ctx) {
         'QImg',
         'QCarousel',
         'QCarouselControl',
-        'QCarouselSlide'
+        'QCarouselSlide',
+        'QInput'
       ],
 
       directives: [
         'Ripple',
-        'ClosePopup'
+        'ClosePopup',
+        'ScrollFire'
       ],
 
       // Quasar plugins
