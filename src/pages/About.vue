@@ -94,6 +94,7 @@
                             <li>In 2016 over $9,000 was raised.</li>
                             <li>In 2017 over $12,500 was raised.</li>
                             <li>In 2018 over $18,000 was raised.</li>
+                            <li>In 2019 over $20,000 was raised.</li>
                         </ul>
                     </div>
                     <div class="pic col-md-4 col-sm-12 col-xs-12 text-center">
@@ -103,23 +104,24 @@
                     </div>
                     <div class="paragroup col-md-10 col-xs-10">
                         <p class="text-justify">
-                            This year we are proud to support
+                            We are proud to support
                             <b>
                                 <em>Genesis Community Health</em>
-                            </b> .
+                            </b>.
                             <b>
                                 <em>Genesis Community Health</em>
                             </b> is an integrated healthcare facility providing primary medical care, basic dental,
-                            mental health,
-                            specialty referral and medication to the low-income and uninsured.
-
+                            mental
+                            health, specialty referral and medication to the low-income and uninsured in the
+                            Treasure Valley. The clinic is staffed by volunteers and healthcare providers who donate
+                            their time and services to care for those who otherwise do not have access to
+                            healthcare. The clinic depends heavily upon volunteers and charitable contributions to
+                            continue to provide these services.
                             <p class="text-justify">
-                                We are determined to continue along our upward fundraising trajectory. We can’t do it
-                                alone.
-                                We need your help. Collectively
-                                we can make a difference. Please join us in helping the most vulnerable in our Treasure
-                                Valley
-                                Community.
+                                With outstanding support provided by the Treasure Valley Bicycle community we are
+                                confident that our upward fundraising trajectory will continue. We can’t do it alone. We
+                                need your help. Collectively we can make a difference . Please come join us in helping
+                                the most vulnerable in our Treasure Valley Community.”
                             </p>
                     </div>
                     <div class="paragroup offset-md-1 col-md-11 top-marg text-center">
@@ -163,7 +165,7 @@
             animate() {
                 anime({
                     targets: '#number input',
-                    value: '$' + '46500',
+                    value: '$' + '66500',
                     round: 1,
                     easing: 'easeInOutExpo',
                     duration: 3333

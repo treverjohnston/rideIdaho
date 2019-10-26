@@ -1,11 +1,18 @@
 <template>
-    <q-page class="black">
+    <q-layout class="black">
         <div class="row wrap justify-center">
             <div class="col-xs-11 col-md-10 black-back shadow-24 text-center q-pa-lg">
-                <h3 class="desktop-only">Registration opens January 1, 2020</h3>
-                <h4 class="mobile-only">Registration opens January 1, 2020</h4>
+                <h4 class="desktop-only">Online Registration open January 1, 2020. Online registration closes at
+                    midnight
+                    on June 18, 2020. You may also register in person at packet pick-up and at the ride.</h4>
+                <h6 class="mobile-only">Online Registration open January 1, 2020. Online registration closes at
+                    midnight
+                    on June 18, 2020. You may also register in person at packet pick-up and at the ride.</h6>
                 <hr class="width_90">
-                <h5>For now, check out our different rides!</h5>
+                <h4 class="desktop-only">Packet pick-up: Friday, June 19, 2020 from 4:00 PM to 7:00 PM. (this is at same
+                    location as last year -- Meridian Cycles)</h4>
+                <h6 class="mobile-only">Packet pick-up: Friday, June 19, 2020 from 4:00 PM to 7:00 PM. (this is at same
+                    location as last year -- Meridian Cycles)</h6>
 
                 <div class="row justify-between desktop-only second-header">
                     <q-list separator class="col-md-4">
@@ -67,7 +74,7 @@
             </div>
 
         </div>
-    </q-page>
+    </q-layout>
 </template>
 
 <script>

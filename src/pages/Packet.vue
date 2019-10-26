@@ -6,7 +6,7 @@
                 <h4 class="mobile-only">Packet Pick Up</h4>
                 <hr class="width_90">
                 <h5>
-                    <b>Date: </b>Friday, June 7</h5>
+                    <b>Date: </b>Friday, June 19, 2020</h5>
                 <h5>
                     <b>Time: </b>4pm-7pm</h5>
                 <hr class="width_90">
@@ -15,7 +15,6 @@
                 <h5> Meridian, ID</h5>
                 <h5>83642</h5>
             </div>
-
 
         </div>
     </q-layout>

@@ -2,8 +2,7 @@
   <div>
     <div class="row justify-center">
       <div id="video_overlays" class="absolute text-center">
-        <img class="ride self-center text-center vid-logo desktop-only" src="statics/logos/RFHIdahoLogo.png"
-          alt="RFHI Logo">
+        <img class="self-center text-center vid-logo desktop-only" src="statics/logos/RFHIdahoLogo.png" alt="RFHI Logo">
         <img class="mini self-center text-center vid-logo mobile-only" src="statics/logos/RFHIdahoLogo.png"
           alt="RFHI Logo">
       </div>
@@ -410,7 +409,7 @@
   }
 
   .mini {
-    height: 4rem;
+    height: 7rem;
   }
 
 

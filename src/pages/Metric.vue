@@ -68,9 +68,7 @@
                                         <h5>Rest Stops</h5>
                                         <hr class="hr" />
                                     </div>
-                                    <div class="col-xs-12 self-center" v-for="stop in route.restStops">
-                                        <h6>{{stop}}</h6>
-                                    </div>
+                                    <div class="text-h6 q-mt-sm" v-for="stop in route.restStops">{{stop}}</div>
                                 </div>
                             </div>
                         </div>
@@ -169,16 +167,16 @@
 </template>
 
 <script>
-    import { openURL } from 'quasar'
+    import { openURL } from "quasar";
     export default {
-        name: 'metric',
+        name: "Metric",
         data() {
             return {
                 route: []
-            }
+            };
         },
         mounted() {
-            this.$store.state.ruotes.routes.forEach(route => {
+            this.$store.state.routes.routes.forEach(route => {
                 if (route.url == this.$route.path) {
                     return this.route = route;
                 }
@@ -186,7 +184,7 @@
         },
         computed: {
             pictures() {
-                return this.$store.state.gallery.pictures
+                return this.$store.state.gallery.pictures;
             },
             routes() {
                 return this.$store.state.routes.routes;
@@ -198,7 +196,7 @@
         methods: {
             openURL
         }
-    }
+    };
 </script>
 
 <style scoped>

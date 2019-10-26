@@ -1,9 +1,16 @@
 <template>
     <q-layout class="black">
-        <div class="row wrap justify-center desktop-only">
+        <div v-if="!openRegistration" class="row wrap justify-center">
             <div class="col-xs-11 col-md-10 white-back shadow-24 text-center">
                 <hr color="red" class="hr">
-                <h3 class="headline text-bold">2019 RAFFLE ITEMS ANNOUNCED AT EVENT</h3>
+                <h4 class="fancy">Raffle tickets are available for purchase once registration opens</h4>
+                <hr color="red" class="hr">
+            </div>
+        </div>
+        <div v-if="openRegistration" class="row wrap justify-center desktop-only">
+            <div class="col-xs-11 col-md-10 white-back shadow-24 text-center">
+                <hr color="red" class="hr">
+                <h3 class="headline text-bold">2209 RAFFLE ITEMS ANNOUNCED AT EVENT</h3>
                 <h4 class="fancy">Raffle tickets are available for purchase: </h4>
                 <h4>1 ticket for $3</h4>
                 <h4>2 tickets for $5</h4>
@@ -16,10 +23,10 @@
                 <hr color="red" class="hr">
             </div>
         </div>
-        <div class="row wrap justify-center mobile-only">
+        <div v-if="openRegistration" class="row wrap justify-center mobile-only">
             <div class="col-xs-11 white-back shadow-24 text-center">
                 <hr color="red" class="hr">
-                <h4 class="headline text-bold">2019 RAFFLE ITEMS ANNOUNCED AT EVENT</h4>
+                <h4 class="headline text-bold">2020 RAFFLE ITEMS ANNOUNCED AT EVENT</h4>
                 <h5 class="fancy ">Raffle tickets are available for purchase: </h5>
                 <h5>1 ticket for $3</h5>
                 <h5>2 tickets for $5</h5>
@@ -46,6 +53,9 @@
         computed: {
             items() {
                 return this.$store.state.raffle.raffles
+            },
+            openRegistration() {
+                return this.$store.state.state.openRegistration
             }
         },
         methods: {

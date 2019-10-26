@@ -37,9 +37,9 @@ export default {
         }
       ],
       shortDescription:
-        'New route for 2019 for those who felt that 19 miles was just a bit too far!  Gentle flat and fun route though farmland and along canals with one rest stop at half way point.  This route is for everyone: road bike, no problem; cruiser bike, no issue; mountain bike, ditto; unicycle, check…….(provided your balance is good enough) !',
+        'This route was first added in 2019 for those who felt that 19 miles was just a bit too far! Gentle flat and fun route though farmland and along canals with one rest stop at half way point. This route is for everyone: road bike, no problem; cruiser bike, no issue; mountain bike, ditto; unicycle, check.......(provided your balance is good enough)!',
       description:
-        'New route for 2019 for those who felt that 19 miles was just a bit too far!  Gentle flat and fun route though farmland and along canals with one rest stop at half way point.  This route is for everyone: road bike, no problem; cruiser bike, no issue; mountain bike, ditto; unicycle, check…….(provided your balance is good enough) !'
+        'This route was first added in 2019 for those who felt that 19 miles was just a bit too far! Gentle flat and fun route though farmland and along canals with one rest stop at half way point. This route is for everyone: road bike, no problem; cruiser bike, no issue; mountain bike, ditto; unicycle, check.......(provided your balance is good enough)!',
     },
     {
       id: 1,
@@ -80,10 +80,8 @@ export default {
           link: '//ridewithgps.com/routes/28660668'
         }
       ],
-      shortDescription:
-        'Completely redesigned route for 2019.  Unlike previous years this route takes riders eastward through scenic rolling farmland and returns along winding canals with two rest stops along the way. Every effort was made to add some greater scenic variety to this route for 2019 while maintaining a flat and mellow course.',
-      description:
-        'Completely redesigned route for 2019.  Unlike previous years this route takes riders eastward through scenic rolling farmland and returns along winding canals with two rest stops along the way. Every effort was made to add some greater scenic variety to this route for 2019 while maintaining a flat and mellow course.'
+      shortDescription: 'This route takes riders eastward through scenic rolling farmland and returns along winding canals with two rest stops along the way.The course route was changed in 2019 to add more scenic variety for 19 mile participants.This is a fun, mellow route that is relatively flat.',
+      description: 'This route takes riders eastward through scenic rolling farmland and returns along winding canals with two rest stops along the way.The course route was changed in 2019 to add more scenic variety for 19 mile participants.This is a fun, mellow route that is relatively flat.',
     },
     {
       id: 2,
@@ -173,9 +171,9 @@ export default {
           link: '//ridewithgps.com/routes/26451173'
         }],
       shortDescription:
-        'Completely redesigned course for 2018. This is a ride for true bikers (i.e., no longer embarrassed to wear spandex). The route Includes rolling hills, scenic overlooks, vineyards and 4 rest stops.',
+        'This is a route for true bikers (i.e., no longer embarrassed to wear spandex). The route Includes rolling hills, scenic overlooks, vineyards and 4 rest stops.',
       description:
-        'At 67 miles long, this is a ride for true bikers (i.e. no longer embarrassed to wear spandex and know that STRAVA isn’t a new type of  pasta). The route Includes rolling hills, scenic overlooks, vineyards and 4 rest stops. The course meets up with the last half of the Century route (so you will have additional riders to share your challenge with along the way). You will continue northwest toward Marsing and then turn back toward Kuna and pedal, pedal, pedal, to Lake Shore Drive skirting Lake Lowell on your way back to the finish line where festivities and food await.  Just remember, no matter how slow you go, you are still lapping everybody on the couch!'
+        'This is a route for true bikers (i.e., no longer embarrassed to wear spandex). The route Includes rolling hills, scenic overlooks, vineyards and 4 rest stops.',
     },
     {
       id: 4,

@@ -13,7 +13,7 @@
                         <img src="statics/team3.jpg" class="responsive img" alt="RFH Riders">
                     </div>
                     <div class="col-xs-8 col-md-4 mobile-only self-center">
-                        <img src="statics/team1.jpg" class="responsive border" alt="RFH Riders">
+                        <img src="statics/team1.jpg" class="responsive img" alt="RFH Riders">
                     </div>
                 </div>
                 <div class="row justify-center bot">
