@@ -12,20 +12,3 @@ export function getPictures({ commit, dispatch }) {
             commit('handleError', err);
         });
 }
-
-export function sendEmail({ commit, dispatch }, obj) {
-    console.log('email obj', obj);
-    $.ajax({
-        url: 'https://formspree.io/rideforhopeidaho@gmail.com',
-        method: 'POST',
-        data: {
-            name: obj.name,
-            _email: obj.email,
-            phone: obj.phone,
-            _subject: obj._subject,
-            message: obj.message
-        },
-        dataType: 'json'
-    });
-    Notify.create('Message Sent');
-}

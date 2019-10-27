@@ -88,9 +88,10 @@
                                     <div class="col-xs-12">
                                         <hr class="width_90">
                                     </div>
-                                    <q-btn class="btn spacers" @click="$router.push('climbs')" no-caps>Information About
+                                    <q-btn class="btn spacers" @click="$router.push('/climbs')" no-caps>Information
+                                        About
                                         Climbs</q-btn>
-                                    <q-btn class="btn spacers" @click="$router.push('rules')" no-caps>Rules Of The Road
+                                    <q-btn class="btn spacers" @click="$router.push('/rules')" no-caps>Rules Of The Road
                                     </q-btn>
                                 </div>
                             </div>
@@ -141,10 +142,10 @@
                                         <hr class="width_90">
                                     </div>
                                     <div class="col-xs-11 text-center">
-                                        <q-btn class="btn spacers" @click="$router.push('climbs')" no-caps>Information
+                                        <q-btn class="btn spacers" @click="$router.push('/climbs')" no-caps>Information
                                             About Climbs
                                         </q-btn>
-                                        <q-btn class="btn spacers" @click="$router.push('rules')" no-caps>Rules Of The
+                                        <q-btn class="btn spacers" @click="$router.push('/rules')" no-caps>Rules Of The
                                             Road
                                         </q-btn>
                                     </div>
@@ -166,6 +167,9 @@
             return {
                 route: []
             };
+        },
+        beforeMount() {
+            this.$router.push('/routes/metric')
         },
         mounted() {
             this.$store.state.routes.routes.forEach(route => {

@@ -6,7 +6,7 @@
       <q-tab stretch flat v-if="openRegistration" class="tab text-red" color="red" label="Register" name="reg"
         @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')" />
       <q-route-tab v-else stretch flat class="tab text-red" color="red" label="Register" name="register"
-        to="register" />
+        to="/register" />
       <q-btn-dropdown stretch flat label="Rider Info" name="rider">
         <q-list>
           <q-item class="black-bg">
@@ -25,62 +25,62 @@
               @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')"
               name="home" class="tab inner-tab width_100 text-red black-bg" color="red" label="Register" />
             <q-route-tab v-else name="register" class="tab inner-tab width_100 text-red black-bg" color="red"
-              label="Register" to="register" />
+              label="Register" to="/register" />
           </q-tabs>
         </q-item>
         <q-item v-close-popup class="black-bg">
           <q-tabs class="width_100">
-            <q-route-tab class="tab inner-tab" label="Packet Pick Up" name="rider" to="packet" />
+            <q-route-tab class="tab inner-tab" label="Packet Pick Up" name="rider" to="/packet" />
           </q-tabs>
         </q-item>
         <q-item v-close-popup class="black-bg">
           <q-tabs class="width_100">
-            <q-route-tab class="tab inner-tab" label="Rules Of The Road" name="rider" to="rules" />
+            <q-route-tab class="tab inner-tab" label="Rules Of The Road" name="rider" to="/rules" />
           </q-tabs>
         </q-item>
         <q-item v-close-popup class="black-bg">
           <q-tabs class="width_100">
-            <q-route-tab class="tab inner-tab" label="Start Times And Directions" name="rider" to="ride" />
+            <q-route-tab class="tab inner-tab" label="Start Times And Directions" name="rider" to="/ride" />
           </q-tabs>
         </q-item>
         <q-item v-close-popup class="black-bg">
           <q-tabs class="width_100">
-            <q-route-tab class="tab inner-tab" label="How Climbs Are Categorized" name="rider" to="climbs" />
+            <q-route-tab class="tab inner-tab" label="How Climbs Are Categorized" name="rider" to="/climbs" />
           </q-tabs>
         </q-item>
         <q-item v-close-popup class="black-bg">
           <q-tabs class="width_100">
-            <q-route-tab class="tab inner-tab" label="Team Ride For Hope Idaho Information" name="rider" to="team" />
+            <q-route-tab class="tab inner-tab" label="Team Ride For Hope Idaho Information" name="rider" to="/team" />
           </q-tabs>
         </q-item>
       </q-btn-dropdown>
       <q-btn-dropdown auto-close stretch flat label="Merchandise" name="merchandise" class="">
         <q-item class="black-bg">
           <q-tabs class="width_100">
-            <q-route-tab class="tab inner-tab" label="Jerseys and More" name="merchandise" to="merchandise" />
+            <q-route-tab class="tab inner-tab" label="Jerseys and More" name="merchandise" to="/merchandise" />
           </q-tabs>
         </q-item>
         <q-item class="black-bg">
           <q-tabs class="width_100">
-            <q-route-tab class="tab inner-tab" label="Raffle Items" name="merchandise" to="raffle" />
+            <q-route-tab class="tab inner-tab" label="Raffle Items" name="merchandise" to="/raffle" />
           </q-tabs>
         </q-item>
       </q-btn-dropdown>
-      <q-route-tab class="tab black-bg" label="Sponsors" name="sponsors" to="sponsors" />
+      <q-route-tab class="tab black-bg" label="Sponsors" name="sponsors" to="/sponsors" />
       <q-btn-dropdown stretch flat auto-close class="" label="Galleries" name="gallery">
         <q-item class="black-bg">
           <q-tabs class="width_100">
-            <q-route-tab class="tab inner-tab" label="2018 Gallery" name="gallery" to="2018-gallery" />
+            <q-route-tab class="tab inner-tab" label="2018 Gallery" name="gallery" to="/2018-gallery" />
           </q-tabs>
         </q-item>
         <q-item class="black-bg">
           <q-tabs class="width_100">
-            <q-route-tab class="tab inner-tab" label="Past Rides" name="gallery" to="gallery" />
+            <q-route-tab class="tab inner-tab" label="Past Rides" name="gallery" to="/gallery" />
           </q-tabs>
         </q-item>
       </q-btn-dropdown>
-      <q-route-tab class="tab black-bg" label="About" name="about" to="about" />
-      <q-route-tab class="tab black-bg" label="Contact" name="contact" to="contact" />
+      <q-route-tab class="tab black-bg" label="About" name="about" to="/about" />
+      <q-route-tab class="tab black-bg" label="Contact" name="contact" to="/contact" />
     </q-tabs>
     <!-- DESKTOP TABS END -->
     <!--  -->
@@ -114,7 +114,7 @@
           <q-item-section class="text-black">Home</q-item-section>
         </q-item>
         <hr class="tabhrs">
-        <q-item to="register">
+        <q-item to="/register">
           <q-item-section v-if="openRegistration"
             @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')"
             class="side register text-red" label="Register">Register</q-item-section>
@@ -136,57 +136,57 @@
             </q-expansion-item>
           </q-list>
           <hr class="tabhrs">
-          <q-item to="register">
+          <q-item to="/register">
             <q-item-section v-if="openRegistration"
               @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')"
               class="small-side register" label="Register">Register</q-item-section>
             <q-item-section v-else class="small-side register" label="Register">Register</q-item-section>
           </q-item>
           <hr class="tabhrs">
-          <q-item class="small-side" @click.native="push('packet')">
+          <q-item class="small-side" @click.native="push('/packet')">
             Packet Pick Up </q-item>
           <hr class="tabhr">
-          <q-item class="small-side" @click.native="push('rules')">
+          <q-item class="small-side" @click.native="push('/rules')">
             Rules of the Road </q-item>
           <hr class="tabhrs">
-          <q-item class="small-side" @click.native="push('ride')">
+          <q-item class="small-side" @click.native="push('/ride')">
             Start Time/Directions </q-item>
           <hr class="tabhr">
-          <q-item class="small-side" @click.native="push('climbs')">
+          <q-item class="small-side" @click.native="push('/climbs')">
             How Climbs are Categorized </q-item>
           <hr class="tabhr">
-          <q-item class="small-side" @click.native="push('team')">
+          <q-item class="small-side" @click.native="push('/team')">
             Team Ride For Hope Idaho Information
           </q-item>
         </q-expansion-item>
         <hr class="tabhr">
         <q-expansion-item class="side-collapse text-black" label="Merchandise">
           <hr class="tabhr">
-          <q-item class="small-side left" @click.native="push('merchandise')">
+          <q-item class="small-side left" @click.native="push('/merchandise')">
             Jerseys and More </q-item>
           <hr class="tabhrs">
-          <q-item class="small-side left" @click.native="push('raffle')">
+          <q-item class="small-side left" @click.native="push('/raffle')">
             Raffle Items </q-item>
         </q-expansion-item>
         <hr class="tabhr">
-        <q-item @click.native="push('sponsors')" class="text-black">
+        <q-item @click.native="push('/sponsors')" class="text-black">
           Sponsors
         </q-item>
         <hr class="tabhr">
         <q-expansion-item class="side-collapse text-black" label="Galleries">
           <hr class="tabhr">
-          <q-item class="small-side" @click.native="push('2018-gallery')">
+          <q-item class="small-side" @click.native="push('/2018-gallery')">
             2018 Gallery </q-item>
           <hr class="tabhrs">
-          <q-item class="small-side" @click.native="push('gallery')">
+          <q-item class="small-side" @click.native="push('/gallery')">
             Past Gallery </q-item>
         </q-expansion-item>
         <hr class="tabhr">
-        <q-item class="side" @click.native="push('about')">
+        <q-item class="side" @click.native="push('/about')">
           About
         </q-item>
         <hr class="tabhr">
-        <q-item class="side" @click.native="push('contact')">
+        <q-item class="side" @click.native="push('/contact')">
           Contact
         </q-item>
         <hr class="tabhr">

@@ -160,6 +160,9 @@
         route: []
       };
     },
+    beforeMount() {
+      this.$router.push('/routes/9-mile')
+    },
     mounted() {
       this.$store.state.routes.routes.forEach(route => {
         if (route.url == this.$route.path) {

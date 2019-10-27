@@ -15,31 +15,45 @@ const routes = [
       },
       {
         path: 'routes',
-        component: () => import('pages/Routes.vue')
+        component: () => import('pages/Route.vue'),
+        children: [
+          {
+            path: '9-mile', component: () => import('pages/Nine.vue')
+          },
+
+          {
+            path: '19-Mile', component: () => import('pages/Eighteen.vue')
+          },
+          {
+            path: '34-Mile', component: () => import('pages/Thirty.vue')
+          },
+          {
+            path: 'Metric', component: () => import('pages/Metric.vue')
+          },
+          {
+            path: 'Century', component: () => import('pages/Century.vue')
+          }
+        ]
+      },
+      {
+        path: '9-mile', component: () => import('pages/Nine.vue')
+      },
+
+      {
+        path: '19-Mile', component: () => import('pages/Eighteen.vue')
+      },
+      {
+        path: '34-Mile', component: () => import('pages/Thirty.vue')
+      },
+      {
+        path: 'Metric', component: () => import('pages/Metric.vue')
+      },
+      {
+        path: 'Century', component: () => import('pages/Century.vue')
       },
       {
         path: 'fundraising',
         component: () => import('pages/Fundraising.vue')
-      },
-      {
-        path: '9-Mile',
-        component: () => import('pages/Nine.vue')
-      },
-      {
-        path: '19-Mile',
-        component: () => import('pages/Eighteen.vue')
-      },
-      {
-        path: '34-Mile',
-        component: () => import('pages/Thirty.vue')
-      },
-      {
-        path: 'Metric',
-        component: () => import('pages/Metric.vue')
-      },
-      {
-        path: 'Century',
-        component: () => import('pages/Century.vue')
       },
       {
         path: 'donate',

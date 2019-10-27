@@ -2,9 +2,11 @@
   <div>
     <div class="row justify-center">
       <div id="video_overlays" class="absolute text-center">
-        <img class="self-center text-center vid-logo desktop-only" src="statics/logos/RFHIdahoLogo.png" alt="RFHI Logo">
+        <img class="self-center text-center vid-logo desktop-only" src="statics/logos/RFHIdahoLogo.png" alt="RFHI Logo"
+          v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
         <img class="mini self-center text-center vid-logo mobile-only" src="statics/logos/RFHIdahoLogo.png"
-          alt="RFHI Logo">
+          alt="RFHI Logo"
+          v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
       </div>
       <video class="fit" style="width: 100%;" id="player" :src="video" type="video/mp4" playsinline="playsinline"
         muted="muted" autoplay="autoplay" loop="loop">Your browser does not
@@ -32,18 +34,21 @@
           </div>
         </div>
         <div class="promo text-center mobile-only">
-          <div class="text-h6 light-paragraph">SUPPORTING HEALTHCARE FOR THE MEDICALLY UNDERSERVED</div>
-          <hr>
-          <div class="text-h4 text-bold">Ride For Hope Idaho</div>
-          <div class="text-h5">2020 Event Date:</div>
-          <div class="text-h5">Saturday, June 20</div>
-          <div class="text-h5">Kuna, ID</div>
-          <hr>
-          <div class="text-h6 q-title">Online registration ends 6/18/2020.</div>
-          <div class="text-h6 q-title">Day of ride registration available.</div>
-          <div class="text-h6 q-title">Discount offered for teams of 5 or more and for families. Contact for more
-            details.</div>
-          <hr>
+          <div
+            v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
+            <div class="text-h6 light-paragraph">SUPPORTING HEALTHCARE FOR THE MEDICALLY UNDERSERVED</div>
+            <hr>
+            <div class="text-h4 text-bold">Ride For Hope Idaho</div>
+            <div class="text-h5">2020 Event Date:</div>
+            <div class="text-h5">Saturday, June 20</div>
+            <div class="text-h5">Kuna, ID</div>
+            <hr>
+            <div class="text-h6 q-title">Online registration ends 6/18/2020.</div>
+            <div class="text-h6 q-title">Day of ride registration available.</div>
+            <div class="text-h6 q-title">Discount offered for teams of 5 or more and for families. Contact for more
+              details.</div>
+            <hr>
+          </div>
         </div>
       </div>
     </div>
@@ -74,8 +79,8 @@
         </q-card-section>
         <hr class="routeshr" v-scroll-fire="fadeInImage">
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-5 border desktop-only self-center" v-for="route in routes">
-        <q-card :id="route.id" class="text-center card-container shadow-24 grow not-loaded">
+      <div class="col-xs-12 col-sm-6 col-md-5 border desktop-only self-center grow" v-for="route in routes">
+        <q-card :id="route.id" class="text-center card-container shadow-24 not-loaded">
           <q-card-section>
             <q-btn class="route-btn grow" @click="$router.push(route.url.trim('/'))" outline color="red">
               <span class="text-h3 q-pa-sm">{{route.length}}</span>
@@ -118,7 +123,7 @@
         </h6>
       </div>
       <div class="col-xs-12 col-md-4 text-center self-center">
-        <q-btn class="cbtnm" @click="$router.push('charities')">Learn More</q-btn>
+        <q-btn class="cbtnm" @click="$router.push('/charities')">Learn More</q-btn>
       </div>
     </div>
   </div>

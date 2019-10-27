@@ -24,7 +24,8 @@
                         </div>
                     </div>
                     <!-- <hr class="offset-md-2 col-md-8 return offset-xs-1 col-xs-10 "> -->
-                    <div class="para col-md-9 col-xs-10">
+                    <div class="para col-md-9 col-xs-10"
+                        v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
                         <h2 class="text-bold col-xs-10 text-center text-italic top-marg">Our Mission</h2>
                         <!-- <hr class="offset-md-2 col-md-8 return offset-xs-1 col-xs-10 "> -->
                         <p class="text-justify">
@@ -48,8 +49,12 @@
                         </p>
                     </div>
                     <!-- <hr class="offset-md-2 col-md-8 return offset-xs-1 col-xs-10"> -->
-                    <h3 class="text-bold col-xs-10 text-center text-italic top-marg">About Us</h3>
-                    <div class="para col-md-5 col-xs-10">
+                    <h3 class="text-bold col-xs-10 text-center text-italic top-marg"
+                        v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
+                        About Us</h3>
+                    <div class="para col-md-5 col-xs-10"
+                        v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
+
                         <p class="text-justify">
                             <em>
                                 <b>Ride For Hope Idaho</b>
@@ -98,11 +103,12 @@
                         </ul>
                     </div>
                     <div class="pic col-md-4 col-sm-12 col-xs-12 text-center">
-                        <img class="rider responsive"
+                        <q-img class="rider responsive"
                             src="https://res.cloudinary.com/treverscloud/image/upload/v1517606065/margo_kuo44h.jpg"
-                            alt="rider">
+                            alt="rider" />
                     </div>
-                    <div class="paragroup col-md-10 col-xs-10">
+                    <div class="paragroup col-md-10 col-xs-10"
+                        v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
                         <p class="text-justify">
                             We are proud to support
                             <b>

@@ -4,7 +4,8 @@
             <div class="col-xs-11 col-md-10 black-back shadow-24">
                 <div class="row wrap justify-center">
                     <div class="col-xs-12">
-                        <div class="row justify-center">
+                        <div class="row justify-center"
+                            v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
                             <div class="col-xs-12 text-center">
                                 <h2 class="headline text-center white">{{route.length}} Ride</h2>
                                 <h5 class="headline text-center white">
@@ -15,7 +16,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="row justify-center">
+                <div class="row justify-center"
+                    v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
                     <div class="col-xs-12 col-lg-4 r-links">
                         <div class="row wrap justify-center">
                             <div class="col-xs-11 text-center spacers">
@@ -63,7 +65,9 @@
                                         <h5>Rest Stops</h5>
                                         <hr class="hr" />
                                     </div>
-                                    <div class="text-h6 q-mt-sm" v-for="stop in route.restStops">{{stop}}</div>
+                                    <div class="text-h6 q-mt-sm col-xs-12" v-for="stop in route.restStops">
+                                        {{stop}}
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -88,9 +92,10 @@
                                     <div class="col-xs-12">
                                         <hr class="width_90">
                                     </div>
-                                    <q-btn class="btn spacers" @click="$router.push('climbs')" no-caps>Information About
+                                    <q-btn class="btn spacers" @click="$router.push('/climbs')" no-caps>Information
+                                        About
                                         Climbs</q-btn>
-                                    <q-btn class="btn spacers" @click="$router.push('rules')" no-caps>Rules Of The Road
+                                    <q-btn class="btn spacers" @click="$router.push('/rules')" no-caps>Rules Of The Road
                                     </q-btn>
                                 </div>
                             </div>
@@ -141,10 +146,10 @@
                                         <hr class="width_90">
                                     </div>
                                     <div class="col-xs-11 text-center">
-                                        <q-btn class="btn spacers" @click="$router.push('climbs')" no-caps>Information
+                                        <q-btn class="btn spacers" @click="$router.push('/climbs')" no-caps>Information
                                             About Climbs
                                         </q-btn>
-                                        <q-btn class="btn spacers" @click="$router.push('rules')" no-caps>Rules Of The
+                                        <q-btn class="btn spacers" @click="$router.push('/rules')" no-caps>Rules Of The
                                             Road
                                         </q-btn>
                                     </div>
@@ -161,18 +166,15 @@
 <script>
     import { openURL, Notify } from "quasar";
     export default {
-        name: "Thirty",
+        name: "Route",
         data() {
             return {
                 route: []
             };
         },
-        beforeMount() {
-            this.$router.push('/routes/34-mile')
-        },
         mounted() {
             this.$store.state.routes.routes.forEach(route => {
-                if (route.url == this.$route.path) {
+                if (this.$route.path.includes(route.url)) {
                     return this.route = route;
                 }
             });
@@ -205,22 +207,43 @@
         margin-bottom: 1rem;
     }
 
+    .rest {
+        max-height: 3rem;
+    }
+
     .top {
         padding-top: 1rem;
     }
 
     .btn {
-        margin: .5rem .5rem .5rem 0;
+        margin: 0.5rem 0.5rem 0.5rem 0;
         background-color: rgba(197, 7, 7, 0.8);
         color: white;
     }
 
     .color {
-        background-color: rgba(73, 143, 255, 0.898);
+        background-color: purple;
+        color: white;
+    }
+
+    .small {
+        font-size: 0.5rem;
+    }
+
+    .white-text {
+        color: white;
+    }
+
+    .map {
+        height: 90vh;
+        width: 100%;
+    }
+
+    .headline {
+        /* text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2); */
     }
 
     .promo {
         background-color: rgba(0, 128, 128, 0.6);
-
     }
 </style>

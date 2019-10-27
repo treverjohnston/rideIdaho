@@ -10,7 +10,8 @@
                             Hope</q-btn>
                     </div>
                 </div> -->
-                <div class="row wrap justify-center text-center">
+                <div class="row wrap justify-center text-center"
+                    v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
                     <div class="col-xs-11 col-md-8 spacers">
                         <h2 class="text-bold shadow desktop-only">Veni Vidi Vici Sponsors</h2>
                         <!-- <h2 class="text-bold shadow desktop-only">($5000+)</h2> -->
@@ -19,7 +20,7 @@
                         <big class="text-italic">"I came. I saw. I conquered."</big>
                         <hr color="red" class="hr">
                         <!-- <h3>Become a Premier Sponsor</h3> -->
-                        <q-btn class="row wrap btn shadow-24" no-caps @click="$router.push('contact')">Become a
+                        <q-btn class="row wrap btn shadow-24" no-caps @click="$router.push('/contact')">Become a
                             Premier Ride For
                             Hope Sponsor</q-btn>
                         <div v-for="sponsor in l1" class="mid row wrap justify-center">
@@ -34,7 +35,8 @@
                         <!-- <hr color="red" class="hr"> -->
                     </div>
                 </div>
-                <div class="row wrap justify-center text-center">
+                <div class="row wrap justify-center text-center"
+                    v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
                     <div class="col-xs-11 col-md-8 spacers">
                         <h2 class="text-bold shadow desktop-only">Omnes Spem Sponsors</h2>
                         <!-- <h2 class="text-bold shadow desktop-only">($2500-$4999)</h2> -->
@@ -64,7 +66,8 @@
                         <!-- <hr color="red" class="hr"> -->
                     </div>
                 </div>
-                <div class="row wrap justify-center text-center">
+                <div class="row wrap justify-center text-center"
+                    v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
                     <div class="col-xs-11 col-md-8 spacers">
                         <h2 class="text-bold shadow desktop-only">Virtutem Spei Sponsors</h2>
                         <!-- <h2 class="text-bold shadow desktop-only">($1500-$2499)</h2> -->
@@ -88,7 +91,8 @@
                 </div>
 
                 <!-- SUPPORT -->
-                <div class="row wrap justify-center text-center ">
+                <div class="row wrap justify-center text-center "
+                    v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
                     <div class="col-xs-11 col-md-8 spacers">
                         <h2 class="text-bold shadow desktop-only">Carpe Diem Sponsors</h2>
                         <!-- <h2 class="text-bold shadow desktop-only">($500-$1499)</h2> -->
@@ -116,7 +120,8 @@
                 </div>
 
                 <!-- SUPPORT -->
-                <div class="row wrap justify-center text-center ">
+                <div class="row wrap justify-center text-center "
+                    v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
                     <div class="col-xs-11 col-md-8 spacers">
                         <h2 class="text-bold shadow desktop-only">Support</h2>
                         <!-- <h2 class="text-bold shadow desktop-only">($500-$1499)</h2> -->
