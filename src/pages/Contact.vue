@@ -87,7 +87,7 @@
                 if (this.$v.name.$error || this.$v.email.$error || this.$v.subject.$error || this.$v.message.$error) {
                     Notify.create({
                         html: 'Something went wrong, please try again. Be sure to check all fields are filled out correctly.',
-                        color: 'red'
+                        backgroundColor: 'red'
                     })
                     return
                 }

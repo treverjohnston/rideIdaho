@@ -30,7 +30,7 @@ const routes = [
         component: () => import('pages/Eighteen.vue')
       },
       {
-        path: '35-Mile',
+        path: '34-Mile',
         component: () => import('pages/Thirty.vue')
       },
       {

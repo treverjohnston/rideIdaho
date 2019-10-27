@@ -104,7 +104,8 @@
                     frameborder="0"></iframe>
                 </q-card-section>
                 <div align="center" class="white small" label="View More Map Options">
-                  <q-btn v-for="link in route.otherMaps" :class="route.btnClass" @click="openURL(link.link)" no-caps>
+                  <q-btn v-for="link in route.otherMaps" :class="route.btnClass"
+                    @click="link.link != '' ? openURL(link.link) : notifyNotReady()" no-caps>
                     {{link.title}}</q-btn>
                 </div>
               </q-card>
@@ -151,7 +152,7 @@
 </template>
 
 <script>
-  import { openURL } from "quasar";
+  import { openURL, Notify } from "quasar";
   export default {
     name: "Nine",
     data() {
@@ -178,7 +179,13 @@
       }
     },
     methods: {
-      openURL
+      openURL,
+      notifyNotReady() {
+        Notify.create({
+          message: 'Printable maps with turn by turn cue sheet available for participants to print are pending. \nPlease check back later.',
+          color: 'primary'
+        })
+      }
     }
   };
 </script>

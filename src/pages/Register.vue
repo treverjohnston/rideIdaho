@@ -9,10 +9,10 @@
                     midnight
                     on June 18, 2020. You may also register in person at packet pick-up and at the ride.</h6>
                 <hr class="width_90">
-                <h4 class="desktop-only">Packet pick-up: Friday, June 19, 2020 from 4:00 PM to 7:00 PM. (this is at same
-                    location as last year -- Meridian Cycles)</h4>
-                <h6 class="mobile-only">Packet pick-up: Friday, June 19, 2020 from 4:00 PM to 7:00 PM. (this is at same
-                    location as last year -- Meridian Cycles)</h6>
+                <h4 class="desktop-only">Early packet pickup will be on Friday, June 19, 2020 from 4:00 PM
+                    to 7:00 PM at Meridian Cycles, 1203 N. Main St., Meridian, Idaho</h4>
+                <h6 class="mobile-only">Early packet pickup will be on Friday, June 19, 2020 from 4:00 PM
+                    to 7:00 PM at Meridian Cycles, 1203 N. Main St., Meridian, Idaho</h6>
 
                 <div class="row justify-between desktop-only second-header">
                     <q-list separator class="col-md-4">

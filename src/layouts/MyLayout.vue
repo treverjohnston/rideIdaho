@@ -12,20 +12,8 @@
           <q-item class="black-bg">
             <q-btn-dropdown flat auto-close stretch label="Routes" name="rider" class="width_100 tab inner-tab">
               <q-list>
-                <q-tabs>
-                  <q-route-tab class="tab inner-tab" label="9 Mile" name="rider" to="9-mile" />
-                </q-tabs>
-                <q-tabs>
-                  <q-route-tab class="tab inner-tab" label="19 Mile" name="rider" to="19-mile" />
-                </q-tabs>
-                <q-tabs>
-                  <q-route-tab class="tab inner-tab" label="35 Mile" name="rider" to="35-mile" />
-                </q-tabs>
-                <q-tabs>
-                  <q-route-tab class="tab inner-tab" label="Metric Century" name="rider" to="metric" />
-                </q-tabs>
-                <q-tabs>
-                  <q-route-tab class="tab inner-tab" label="Century" name="rider" to="Century" />
+                <q-tabs v-for="route in routes">
+                  <q-route-tab class="tab inner-tab" :label="route.length" name="rider" :to="route.url" />
                 </q-tabs>
               </q-list>
             </q-btn-dropdown>
@@ -140,21 +128,11 @@
           <q-list>
             <hr class="tabhr">
             <q-expansion-item class="margin-left-1 text-black" label="Routes">
-              <hr class="tabhr">
-              <q-item class="small-side" @click.native="push('/9-mile')">
-                9 Mile </q-item>
-              <hr class="tabhrs">
-              <q-item class="small-side" @click.native="push('19-mile')">
-                19 Mile </q-item>
-              <hr class="tabhrs">
-              <q-item class="small-side" @click.native="push('35-mile')">
-                35 Mile </q-item>
-              <hr class="tabhrs">
-              <q-item class="small-side" @click.native="push('metric')">
-                Metric Century </q-item>
-              <hr class="tabhrs">
-              <q-item class="small-side" @click.native="push('Century')">
-                Century </q-item>
+              <span v-for="route in routes">
+                <hr class="tabhr">
+                <q-item class="small-side" @click.native="push(route.url)">
+                  {{route.length}} </q-item>
+              </span>
             </q-expansion-item>
           </q-list>
           <hr class="tabhrs">

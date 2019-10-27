@@ -51,11 +51,6 @@
                                 </p>
                             </div>
                         </div>
-                        <!-- <div class="row wrap justify-center">
-              <h6 class="light-paragraph text-center col-xs-11 spacers description text-justify">
-                {{route.description}}
-              </h6>
-            </div> -->
                         <div class="row justify-center">
                             <div class="col-xs-11 col-md-11 text-center border spacers">
                                 <div class="row justify-center">
@@ -97,7 +92,6 @@
                                         Climbs</q-btn>
                                     <q-btn class="btn spacers" @click="$router.push('rules')" no-caps>Rules Of The Road
                                     </q-btn>
-
                                 </div>
                             </div>
                         </div>
@@ -105,20 +99,18 @@
                     <div class="col-xs-12 col-lg-7 top-marg">
                         <div class="row wrap justify-center">
                             <q-card class="route col-xs-11 col-md-11 shadow-24">
-                                <div>
-                                    <q-card-section class="desktop-only">
-                                        <iframe id="mapmyfitness_route" :src="route.frame" height="650px" width="100%"
-                                            frameborder="0"></iframe>
-                                    </q-card-section>
-                                    <q-card-section class="mobile-only">
-                                        <iframe id="mapmyfitness_route" :src="route.frameMobile" height="650px"
-                                            width="100%" frameborder="0"></iframe>
-                                    </q-card-section>
-                                    <div align="center" class="white small" label="View More Map Options">
-                                        <q-btn v-for="link in route.otherMaps" :class="route.btnClass"
-                                            @click="openURL(link.link)" no-caps>
-                                            {{link.title}}</q-btn>
-                                    </div>
+                                <q-card-section class="desktop-only">
+                                    <iframe id="mapmyfitness_route" :src="route.frame" height="650px" width="100%"
+                                        frameborder="0"></iframe>
+                                </q-card-section>
+                                <q-card-section class="mobile-only">
+                                    <iframe id="mapmyfitness_route" :src="route.frameMobile" height="650px" width="100%"
+                                        frameborder="0"></iframe>
+                                </q-card-section>
+                                <div align="center" class="white small" label="View More Map Options">
+                                    <q-btn v-for="link in route.otherMaps" :class="route.btnClass"
+                                        @click="link.link != '' ? openURL(link.link) : notifyNotReady()" no-caps>
+                                        {{link.title}}</q-btn>
                                 </div>
                             </q-card>
                         </div>
@@ -167,13 +159,13 @@
 </template>
 
 <script>
-    import { openURL } from 'quasar'
+    import { openURL, Notify } from "quasar";
     export default {
-        name: 'century',
+        name: "Century",
         data() {
             return {
                 route: []
-            }
+            };
         },
         mounted() {
             this.$store.state.routes.routes.forEach(route => {
@@ -184,7 +176,7 @@
         },
         computed: {
             pictures() {
-                return this.$store.state.gallery.pictures
+                return this.$store.state.gallery.pictures;
             },
             routes() {
                 return this.$store.state.routes.routes;
@@ -194,9 +186,15 @@
             }
         },
         methods: {
-            openURL
-        },
-    }
+            openURL,
+            notifyNotReady() {
+                Notify.create({
+                    message: 'Printable maps with turn by turn cue sheet available for participants to print are pending. \nPlease check back later.',
+                    color: 'primary'
+                })
+            }
+        }
+    };
 </script>
 
 <style scoped>

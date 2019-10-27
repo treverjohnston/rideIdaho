@@ -17,7 +17,8 @@ export default {
       otherMaps: [
         {
           title: 'Print Map',
-          link: './statics/pdfs/2019_9_MILE_PRINTABLE_MAP.pdf'
+          link: ''
+          // link: './statics/pdfs/2019_9_MILE_PRINTABLE_MAP.pdf'
         },
         {
           title: 'Map My Ride',
@@ -61,7 +62,8 @@ export default {
       otherMaps: [
         {
           title: 'Print Map',
-          link: './statics/pdfs/2019_19_MILE_PRINTABLE_MAP.pdf'
+          link: ''
+          // link: './statics/pdfs/2019_19_MILE_PRINTABLE_MAP.pdf'
         },
         {
           title: 'Map My Ride',
@@ -87,8 +89,8 @@ export default {
       id: 2,
       earlyReg: '$65',
       reg: '$75',
-      url: '/35-mile',
-      length: '35 Mile',
+      url: '/34-mile',
+      length: '34 Mile',
       pic:
         '//res.cloudinary.com/treverscloud/image/upload/v1510899777/Ride/31_lst8ag.jpg',
       mapLink: '//www.mapmyride.com/routes/view/1478990992',
@@ -105,7 +107,8 @@ export default {
       otherMaps: [
         {
           title: 'Print Map',
-          link: './statics/pdfs/2019_35_MILE_PRINTABLE_MAP.pdf'
+          link: ''
+          // link: './statics/pdfs/2019_35_MILE_PRINTABLE_MAP.pdf'
         },
         {
           title: 'Map My Ride',
@@ -125,9 +128,9 @@ export default {
         }
       ],
       shortDescription:
-        'Destination route to Melba and then back to Kuna. Gentle rolling hills through farmland. This is a course that will delight those who want to establish a new 40k personal best.',
+        'Destination route to Bowmont and then back to Kuna. Gentle rolling hills through farmland. This is a course that will delight those who want to establish a new 40k personal best.',
       description:
-        'Destination route to Melba and then back to Kuna. Gentle rolling hills through farmland. This is a course that will delight those who want to establish a new 40k personal best. But you surely didn’t train all that time to come to Ride For Hope Idaho just to get it over with as fast as you can; did you?! Stop and smell the roses, converse with your riding partners, and don’t forget to experience a fancy porta-john at one of the three rest stops you will encounter along the route!'
+        'Destination route to Bowmont and then back to Kuna. Gentle rolling hills through farmland. This is a course that will delight those who want to establish a new 40k personal best. But you surely didn’t train all that time to come to Ride For Hope Idaho just to get it over with as fast as you can; did you?! Stop and smell the roses, converse with your riding partners, and don’t forget to experience a fancy porta-john at one of the three rest stops you will encounter along the route!'
     },
     {
       id: 3,
@@ -152,7 +155,8 @@ export default {
       otherMaps: [
         {
           title: 'Print Map',
-          link: './statics/pdfs/2019_METRIC_PRINTABLE_MAP.pdf'
+          // link: './statics/pdfs/2019_METRIC_PRINTABLE_MAP.pdf'
+          link: ''
         },
         {
           title: 'Map My Ride',
@@ -200,7 +204,8 @@ export default {
       otherMaps: [
         {
           title: 'Print Map',
-          link: './statics/pdfs/2019_CENTURY_PRINTABLE_MAP.pdf'
+          link: ''
+          // link: './statics/pdfs/2019_CENTURY_PRINTABLE_MAP.pdf'
         },
         {
           title: 'Map My Ride',
