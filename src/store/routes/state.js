@@ -9,7 +9,7 @@ export default {
       pic: '',
       mapLink: '//www.mapmyride.com/routes/view/2264365960',
       restStops: ['East Kuna Mora Road -  4.6 Miles'],
-      btnClass: 'btn color',
+      btnClass: 'btn color bg-purple',
       headline: 'Virtutem Spei - "Hope and Strength"',
       frame: '//snippets.mapmycdn.com/routes/view/embedded/2264365960?width=600&height=400&elevation=true&line_color=E6d90d8e&rgbhex=8e0dd9&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-09-28T15:24:15-05:00',
       frameMobile: '//snippets.mapmycdn.com/routes/view/embedded/2264365960?width=300&height=450&elevation=true&line_color=E6d90d8e&rgbhex=8e0dd9&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-09-28T15:24:15-05:00',
@@ -17,8 +17,11 @@ export default {
       otherMaps: [
         {
           title: 'Print Map',
-          link: ''
-          // link: './statics/pdfs/2019_9_MILE_PRINTABLE_MAP.pdf'
+          link: './statics/pdfs/RFHI_2020_9_MILE_MAP.pdf'
+        },
+        {
+          title: 'Print Cue Sheet',
+          link: './statics/pdfs/RFHI_2020_9_MILE_CUE_SHEET.pdf'
         },
         {
           title: 'Map My Ride',
@@ -62,8 +65,11 @@ export default {
       otherMaps: [
         {
           title: 'Print Map',
-          link: ''
-          // link: './statics/pdfs/2019_19_MILE_PRINTABLE_MAP.pdf'
+          link: './statics/pdfs/RFHI_2020_19_MILE_MAP.pdf'
+        },
+        {
+          title: 'Print Cue Sheet',
+          link: './statics/pdfs/RFHI_2020_19_MILE_CUE_SHEET.pdf'
         },
         {
           title: 'Map My Ride',
@@ -95,11 +101,10 @@ export default {
         '//res.cloudinary.com/treverscloud/image/upload/v1510899777/Ride/31_lst8ag.jpg',
       mapLink: '//www.mapmyride.com/routes/view/1478990992',
       restStops: [
-        'Bowmont - 14.2 miles',
-        'Melba - 20.9 Miles',
-        'W. Dickman 25.3 Miles'
+        'W. Dickman - 18.5 Miles',
+        'Bowmont - 25.5 Miles'
       ],
-      btnClass: 'btn color',
+      btnClass: 'btn color bg-blue',
       headline: 'Carpe Diem - "Seize The Day"',
       frame: '//snippets.mapmycdn.com/routes/view/embedded/1478990992?width=600&height=400&elevation=true&line_color=E6d9430d&rgbhex=0d43d9&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-09-21T10:32:52-05:00&show_marker_every=3',
       frameMobile: '//snippets.mapmycdn.com/routes/view/embedded/1478990992?width=300&height=450&elevation=true&line_color=E6d9430d&rgbhex=0d43d9&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-09-21T10:32:52-05:00&show_marker_every=3',
@@ -107,8 +112,11 @@ export default {
       otherMaps: [
         {
           title: 'Print Map',
-          link: ''
-          // link: './statics/pdfs/2019_35_MILE_PRINTABLE_MAP.pdf'
+          link: './statics/pdfs/RFHI_2020_34_MILE_MAP.pdf'
+        },
+        {
+          title: 'Print Cue Sheet',
+          link: './statics/pdfs/RFHI_2020_34_MILE_CUE_SHEET.pdf'
         },
         {
           title: 'Map My Ride',
@@ -120,7 +128,7 @@ export default {
         },
         {
           title: 'Garmin',
-          link: '//connect.garmin.com/modern/course/23705949'
+          link: '//connect.garmin.com/modern/course/28809846'
         },
         {
           title: 'Ride with GPS',
@@ -142,12 +150,12 @@ export default {
         '//res.cloudinary.com/treverscloud/image/upload/v1510899777/Ride/62.8_obydkx.jpg',
       mapLink: '//www.mapmyride.com/routes/view/981667107',
       restStops: [
-        'Bowmont - 14.2 Miles',
-        'Gun Range- 29.5 Miles',
-        'Lake Shore Dr. - 46.6 Miles',
-        'Bowmont - 58.5 Miles'
+        'West Dickman - 18.5 Miles',
+        'Bowmont- 25.5 Miles',
+        'Lakeshore Dr. - 44 Miles',
+        'Bowmont - 56 Miles'
       ],
-      btnClass: 'btn color',
+      btnClass: 'btn color bg-orange',
       headline: 'Semper Fidelis - "Always Faithful"',
       frame: '//snippets.mapmycdn.com/routes/view/embedded/981667107?width=600&height=400&elevation=true&line_color=E60d5ed9&rgbhex=d95e0d&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-12-16T22:22:58-06:00&show_marker_every=6"',
       frameMobile: '//snippets.mapmycdn.com/routes/view/embedded/981667107?width=300&height=450&elevation=true&line_color=E60d5ed9&rgbhex=d95e0d&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-12-16T22:22:58-06:00&show_marker_every=6"',
@@ -155,8 +163,11 @@ export default {
       otherMaps: [
         {
           title: 'Print Map',
-          // link: './statics/pdfs/2019_METRIC_PRINTABLE_MAP.pdf'
-          link: ''
+          link: './statics/pdfs/RFHI_2020_METRIC_CENTURY_MAP.pdf'
+        },
+        {
+          title: 'Print Cue Sheet',
+          link: './statics/pdfs/RFHI_2020_METRIC_CENTURY_CUE_SHEET.pdf'
         },
         {
           title: 'Map My Ride',
@@ -168,7 +179,7 @@ export default {
         },
         {
           title: 'Garmin',
-          link: '//connect.garmin.com/modern/course/23734369'
+          link: '//connect.garmin.com/modern/course/28810114'
         },
         {
           title: 'Ride with GPS',
@@ -189,14 +200,14 @@ export default {
         '//res.cloudinary.com/treverscloud/image/upload/v1510899777/Ride/100_wi51xj.jpg',
       mapLink: '//www.mapmyride.com/routes/view/1462908562',
       restStops: [
-        'W. Dickman - 20.3 Miles',
-        'Melba - 34 Miles',
-        'Bowmont - 49.6 Miles',
-        'Gun Range - 65 Miles',
-        'Lake Shore Dr. - 82 Miles',
+        'W. Dickman - 18.5 Miles',
+        'Melba - 32 Miles',
+        'Bowmont - 50 Miles',
+        'Nash Road (Gun Range) - 65 Miles',
+        'Lakeshore Dr. - 82 Miles',
         'Bowmont - 94 Miles'
       ],
-      btnClass: 'btn color',
+      btnClass: 'btn color bg-green',
       headline: 'Veni Vidi Vici - "I Came. I Saw. I Conquered."',
       frame: '//snippets.mapmycdn.com/routes/view/embedded/1462908562?width=600&height=400&elevation=true&line_color=E636d90d&rgbhex=0dd936&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-12-16T22:25:01-06:00&show_marker_every=10',
       frameMobile: '//snippets.mapmycdn.com/routes/view/embedded/1462908562?width=600&height=400&elevation=true&line_color=E636d90d&rgbhex=0dd936&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-12-16T22:25:01-06:00&show_marker_every=10',
@@ -204,8 +215,11 @@ export default {
       otherMaps: [
         {
           title: 'Print Map',
-          link: ''
-          // link: './statics/pdfs/2019_CENTURY_PRINTABLE_MAP.pdf'
+          link: './statics/pdfs/RFHI_2020_CENTURY_MAP.pdf'
+        },
+        {
+          title: 'Print Cue Sheet',
+          link: './statics/pdfs/RFHI_2020_CENTURY_CUE _SHEET.pdf'
         },
         {
           title: 'Map My Ride',
@@ -217,7 +231,7 @@ export default {
         },
         {
           title: 'Garmin',
-          link: '//connect.garmin.com/modern/course/24163088'
+          link: '//connect.garmin.com/modern/course/28810455'
         },
         {
           title: 'Ride with GPS',

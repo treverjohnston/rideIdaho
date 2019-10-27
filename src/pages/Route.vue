@@ -222,7 +222,6 @@
     }
 
     .color {
-        background-color: purple;
         color: white;
     }
 
