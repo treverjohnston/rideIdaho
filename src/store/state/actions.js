@@ -13,9 +13,9 @@ var api = axios.create({
 export function sendEmail({ commit, dispatch }, obj) {
     api.post('email', obj)
         .then(res => {
-            Notify.create({ html: 'Message Sent', color: 'green' });
+            Notify.create({ message: 'Message Sent', color: 'green' });
         })
         .catch(err => {
-            Notify.create({ html: 'Message send failed: \n If issue persists, please email rideforhope@gmail.com  \n\n Error:  ' + err, color: 'red' });
+            Notify.create({ message: 'Message send failed: \n If issue persists, please email rideforhope@gmail.com  \n\n Error:  ' + err, color: 'red' });
         })
-}
+} 
