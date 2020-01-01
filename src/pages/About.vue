@@ -93,7 +93,7 @@
                         <p class="text-justify">
                             <em>
                                 <b>Ride For Hope Idaho</b>
-                            </em> has donated over $46,500 in four years:</p>
+                            </em> has donated over $66,500 in five years:</p>
                         <ul>
                             <li>In 2015 over $7,000 was raised.</li>
                             <li>In 2016 over $9,000 was raised.</li>

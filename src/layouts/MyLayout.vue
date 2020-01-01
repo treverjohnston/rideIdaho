@@ -4,7 +4,7 @@
     <q-tabs align="center" class="shadow-2 tabs head desktop-only">
       <q-route-tab stretch flat class="tab" label="Home" name="home" to="/" />
       <q-tab stretch flat v-if="openRegistration" class="tab text-red" color="red" label="Register" name="reg"
-        @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')" />
+        @click="openURL(registrationUrl)" />
       <q-route-tab v-else stretch flat class="tab text-red" color="red" label="Register" name="register"
         to="/register" />
       <q-btn-dropdown stretch flat label="Rider Info" name="rider">
@@ -21,9 +21,8 @@
         </q-list>
         <q-item v-close-popup>
           <q-tabs class="width_100 black-bg">
-            <q-tab v-if="openRegistration"
-              @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')"
-              name="home" class="tab inner-tab width_100 text-red black-bg" color="red" label="Register" />
+            <q-tab v-if="openRegistration" @click="openURL(registrationUrl)" name="home"
+              class="tab inner-tab width_100 text-red black-bg" color="red" label="Register" />
             <q-route-tab v-else name="register" class="tab inner-tab width_100 text-red black-bg" color="red"
               label="Register" to="/register" />
           </q-tabs>
@@ -95,13 +94,11 @@
         <img src="statics/logos/RFHIdahoLogo.png" alt="logo" class="mini">
       </q-btn>
       <q-btn outline color="red"
-        @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventStore.aspx%3FfEID%3D71518%26mSource%3DimAOverview')">
+        @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventStore.aspx%3FfEID%3D73331%26mSource%3DimAOverview')">
         Just
         Donate
       </q-btn>
-      <q-btn v-if="openRegistration" class="mobile-only" outline
-        @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')"
-        color="red">Register
+      <q-btn v-if="openRegistration" class="mobile-only" outline @click="openURL(registrationUrl)" color="red">Register
       </q-btn>
       <q-btn v-else class="mobile-only" outline @click="$router.push('/register')" color="red">Register
       </q-btn>
@@ -115,9 +112,8 @@
         </q-item>
         <hr class="tabhrs">
         <q-item to="/register">
-          <q-item-section v-if="openRegistration"
-            @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')"
-            class="side register text-red" label="Register">Register</q-item-section>
+          <q-item-section v-if="openRegistration" @click="openURL(registrationUrl)" class="side register text-red"
+            label="Register">Register</q-item-section>
           <q-item-section v-else class="side register text-red" label="Register" @click.native="push('/register')">
             Register
           </q-item-section>
@@ -137,9 +133,8 @@
           </q-list>
           <hr class="tabhrs">
           <q-item to="/register">
-            <q-item-section v-if="openRegistration"
-              @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')"
-              class="small-side register" label="Register">Register</q-item-section>
+            <q-item-section v-if="openRegistration" @click="openURL(registrationUrl)" class="small-side register"
+              label="Register">Register</q-item-section>
             <q-item-section v-else class="small-side register" label="Register">Register</q-item-section>
           </q-item>
           <hr class="tabhrs">
@@ -308,6 +303,9 @@
       },
       earlyRegistration() {
         return this.$store.state.state.earlyRegistration;
+      },
+      registrationUrl() {
+        return this.$store.state.state.registrationUrl;
       }
     },
     methods: {

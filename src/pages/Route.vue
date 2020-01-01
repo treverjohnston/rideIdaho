@@ -22,7 +22,7 @@
                         <div class="row wrap justify-center">
                             <div class="col-xs-11 text-center spacers">
                                 <q-btn v-if="openRegistration" no-caps class="btn spacers"
-                                    @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventOverview.aspx%3FfEID%3D71518%26z%3D1546310361813')">
+                                    @click="openURL(registrationUrl)">
                                     Register
                                     Now
                                 </q-btn>
@@ -188,6 +188,9 @@
             },
             openRegistration() {
                 return this.$store.state.state.openRegistration;
+            },
+            registrationUrl() {
+                return this.$store.state.state.registrationUrl;
             }
         },
         methods: {
