@@ -2,25 +2,14 @@
     <q-layout class="">
         <div class="row justify-center">
             <div class="col-xs-12 col-md-10 shadow-24 white-back">
-                <!-- <div class="row wrap justify-center promo">
-                    <div class="col-xs-11 col-md-6 text-center">
-                        <h3 class="text-bold shadow">We Love Our Sponsors!</h3>
-                        <hr color="red" class="hr">
-                        <q-btn class="row wrap btn shadow-24" no-caps @click="$router.push('contact')">Sponsor Ride For
-                            Hope</q-btn>
-                    </div>
-                </div> -->
                 <div class="row wrap justify-center text-center"
                     v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
                     <div class="col-xs-11 col-md-8 spacers">
                         <h2 class="text-bold shadow desktop-only">Veni Vidi Vici Sponsors</h2>
-                        <!-- <h2 class="text-bold shadow desktop-only">($5000+)</h2> -->
                         <h4 class="text-bold shadow mobile-only">Veni Vidi Vici Sponsors</h4>
-                        <!-- <h4 class="text-bold shadow mobile-only">($5000+)</h4> -->
                         <big class="text-italic">"I came. I saw. I conquered."</big>
                         <hr color="red" class="hr">
-                        <!-- <h3>Become a Premier Sponsor</h3> -->
-                        <q-btn class="row wrap btn shadow-24" no-caps @click="$router.push('/contact')">Become a
+                        <q-btn class="row wrap btn shadow-24" no-caps @click="$router.push('/contact')">Become the
                             Premier Ride For
                             Hope Sponsor</q-btn>
                         <div v-for="sponsor in l1" class="mid row wrap justify-center">
@@ -32,28 +21,16 @@
                                 </q-btn>
                             </div>
                         </div>
-                        <!-- <hr color="red" class="hr"> -->
                     </div>
                 </div>
                 <div class="row wrap justify-center text-center"
                     v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
                     <div class="col-xs-11 col-md-8 spacers">
                         <h2 class="text-bold shadow desktop-only">Omnes Spem Sponsors</h2>
-                        <!-- <h2 class="text-bold shadow desktop-only">($2500-$4999)</h2> -->
                         <h4 class="text-bold shadow mobile-only">Omnes Spem Sponsors</h4>
-                        <!-- <h4 class="text-bold shadow mobile-only">($2500-$4999)</h4> -->
                         <big class="text-italic">"Hope Conquers All"</big>
                         <hr color="red" class="hr">
                         <div class="mid row wrap justify-center">
-                            <!-- <div id="bar" class="col-xs-12 col-md-10">
-                                <q-btn flat class="el" data-x="360" @click="openURL('https://www.lylepearson.com/')">
-                                    <img class="responsive silver-big desktop-only" src="~/statics/sponsors/lyle.jpg"
-                                        alt="Lyle Pearson">
-                                    <img class="responsive silver-big-mobile mobile-only"
-                                        src="~/statics/sponsors/lyle.jpg" alt="Lyle Pearson">
-                                </q-btn>
-                            </div> -->
-
                             <div v-for="sponsor in l2" class="col-xs-12 col-md-9 self-center">
                                 <q-btn v-if="sponsor.logo != ''" flat @click="openURL(sponsor.link)">
                                     <img class="responsive silver silver-space desktop-only" :src="sponsor.logo"
@@ -62,17 +39,17 @@
                                         :alt="sponsor.name">
                                 </q-btn>
                             </div>
+                            <q-btn v-if="l2.length === 0" class="row wrap btn shadow-24" no-caps
+                                @click="$router.push('/contact')">Become a Omnes
+                                Spem Sponsor</q-btn>
                         </div>
-                        <!-- <hr color="red" class="hr"> -->
                     </div>
                 </div>
                 <div class="row wrap justify-center text-center"
                     v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
                     <div class="col-xs-11 col-md-8 spacers">
                         <h2 class="text-bold shadow desktop-only">Virtutem Spei Sponsors</h2>
-                        <!-- <h2 class="text-bold shadow desktop-only">($1500-$2499)</h2> -->
                         <h4 class="text-bold shadow mobile-only">Virtutem Spei Sponsors</h4>
-                        <!-- <h4 class="text-bold shadow mobile-only">($1500-$2499)</h4> -->
                         <big class="text-italic">"Hope And Strength"</big>
                         <hr color="red" class="hr">
                         <div class="mid row wrap justify-center">
@@ -85,37 +62,31 @@
                                     </h6>
                                 </q-btn>
                             </div>
+                            <q-btn v-if="l3.length === 0" class="row wrap btn shadow-24" no-caps
+                                @click="$router.push('/contact')">Become a Virtutem
+                                Spei Sponsor</q-btn>
                         </div>
-                        <!-- <hr color="red" class="hr"> -->
                     </div>
                 </div>
 
-                <!-- SUPPORT -->
                 <div class="row wrap justify-center text-center "
                     v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
                     <div class="col-xs-11 col-md-8 spacers">
                         <h2 class="text-bold shadow desktop-only">Carpe Diem Sponsors</h2>
-                        <!-- <h2 class="text-bold shadow desktop-only">($500-$1499)</h2> -->
                         <h4 class="text-bold shadow mobile-only">Carpe Diem Sponsors</h4>
-                        <!-- <h4 class="text-bold shadow mobile-only">($500-$1499)</h4> -->
                         <big class="text-italic">"Seize The Day"</big>
                         <hr color="red" class="hr">
                         <div class="mid row wrap justify-center">
 
-                            <!-- <div class="mid row wrap justify-center"> -->
                             <div v-for="sponsor in l4" class="col-xs-6 col-md-4 self-center">
                                 <q-btn flat>
                                     <img class="responsive carp" :src="sponsor.logo" :alt="sponsor.name">
                                 </q-btn>
                             </div>
-                            <!-- <div v-for="sponsor in l4" class="col-xs-6 col-md-6 self-center last margin">
-                                <q-btn outline color="white" no-caps flat @click="openURL(sponsor.link)">
-                                    <img class="responsive carp" :src="sponsor.logo" :alt="sponsor.name">
-                                   
-                                </q-btn>
-                            </div> -->
+                            <q-btn v-if="l4.length === 0" class="row wrap btn shadow-24" no-caps
+                                @click="$router.push('/contact')">Become a Carpe
+                                Diem Sponsor</q-btn>
                         </div>
-                        <!-- <hr color="red" class="hr"> -->
                     </div>
                 </div>
 
@@ -124,21 +95,17 @@
                     v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
                     <div class="col-xs-11 col-md-8 spacers">
                         <h2 class="text-bold shadow desktop-only">Support</h2>
-                        <!-- <h2 class="text-bold shadow desktop-only">($500-$1499)</h2> -->
                         <h4 class="text-bold shadow mobile-only">Support</h4>
-                        <!-- <h4 class="text-bold shadow mobile-only">($500-$1499)</h4> -->
-                        <!-- <big class="text-italic">"Seize The Day"</big> -->
                         <hr color="red" class="hr">
                         <div class="mid row wrap justify-center">
 
                             <div v-for="sponsor in l5" class="col-xs-6 col-md-6 self-center last margin">
-                                <!-- <q-btn outline color="white" no-caps> -->
                                 <h6 class="text-bold desktop-only">{{sponsor.name}}</h6>
                                 <h6 class="text-bold mobile-only">{{sponsor.name}}</h6>
-                                <!-- </q-btn> -->
                             </div>
+                            <q-btn v-if="l5.length === 0" class="row wrap btn shadow-24" no-caps
+                                @click="$router.push('/contact')">Become a Support Sponsor</q-btn>
                         </div>
-                        <!-- <hr color="red" class="hr"> -->
                     </div>
                 </div>
 

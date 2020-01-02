@@ -17,8 +17,7 @@
                 <h4>4 tickets for $10</h4>
                 <h4>10 tickets for $20</h4>
                 <h4 class="fancy">Additional meal tickets are also available for $10</h4>
-                <q-btn class="btn shadow-24" no-caps
-                    @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventStore.aspx%3FfEID%3D67623%26mSource%3DimAOverview')">
+                <q-btn class="btn shadow-24" no-caps @click="openURL(merchandiseUrl)">
                     Purchase Raffle Tickets</q-btn>
                 <hr color="red" class="hr">
             </div>
@@ -33,8 +32,7 @@
                 <h5>4 tickets for $10</h5>
                 <h5>10 tickets for $20</h5>
                 <h5 class="fancy">Additional meal tickets are also available for $10</h5>
-                <q-btn class="btn shadow-24" no-caps
-                    @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventStore.aspx%3FfEID%3D67623%26mSource%3DimAOverview')">
+                <q-btn class="btn shadow-24" no-caps @click="openURL(merchandiseUrl)">
                     Purchase Raffle Tickets</q-btn>
                 <hr color="red" class="hr">
             </div>
@@ -56,6 +54,9 @@
             },
             openRegistration() {
                 return this.$store.state.state.openRegistration
+            },
+            merchandiseUrl() {
+                return this.$store.state.state.merchandiseUrl;
             }
         },
         methods: {

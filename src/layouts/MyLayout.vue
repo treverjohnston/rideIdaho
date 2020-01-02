@@ -3,10 +3,31 @@
     <!-- DESKTOP TABS START -->
     <q-tabs align="center" class="shadow-2 tabs head desktop-only">
       <q-route-tab stretch flat class="tab" label="Home" name="home" to="/" />
-      <q-tab stretch flat v-if="openRegistration" class="tab text-red" color="red" label="Register" name="reg"
-        @click="openURL(registrationUrl)" />
+
+      <q-btn-dropdown v-if="openRegistration" auto-close stretch flat label="Register" name="merchandise"
+        class="text-red">
+        <q-item class="black-bg">
+          <q-tabs class="width_100">
+            <q-tab @click="openURL(registrationUrl)" name="home" class="tab inner-tab width_100 black-bg" color=""
+              label="Register" />
+          </q-tabs>
+        </q-item>
+        <q-item class="black-bg">
+          <q-tabs class="width_100">
+            <q-tab @click="openURL(participantUrl)" name="home" class="tab inner-tab width_100 black-bg" color=""
+              label="Participants" />
+          </q-tabs>
+        </q-item>
+        <q-item class="black-bg">
+          <q-tabs class="width_100">
+            <q-tab @click="openURL(merchandiseUrl)" name="home" class="tab inner-tab width_100 black-bg" color=""
+              label="Just Donate" />
+          </q-tabs>
+        </q-item>
+      </q-btn-dropdown>
       <q-route-tab v-else stretch flat class="tab text-red" color="red" label="Register" name="register"
         to="/register" />
+
       <q-btn-dropdown stretch flat label="Rider Info" name="rider">
         <q-list>
           <q-item class="black-bg">
@@ -93,8 +114,8 @@
       <q-btn @click="$router.push('/')">
         <img src="statics/logos/RFHIdahoLogo.png" alt="logo" class="mini">
       </q-btn>
-      <q-btn outline color="red"
-        @click="openURL('https://www.imathlete.com/#/legacy?url=%2Fevents%2FEventStore.aspx%3FfEID%3D73331%26mSource%3DimAOverview')">
+      <!-- Below is for the donate link, the link for registration is found in state -->
+      <q-btn outline color="red" @click="openURL(merchandiseUrl)">
         Just
         Donate
       </q-btn>
@@ -306,6 +327,12 @@
       },
       registrationUrl() {
         return this.$store.state.state.registrationUrl;
+      },
+      participantUrl() {
+        return this.$store.state.state.participantUrl;
+      },
+      merchandiseUrl() {
+        return this.$store.state.state.merchandiseUrl;
       }
     },
     methods: {
