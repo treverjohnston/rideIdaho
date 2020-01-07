@@ -123,6 +123,10 @@
       </q-btn>
       <q-btn v-else class="mobile-only" outline @click="$router.push('/register')" color="red">Register
       </q-btn>
+      <q-btn v-if="openRegistration && participantTotal > 0" class="mobile-only" outline
+        @click="openURL(participantUrl)" color="red">
+        {{participantTotal}}
+      </q-btn>
     </q-toolbar>
     <!-- MOBILE TOOLBAR END -->
     <!-- MOBILE DRAWER START -->
@@ -331,6 +335,9 @@
       participantUrl() {
         return this.$store.state.state.participantUrl;
       },
+      participantTotal() {
+        return this.$store.state.state.participantTotal;
+      },
       merchandiseUrl() {
         return this.$store.state.state.merchandiseUrl;
       }
@@ -345,6 +352,7 @@
     directives: {
     },
     mounted() {
+      this.$store.dispatch('state/getParticipantTotal');
     },
 
   };
