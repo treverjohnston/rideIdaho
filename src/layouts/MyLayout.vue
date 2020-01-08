@@ -111,21 +111,24 @@
       <q-btn class="mobile-only" flat @click="leftDrawerOpen = !leftDrawerOpen">
         <q-icon name="menu" />
       </q-btn>
-      <q-btn @click="$router.push('/')">
+      <!-- <q-btn @click="$router.push('/')">
         <img src="statics/logos/RFHIdahoLogo.png" alt="logo" class="mini">
+      </q-btn> -->
+      <q-btn class="q-mr-xs" outline dense color="red" @click="openURL(merchandiseUrl)">
+        Just Donate
       </q-btn>
-      <!-- Below is for the donate link, the link for registration is found in state -->
-      <q-btn outline color="red" @click="openURL(merchandiseUrl)">
-        Just
-        Donate
+      <q-btn v-if="openRegistration" dense class="mobile-only q-mr-xs" outline @click="openURL(registrationUrl)"
+        color="red">
+        Register
       </q-btn>
-      <q-btn v-if="openRegistration" class="mobile-only" outline @click="openURL(registrationUrl)" color="red">Register
-      </q-btn>
-      <q-btn v-else class="mobile-only" outline @click="$router.push('/register')" color="red">Register
+      <q-btn v-else class="mobile-only q-mr-xs" dense outline @click="$router.push('/register')" color="red">Register
       </q-btn>
       <q-btn v-if="openRegistration && participantTotal > 0" class="mobile-only" outline
         @click="openURL(participantUrl)" color="red">
         {{participantTotal}}
+      </q-btn>
+      <q-btn outline dense color="red" @click="openURL(participantUrl)">
+        Participants
       </q-btn>
     </q-toolbar>
     <!-- MOBILE TOOLBAR END -->
@@ -352,7 +355,7 @@
     directives: {
     },
     mounted() {
-      this.$store.dispatch('state/getParticipantTotal');
+      // this.$store.dispatch('state/getParticipantTotal');
     },
 
   };
