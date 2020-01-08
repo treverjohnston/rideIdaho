@@ -49,7 +49,11 @@ export function getParticipantTotal({ commit, dispatch }) {
         }
     }
     var jsonBody = JSON.stringify(body);
-    imathleteAPI.post('data/events/services/EventParticipantsService.asmx/GetEventParticipantsList', jsonBody)
+    imathleteAPI.post('data/events/services/EventParticipantsService.asmx/GetEventParticipantsList', jsonBody, {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
         .then(res => {
             Notify.create({ message: 'Got participants', color: 'green' });
             console.log('RES', res);
