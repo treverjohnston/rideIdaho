@@ -123,10 +123,6 @@
       </q-btn>
       <q-btn v-else class="mobile-only q-mr-xs" dense outline @click="$router.push('/register')" color="red">Register
       </q-btn>
-      <q-btn v-if="openRegistration && participantTotal > 0" class="mobile-only" outline
-        @click="openURL(participantUrl)" color="red">
-        {{participantTotal}}
-      </q-btn>
       <q-btn outline dense color="red" @click="openURL(participantUrl)">
         Participants
       </q-btn>
@@ -316,10 +312,8 @@
     data() {
       return {
         leftDrawerOpen: false,
-        showVid: false,
         showSplash: false,
-        showSwal: false,
-        video: `./statics/video/head.mp4`
+        showSwal: false
       };
     },
     computed: {
@@ -337,9 +331,6 @@
       },
       participantUrl() {
         return this.$store.state.state.participantUrl;
-      },
-      participantTotal() {
-        return this.$store.state.state.participantTotal;
       },
       merchandiseUrl() {
         return this.$store.state.state.merchandiseUrl;
@@ -364,21 +355,6 @@
 <style scoped>
   .width_100 {
     width: 100%
-  }
-
-  .full-vid {
-    width: 100%;
-  }
-
-  #video_overlays {
-    /* float: left;
-    z-index: 1000; */
-    display: block;
-    position: absolute;
-    width: 100%;
-    top: 15vh;
-    z-index: 25;
-    text-align: center;
   }
 
   .noHighlight {
@@ -472,22 +448,6 @@
     opacity: 0;
     transition: .5s ease;
     background-color: rgba(70, 28, 28, 0.699);
-  }
-
-  .vid {
-    width: 100vw;
-    height: 100vh;
-  }
-
-  .vid-mobile {
-    width: 100vw;
-    /* height: 100vh; */
-  }
-
-  .video {
-    background-color: white;
-    color: black;
-    padding: 1rem 0 2rem 0;
   }
 
   .gch {
@@ -708,12 +668,5 @@
   .logo {
     position: absolute;
     transform-style: preserve-3d;
-  }
-
-  .back {
-    /* background-image: url("~assets/cover.jpg"); */
-    /* background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover; */
   }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <!-- <div>
     <div class="row justify-center">
       <div id="video_overlays" class="absolute text-center">
         <img class="self-center text-center vid-logo desktop-only" src="statics/logos/RFHIdahoLogo.png" alt="RFHI Logo"
@@ -7,12 +7,44 @@
         <img class="mini self-center text-center vid-logo mobile-only" src="statics/logos/RFHIdahoLogo.png"
           alt="RFHI Logo"
           v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
+
+        <h5 v-if="openRegistration && participantTotal > 10" class="self-center text-center vid-logo mobile-only"
+          v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '-50px'], duration:
+          1000}, easing: 'linear' }" @click="openURL(participantUrl)">
+          {{participantTotal}}
+        </h5>
       </div>
       <video class="fit" style="width: 100%;" id="player" :src="video" type="video/mp4" playsinline="playsinline"
         muted="muted" autoplay="autoplay" loop="loop">Your browser does not
         support this
         streaming content.
       </video>
+    </div> -->
+  <div>
+    <div class="row justify-center">
+      <q-media-player background-color="black" autoplay :source="video" hide-volume-slider mobile-mode no-controls loop
+        muted dense playsinline dark>
+        <template v-slot:overlay>
+          <div class="text-center">
+            <img class="self-center text-center vid-logo desktop-overlay desktop-only"
+              src="statics/logos/RFHIdahoLogo.png" alt="RFHI Logo"
+              v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
+              <div class="video-banner desktop-only">
+                  <big>2020 Participant Total: {{participantTotal}}</big>
+                  <br>
+                  <big>Help us reach our goal of 400 riders, register early and save!</big>
+                </div>
+            <div class="mobile-only" 
+            v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
+              <img class="mini self-center text-center vid-logo" src="statics/logos/RFHIdahoLogo.png"
+                alt="RFHI Logo">
+                <div class="video-banner">
+                  2020 Participant Total: {{participantTotal}} 
+                </div>
+              </div>
+          </div>
+        </template>
+      </q-media-player>
     </div>
 
     <div class="row justify-center">
@@ -152,6 +184,9 @@
       },
       earlyRegistration() {
         return this.$store.state.state.earlyRegistration;
+      },
+      participantTotal() {
+        return this.$store.state.state.participantTotal;
       }
     },
     methods: {
@@ -171,15 +206,14 @@
     width: 100%;
   }
 
-  #video_overlays {
-    /* float: left;
-    z-index: 1000; */
-    display: block;
-    position: absolute;
-    width: 100%;
-    top: 15vh;
-    z-index: 25;
-    text-align: center;
+  .video-banner{
+    background-color: rgba(0,0,0,.6);
+    width:100vw;
+    padding:1px;
+  }
+
+  .desktop-overlay {
+    margin-top: 15vh;
   }
 
   .noHighlight {
@@ -518,12 +552,5 @@
   .logo {
     position: absolute;
     transform-style: preserve-3d;
-  }
-
-  .back {
-    /* background-image: url("~assets/cover.jpg"); */
-    /* background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover; */
   }
 </style>

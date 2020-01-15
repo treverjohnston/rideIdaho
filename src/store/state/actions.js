@@ -13,8 +13,7 @@ var api = axios.create({
 var imathleteBaseUrl = '//legacy.imathlete.com/'
 var imathleteAPI = axios.create({
     baseURL: imathleteBaseUrl,
-    timeout: 4000,
-    headers: { 'Content-Type': 'application/json' }
+    timeout: 4000
 })
 
 export function sendEmail({ commit, dispatch }, obj) {
@@ -28,31 +27,20 @@ export function sendEmail({ commit, dispatch }, obj) {
 }
 
 export function getParticipantTotal({ commit, dispatch }) {
-    var settings = {
-        "url": "https://legacy.imathlete.com/data/events/services/EventParticipantsService.asmx/GetEventParticipantsList",
-        "method": "POST",
-        "timeout": 0,
-        "headers": {
-            "Content-Type": "application/json"
-        },
-        "data": JSON.stringify({ "parameters": { "EventID": "73331", "UserID": "", "Sort": "na", "PrevEventID": "", "PageIndex": 1, "PageSize": 500, "NameFilter": "", "AgeFrom": 0, "AgeTo": 200, "Gender": "", "FinishTimeFrom": 0, "FinishTimeTo": 70000, "CategoryID": "0", "WaveID": "", "SportID": 0, "TeamNameFilter": "" } }),
-    };
 
-    $.ajax(settings).done(function (response) {
-        console.log(response);
-    });
+    imathleteAPI.get('data/events/EventGetVitalStats.aspx?fEID=73331&z=1579029328799')
+        .then(res => {
+            var totalStates = res.data.split('<State>').length - 1;
+            var splitRes = res.data.split('<StateParticipants>');
+            var totalParticipants = 0;
 
-    // var body = JSON.stringify({ "parameters": { "EventID": "73331", "UserID": "", "Sort": "na", "PrevEventID": "", "PageIndex": 1, "PageSize": 500, "NameFilter": "", "AgeFrom": 0, "AgeTo": 200, "Gender": "", "FinishTimeFrom": 0, "FinishTimeTo": 70000, "CategoryID": "0", "WaveID": "", "SportID": 0, "TeamNameFilter": "" } })
+            for (let i = 1; i < splitRes.length; i++) {
+                const element = splitRes[i];
+                var next = element.split('</StateParticipants>')
+                totalParticipants += parseInt(next[0]);
+            }
 
-    // imathleteAPI.post('data/events/services/EventParticipantsService.asmx/GetEventParticipantsList', body)
-    //     .then(res => {
-    //         Notify.create({ message: 'Got participants', color: 'green' });
-    //         console.log('RES', res);
-    //         var participantTotal = res.data.resources;
-    //         commit('setParticipantTotal', participantTotal);
-    //     })
-    //     .catch(err => {
-    //         //Need to get rid of this before go live
-    //         Notify.create({ message: 'Get participants failed: \n\n Error:  ' + err, color: 'red' });
-    //     })
+            commit('setParticipantTotal', totalParticipants);
+            commit('setStateTotal', totalStates);
+        })
 }
