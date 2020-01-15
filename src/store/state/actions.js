@@ -28,10 +28,11 @@ export function sendEmail({ commit, dispatch }, obj) {
 
 export function getParticipantTotal({ commit, dispatch }) {
 
-    imathleteAPI.get('data/events/EventGetVitalStats.aspx?fEID=73331&z=1579029328799')
+    api.get('api/participants/count')
         .then(res => {
-            var totalStates = res.data.split('<State>').length - 1;
-            var splitRes = res.data.split('<StateParticipants>');
+            var body = res.data.data.body;
+            var totalStates = body.split('<State>').length - 1;
+            var splitRes = body.split('<StateParticipants>');
             var totalParticipants = 0;
 
             for (let i = 1; i < splitRes.length; i++) {
