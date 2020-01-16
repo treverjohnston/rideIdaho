@@ -114,7 +114,11 @@ const routes = [
       {
         path: 'charities',
         component: () => import('pages/Charities.vue')
-      }
+      },
+      // {
+      //   path: 'participants',
+      //   component: () => import('pages/Participants.vue')
+      // }
     ]
 
   }

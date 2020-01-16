@@ -45,3 +45,13 @@ export function getParticipantTotal({ commit, dispatch }) {
             commit('setStateTotal', totalStates);
         })
 }
+export function getParticipantList({ commit, dispatch }) {
+
+    api.get('api/participants/list')
+        .then(res => {
+            var body = res.data.data.body;
+            var parsedBody = JSON.parse(body);
+            var participantArray = parsedBody['d'];
+            commit('setParticipantList', participantArray);
+        })
+}
