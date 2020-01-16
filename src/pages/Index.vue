@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="row justify-center">
-      <q-media-player class="full-vid" background-color="black" autoplay :source="video" hide-volume-slider mobile-mode no-controls loop
-        muted dense playsinline dark>
+      <q-media-player class="full-vid" background-color="black" autoplay :source="video" hide-volume-slider mobile-mode
+        no-controls loop muted dense playsinline dark>
         <template v-slot:overlay>
           <div class="text-center">
             <img class="self-center text-center vid-logo desktop-overlay desktop-only"
               src="statics/logos/RFHIdahoLogo.png" alt="RFHI Logo"
               v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
-            <div class="video-banner desktop-only">
+            <div v-if="participantTotal > 10" class="video-banner desktop-only">
               <big>2020 Participant Total: {{participantTotal}}</big>
               <br>
               <big>Help us reach our goal of 400 riders, register early and save!</big>
