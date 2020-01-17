@@ -4,15 +4,12 @@
       <q-media-player class="full-vid" background-color="black" autoplay :source="video" hide-volume-slider mobile-mode
         no-controls loop muted dense playsinline dark>
         <template v-slot:overlay>
-          <div class="text-center">
+          <div class="text-center"
+           v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
             <img class="self-center text-center vid-logo desktop-overlay desktop-only"
-              src="statics/logos/RFHIdahoLogo.png" alt="RFHI Logo"
-              v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
+              src="statics/logos/RFHIdahoLogo.png" alt="RFHI Logo">
+              <img class="mini self-center text-center vid-logo mobile-only" src="statics/logos/RFHIdahoLogo.png" alt="RFHI Logo">
           </div>
-          <div class="mobile-only"
-              v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
-              <img class="mini self-center text-center vid-logo" src="statics/logos/RFHIdahoLogo.png" alt="RFHI Logo">
-            </div>
         </template>
       </q-media-player>
     </div>
