@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="row justify-center">
+    <div class="row justify-center media-container">
       <q-media-player class="full-vid" background-color="black" autoplay :source="video" hide-volume-slider mobile-mode
         no-controls loop muted dense playsinline dark>
         <template v-slot:overlay>
@@ -13,7 +13,7 @@
       </q-media-player>
     </div>
     <div class="row justify-center spacer text-center">
-      <div class="col-xs-11 col-sm-3 info-box"
+      <div class="col-xs-11 col-sm-3 "
       v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['400px', '0px'], duration: 1000},  easing: 'linear' }">
         <div class="text-h5 text-weight-bold">
           Location
@@ -21,8 +21,9 @@
         <div class="text-h6 text-weight-medium">
           Kuna, Idaho
         </div>
+        <hr class="hr">
       </div>
-      <div class="col-xs-11 col-sm-3 info-box"
+      <div class="col-xs-11 col-sm-3 "
       v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
         <div class="text-h5 text-weight-bold">
           2020 Date
@@ -30,8 +31,9 @@
         <div class="text-h6 text-weight-medium">
           Saturday, June 20
         </div>
+                <hr class="hr">
       </div>
-      <div class="col-xs-11 col-sm-3 info-box"
+      <div class="col-xs-11 col-sm-3 "
       v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['200px', '0px'], duration: 1000},  easing: 'linear' }">
         <div class="text-h5 text-weight-bold">
           Routes
@@ -39,8 +41,9 @@
         <div class="text-h6 text-weight-medium">
           5
         </div>
+                <hr class="hr">
       </div>
-      <div class="col-xs-11 col-sm-3 info-box" v-if="participantTotal >= 0"
+      <div class="col-xs-11 col-sm-3 " v-if="participantTotal >= 0"
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['100px', '0px'], duration: 1000},  easing: 'linear' }">
         <div class="text-h5 text-weight-bold">
           Current Riders
@@ -48,6 +51,7 @@
         <div class="text-h6 text-weight-medium" @click="openURL(participantUrl)">
           {{participantTotal}}
         </div>
+                <hr class="hr">
       </div>
     </div>
 
@@ -206,19 +210,15 @@
     color: rgb(190, 30, 30);
   }
 
-  .info-box {
-    border-bottom: 1px solid black;
-  }
-
   .full-vid {
     width: 100%;
   }
 
-  .video-banner {
-    background-color: rgba(0, 0, 0, .6);
-    width: 100vw;
-    padding: 1px;
-  }
+.media-container{
+ width: 100%;
+  max-height: 80vh;
+  overflow: hidden;
+}
 
   .desktop-overlay {
     margin-top: 15vh;
