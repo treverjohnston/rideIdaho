@@ -9,6 +9,10 @@
               src="statics/logos/RFHIdahoLogo.png" alt="RFHI Logo"
               v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
           </div>
+          <div class="mobile-only"
+              v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
+              <img class="mini self-center text-center vid-logo" src="statics/logos/RFHIdahoLogo.png" alt="RFHI Logo">
+            </div>
         </template>
       </q-media-player>
     </div>
