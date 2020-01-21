@@ -13,7 +13,7 @@
         </template>
       </q-media-player>
     </div>
-    <div class="row justify-center spacer text-center">
+    <div class="row justify-center spacer text-center dark-background">
       <div class="col-xs-11 col-sm-3 "
       v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['400px', '0px'], duration: 1000},  easing: 'linear' }">
         <div class="text-h5 text-weight-bold">
@@ -44,7 +44,7 @@
         </div>
                 <hr class="hr">
       </div>
-      <div class="col-xs-11 col-sm-3 " v-if="participantTotal >= 0"
+      <div class="col-xs-11 col-sm-3 " v-if="participantTotal >= 10"
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['100px', '0px'], duration: 1000},  easing: 'linear' }">
         <div class="text-h5 text-weight-bold">
           Current Riders
@@ -56,7 +56,7 @@
       </div>
     </div>
 
-    <div class="row justify-center">
+    <div class="row justify-center dark-background">
       <div class="col-xs-12">
         <div class="text-center">
           <div class="promo text-center desktop-only">
@@ -83,10 +83,7 @@
         </div>
       </div>
     </div>
-    <div class="spacer row wrap">
-      <div class="col-xs-10 mobile-only">
-        <hr>
-      </div>
+    <div class="spacer row wrap light-background">
       <h6 class="text-italic text-center light-paragraph col-xs-10 col-md-3 self-center text">
         <b>Ride For Hope Idaho</b> is a charity bicycle event with the firm belief that quality healthcare should be
         accessible
@@ -106,7 +103,7 @@
         cost of the event.
       </h6>
     </div>
-    <div class="row justify-around head">
+    <div class="row justify-around dark-background">
       <div class="col-xs-12 text-center">
         <q-card-section>
           <h2>Routes</h2>
@@ -140,7 +137,7 @@
         </q-card>
       </div>
     </div>
-    <div class="row wrap justify-center gen">
+    <div class="row wrap justify-center gen light-background">
       <div class="text-center col-xs-12 col-md-4 self-center">
         <q-btn @click="openURL('https://genesiscommunityhealth.com/about-us/')" flat>
           <img class="gch responsive" src="statics/logos/gch.png" alt="genesis community health logo">
@@ -242,9 +239,12 @@
 
 
   .gen {
-    background-color: rgba(255, 255, 255, 0.892);
-    color: black;
     padding: 1rem 0 1rem 0;
+  }
+
+  .light-background{    
+    background-color: rgba(255, 255, 255, 0.95);
+    color: black;
   }
 
   .vid {
@@ -320,8 +320,6 @@
 
   .spacer {
     padding: 0.5rem 0 0.5rem 0;
-    background-color: rgba(255, 255, 255, 0.95);
-    color: black;
     display: flex;
     justify-content: center;
   }
@@ -345,18 +343,13 @@
 
   .promo {
     padding: 6rem 2rem 6rem 2rem;
-    background-color: rgba(0, 0, 0, 0.699);
-    color: white;
     border-radius: 5px;
-
-    background-color: rgba(255, 255, 255, 0.95);
-    color: black;
   }
 
 
-  .head {
+  .dark-background {
     background-color: rgba(17, 17, 17, 0.88);
-    /* color: rgba(17, 17, 17, 0.705); */
+    color: white;
   }
 
   .tab {

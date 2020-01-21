@@ -68,11 +68,6 @@
             <q-route-tab class="tab inner-tab" label="How Climbs Are Categorized" name="rider" to="/climbs" />
           </q-tabs>
         </q-item>
-        <q-item v-close-popup class="black-bg">
-          <q-tabs class="width_100">
-            <q-route-tab class="tab inner-tab" label="Team Ride For Hope Idaho Information" name="rider" to="/team" />
-          </q-tabs>
-        </q-item>
       </q-btn-dropdown>
       <q-btn-dropdown auto-close stretch flat label="Merchandise" name="merchandise" class="">
         <q-item class="black-bg">
@@ -173,10 +168,6 @@
           <hr class="tabhr">
           <q-item class="small-side" @click.native="push('/climbs')">
             How Climbs are Categorized </q-item>
-          <hr class="tabhr">
-          <q-item class="small-side" @click.native="push('/team')">
-            Team Ride For Hope Idaho Information
-          </q-item>
         </q-expansion-item>
         <hr class="tabhr">
         <q-expansion-item class="side-collapse text-black" label="Merchandise">

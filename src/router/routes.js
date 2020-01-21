@@ -107,10 +107,10 @@ const routes = [
         path: 'packet',
         component: () => import('pages/Packet.vue')
       },
-      {
-        path: 'team',
-        component: () => import('pages/Team.vue')
-      },
+      // {
+      //   path: 'team',
+      //   component: () => import('pages/Team.vue')
+      // },
       {
         path: 'charities',
         component: () => import('pages/Charities.vue')
