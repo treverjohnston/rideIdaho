@@ -60,7 +60,7 @@ module.exports = function (ctx) {
         'QCarousel',
         'QCarouselControl',
         'QCarouselSlide',
-        'QInput'
+        'QInput',
       ],
 
       directives: [

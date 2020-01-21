@@ -44,7 +44,7 @@
         </div>
                 <hr class="hr">
       </div>
-      <div class="col-xs-11 col-sm-3 " v-if="participantTotal >= 10"
+      <div class="col-xs-11 col-sm-3" v-if="participantTotal >= 0"
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['100px', '0px'], duration: 1000},  easing: 'linear' }">
         <div class="text-h5 text-weight-bold">
           Current Riders
@@ -52,7 +52,7 @@
         <div class="text-h6 text-weight-medium" @click="openURL(participantUrl)">
           {{participantTotal}}
         </div>
-                <hr class="hr">
+        <hr class="hr">
       </div>
     </div>
 
@@ -204,6 +204,7 @@
 </script>
 
 <style scoped>
+
   .soft-red {
     color: rgb(190, 30, 30);
   }
@@ -348,7 +349,7 @@
 
 
   .dark-background {
-    background-color: rgba(17, 17, 17, 0.88);
+    background-color: rgba(17, 17, 17, 0.8);
     color: white;
   }
 
