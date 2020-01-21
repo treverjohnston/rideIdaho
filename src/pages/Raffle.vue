@@ -10,7 +10,7 @@
         <div v-if="openRegistration" class="row wrap justify-center desktop-only">
             <div class="col-xs-11 col-md-10 white-back shadow-24 text-center">
                 <hr color="red" class="hr">
-                <h3 class="headline text-bold">2209 RAFFLE ITEMS ANNOUNCED AT EVENT</h3>
+                <h3 class="headline text-bold">2020 RAFFLE ITEMS ANNOUNCED AT EVENT</h3>
                 <h4 class="fancy">Raffle tickets are available for purchase: </h4>
                 <h4>1 ticket for $3</h4>
                 <h4>2 tickets for $5</h4>
@@ -77,12 +77,8 @@
         margin: 1rem 0 1rem 0;
     }
 
-    .fancy {
-        font-family: 'Niconne', cursive;
-    }
-
     .headline {
-        text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2);
+        /* text-shadow: 6px 6px 0px rgba(0, 0, 0, 0.2); */
     }
 
     .hr {

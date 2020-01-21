@@ -51,7 +51,7 @@
     }
 
     .font {
-        font-family: 'Lobster', cursive;
+        /* font-family: 'Lobster', cursive; */
         color: black;
     }
 

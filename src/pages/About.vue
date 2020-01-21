@@ -261,7 +261,7 @@
         background-color: transparent;
         border: none;
         text-align: center;
-        font-family: "Bellefair", serif;
+        /* font-family: "Bellefair", serif; */
 
     }
 

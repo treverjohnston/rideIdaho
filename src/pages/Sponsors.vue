@@ -4,14 +4,13 @@
             <div class="col-xs-12 col-md-10 shadow-24 white-back">
                 <div class="row wrap justify-center text-center"
                     v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
-                    <div class="col-xs-11 col-md-8 spacers">
+                    <div class="col-xs-11 col-md-8 spacers text-center">
                         <h2 class="text-bold shadow desktop-only">Veni Vidi Vici Sponsors</h2>
                         <h4 class="text-bold shadow mobile-only">Veni Vidi Vici Sponsors</h4>
                         <big class="text-italic">"I came. I saw. I conquered."</big>
                         <hr color="red" class="hr">
-                        <q-btn class="row wrap btn shadow-24" no-caps @click="$router.push('/contact')">Become the
-                            Premier Ride For
-                            Hope Sponsor</q-btn>
+                                                <div class="mid row wrap justify-center">
+
                         <div v-for="sponsor in l1" class="mid row wrap justify-center">
                             <div id="bar" class="col-xs-12 col-md-12">
                                 <q-btn flat class="el" data-x="360" @click="openURL(sponsor.link)">
@@ -21,6 +20,10 @@
                                 </q-btn>
                             </div>
                         </div>
+                         <q-btn v-if="l1.length === 0" class="row wrap btn shadow-24 text-center" no-caps @click="$router.push('/contact')">Become the
+                            Premier Ride For
+                            Hope Sponsor</q-btn>
+                         </div>
                     </div>
                 </div>
                 <div class="row wrap justify-center text-center"
@@ -156,7 +159,7 @@
 
     .silver-text {
         font-size: 2.5rem;
-        font-family: "Niconne", cursive;
+        /* font-family: "Niconne", cursive; */
     }
 
     .back {
