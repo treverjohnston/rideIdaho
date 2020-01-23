@@ -5,17 +5,22 @@
         no-controls loop muted dense playsinline dark>
         <template v-slot:overlay>
           <div class="text-center"
-           v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
+            v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '0px'], duration: 1000},  easing: 'linear' }">
             <img class="self-center text-center vid-logo desktop-overlay desktop-only"
               src="statics/logos/RFHIdahoLogo.png" alt="RFHI Logo">
-              <img class="mini self-center text-center vid-logo mobile-only" src="statics/logos/RFHIdahoLogo.png" alt="RFHI Logo">
+            <img class="mini self-center text-center vid-logo mobile-only" src="statics/logos/RFHIdahoLogo.png"
+              alt="RFHI Logo">
           </div>
         </template>
       </q-media-player>
     </div>
     <div class="row justify-center spacer text-center dark-background">
+      <div class="col-xs-11 mobile-only">
+        <span class="text-weight-bold text-h4">Ride For Hope Idaho</span>
+        <hr class="hr">
+      </div>
       <div class="col-xs-11 col-sm-3 "
-      v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['400px', '0px'], duration: 1000},  easing: 'linear' }">
+        v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['400px', '0px'], duration: 1000},  easing: 'linear' }">
         <div class="text-h5 text-weight-bold">
           Location
         </div>
@@ -25,24 +30,24 @@
         <hr class="hr">
       </div>
       <div class="col-xs-11 col-sm-3 "
-      v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
+        v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
         <div class="text-h5 text-weight-bold">
           2020 Date
         </div>
         <div class="text-h6 text-weight-medium">
           Saturday, June 20
         </div>
-                <hr class="hr">
+        <hr class="hr">
       </div>
       <div class="col-xs-11 col-sm-3 "
-      v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['200px', '0px'], duration: 1000},  easing: 'linear' }">
+        v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['200px', '0px'], duration: 1000},  easing: 'linear' }">
         <div class="text-h5 text-weight-bold">
           Routes
         </div>
         <div class="text-h6 text-weight-medium">
           5
         </div>
-                <hr class="hr">
+        <hr class="hr">
       </div>
       <div class="col-xs-11 col-sm-3" v-if="participantTotal >= 0"
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['100px', '0px'], duration: 1000},  easing: 'linear' }">
@@ -60,7 +65,7 @@
       <div class="col-xs-12">
         <div class="text-center">
           <div class="promo text-center desktop-only">
-            <h1 class="text-bold hidden">Ride For Hope Idaho</h1>
+            <h1 class="text-weight-bold">Ride For Hope Idaho</h1>
             <div class="text-weight-bold text-h4 soft-red q-mb-md">Supporting Healthcare for the Medically Underserved
             </div>
             <div class="q-title text-h5">Online registration ends 6/18/2020.</div>
@@ -73,8 +78,8 @@
         <div class="promo text-center mobile-only">
           <div
             v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
-               <div class="text-weight-bold text-h5 soft-red q-mb-lg">Supporting Healthcare for the Medically Underserved
-</div>
+            <div class="text-weight-bold text-h5 soft-red q-mb-lg">Supporting Healthcare for the Medically Underserved
+            </div>
             <div class="text-h6 q-title">Online registration ends 6/18/2020.</div>
             <div class="text-h6 q-title">Day of ride registration available.</div>
             <div class="text-h6 q-title">Discount offered for teams of 5 or more and for families. Contact for more
@@ -204,7 +209,6 @@
 </script>
 
 <style scoped>
-
   .soft-red {
     color: rgb(190, 30, 30);
   }
@@ -213,11 +217,11 @@
     width: 100%;
   }
 
-.media-container{
- width: 100%;
-  max-height: 80vh;
-  overflow: hidden;
-}
+  .media-container {
+    width: 100%;
+    max-height: 80vh;
+    overflow: hidden;
+  }
 
   .desktop-overlay {
     margin-top: 15vh;
@@ -243,7 +247,7 @@
     padding: 1rem 0 1rem 0;
   }
 
-  .light-background{    
+  .light-background {
     background-color: rgba(255, 255, 255, 0.95);
     color: black;
   }
@@ -343,7 +347,7 @@
   }
 
   .promo {
-    padding: 6rem 2rem 6rem 2rem;
+    padding: 0rem 2rem 6rem 2rem;
     border-radius: 5px;
   }
 
