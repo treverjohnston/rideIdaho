@@ -58,7 +58,6 @@ module.exports = function (ctx) {
         'QSeparator',
         'QImg',
         'QCarousel',
-        'QCarouselControl',
         'QCarouselSlide',
         'QInput',
       ],

@@ -213,12 +213,12 @@
     <!-- Footer -->
     <div class="footer text-center text-bold">
       <div class="row justify-center">
-        <div class="col-xs-12">
+        <div class="col-xs-11">
           <h3 class="text-center desktop-only white">
-            Thank you for supporting Ride for Hope!
+            Thank you for supporting healthcare for the medically underserved!
           </h3>
           <h6 class="text-center mobile-only white">
-            Thank you for supporting Ride for Hope!
+            Thank you for supporting healthcare for the medically underserved!
           </h6>
         </div>
         <div class="col-xs-12">
@@ -336,10 +336,6 @@
     },
     directives: {
     },
-    mounted() {
-      this.$store.dispatch('state/getParticipantTotal');
-    },
-
   };
 </script>
 

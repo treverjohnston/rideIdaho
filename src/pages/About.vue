@@ -5,7 +5,7 @@
                 <div class="row wrap justify-center">
                     <div class="col-xs-9 text-center desktop-only spacers">
                         <div class="row wrap justify-center" id="number">
-                            <input readonly class="text-output large-text text-bold col-xs-4" value="$0">
+                            <input readonly class="text-output large-text text-bold " value="$0">
                             <h4 class="text-bold col-xs-9 text-center text-italic">Donated by Ride For Hope Idaho
                                 With
                                 <u>YOUR</u> Help</h4>

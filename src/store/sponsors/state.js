@@ -22,11 +22,11 @@ export default {
     //   logo: './statics/sponsors/bigk.jpg',
     //   link: 'https://bigkbbqidaho.com'
     // },
-    // {
-    //   name: 'Meridian Cycles',
-    //   logo: './statics/sponsors/meridian.png',
-    //   link: 'http://www.meridian-cycles.com/'
-    // }
+    {
+      name: 'Meridian Cycles',
+      logo: './statics/sponsors/meridian.png',
+      link: 'http://www.meridian-cycles.com/'
+    }
   ],
   lvl3: [
     // {

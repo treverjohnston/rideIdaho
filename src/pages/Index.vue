@@ -49,7 +49,7 @@
         </div>
         <hr class="hr">
       </div>
-      <div class="col-xs-11 col-sm-3" v-if="participantTotal >= 0"
+      <div class="col-xs-11 col-sm-3" v-if="participantTotal >= 10"
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['100px', '0px'], duration: 1000},  easing: 'linear' }">
         <div class="text-h5 text-weight-bold">
           Current Riders
@@ -142,7 +142,7 @@
         </q-card>
       </div>
     </div>
-    <div class="row wrap justify-center gen light-background">
+    <div class="row wrap justify-center gen light-background q-mb-md">
       <div class="text-center col-xs-12 col-md-4 self-center">
         <q-btn @click="openURL('https://genesiscommunityhealth.com/about-us/')" flat>
           <img class="gch responsive" src="statics/logos/gch.png" alt="genesis community health logo">
@@ -162,6 +162,51 @@
         <q-btn class="cbtnm" @click="$router.push('/charities')">Learn More</q-btn>
       </div>
     </div>
+    <div class="q-gutter-md row wrap justify-center carousel-container bg-white">
+      <!-- MOBILE -->
+      <q-carousel v-model="slide" transition-prev="scale" transition-next="scale" swipeable animated padding infinite
+        autoplay control-color="black" class="bg-white col-xs-8 mobile-only">
+        <q-carousel-slide v-for="sponsor in l2" :name="sponsor.name" class="no-wrap flex-center">
+          <div class="q-mt-md text-center">
+            <q-btn flat class="absolute-center" to="sponsors">
+              <img class="slide-img-mobile absolute-center" :src="sponsor.logo" :alt="sponsor.name" />
+            </q-btn>
+          </div>
+        </q-carousel-slide>
+      </q-carousel>
+      <!-- DESKTOP -->
+      <q-carousel v-model="slide" transition-prev="scale" transition-next="scale" swipeable animated padding arrows
+        infinite autoplay class="bg-white col-xs-10 col-sm-4 col-md-3 desktop-only">
+        <q-carousel-slide v-for="sponsor in l2" :name="sponsor.name" class=" no-wrap flex-center">
+          <div class="q-mt-md text-center">
+            <q-btn flat class="absolute-center" to="sponsors">
+              <img class="slide-img absolute-center" :src="sponsor.logo" :alt="sponsor.name" />
+            </q-btn>
+          </div>
+        </q-carousel-slide>
+      </q-carousel>
+      <q-carousel v-model="slide2" transition-prev="scale" transition-next="scale" swipeable animated padding arrows
+        infinite autoplay class="bg-white col-xs-10 col-sm-4 col-md-3 desktop-only">
+        <q-carousel-slide v-for="sponsor in l2" :name="sponsor.name" class=" no-wrap flex-center">
+          <div class="q-mt-md text-center">
+            <q-btn flat class="absolute-center" to="sponsors">
+              <img class="slide-img absolute-center" :src="sponsor.logo" :alt="sponsor.name" />
+            </q-btn>
+          </div>
+        </q-carousel-slide>
+      </q-carousel>
+      <q-carousel v-model="slide3" transition-prev="scale" transition-next="scale" swipeable animated padding arrows
+        infinite autoplay class="bg-white col-xs-10 col-sm-4 col-md-3 desktop-only">
+        <q-carousel-slide v-for="sponsor in l2" :name="sponsor.name" class=" no-wrap flex-center">
+          <div class="q-mt-md text-center">
+            <q-btn flat class="absolute-center" to="sponsors">
+              <img class="slide-img absolute-center" :src="sponsor.logo" :alt="sponsor.name" />
+            </q-btn>
+          </div>
+        </q-carousel-slide>
+      </q-carousel>
+
+    </div>
   </div>
 
 </template>
@@ -176,7 +221,10 @@
         showVid: false,
         showSplash: false,
         showSwal: false,
-        video: `./statics/video/head.mp4`
+        video: `./statics/video/head.mp4`,
+        slide: "Ebenezer Websites LLC",
+        slide2: "Lyle Pearson",
+        slide3: "Imago Caeli LLC"
       };
     },
     computed: {
@@ -195,6 +243,9 @@
       participantUrl() {
         return this.$store.state.state.participantUrl;
       },
+      l2() {
+        return this.$store.state.sponsors.lvl2;
+      },
     },
     methods: {
       openURL,
@@ -204,11 +255,31 @@
           el.classList.add('loaded')
         });
       }
-    }
+    },
+    mounted() {
+      this.$store.dispatch('state/getParticipantTotal');
+    },
+
   };
 </script>
 
 <style scoped>
+  .carousel-container {
+    height: 30vh;
+  }
+
+  .slide-img {
+    max-width: 15vw;
+  }
+
+  .slide-img-mobile {
+    width: 60vw;
+  }
+
+  .slide-container {
+    position: relative;
+  }
+
   .soft-red {
     color: rgb(190, 30, 30);
   }
