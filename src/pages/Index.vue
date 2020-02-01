@@ -165,7 +165,17 @@
     <div class="q-gutter-md row wrap justify-center carousel-container bg-white">
       <!-- MOBILE -->
       <q-carousel v-model="slide" transition-prev="scale" transition-next="scale" swipeable animated padding infinite
-        autoplay control-color="black" class="bg-white col-xs-8 mobile-only">
+        autoplay control-color="black" class="bg-white col-xs-5 mobile-only">
+        <q-carousel-slide v-for="sponsor in l2" :name="sponsor.name" class="no-wrap flex-center">
+          <div class="q-mt-md text-center">
+            <q-btn flat class="absolute-center" to="sponsors">
+              <img class="slide-img-mobile absolute-center" :src="sponsor.logo" :alt="sponsor.name" />
+            </q-btn>
+          </div>
+        </q-carousel-slide>
+      </q-carousel>
+      <q-carousel v-model="slide2" transition-prev="scale" transition-next="scale" swipeable animated padding infinite
+        autoplay control-color="black" class="bg-white col-xs-5 mobile-only">
         <q-carousel-slide v-for="sponsor in l2" :name="sponsor.name" class="no-wrap flex-center">
           <div class="q-mt-md text-center">
             <q-btn flat class="absolute-center" to="sponsors">
@@ -273,7 +283,7 @@
   }
 
   .slide-img-mobile {
-    width: 60vw;
+    width: 40vw;
   }
 
   .slide-container {
