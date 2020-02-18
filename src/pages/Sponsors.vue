@@ -9,21 +9,23 @@
                         <h4 class="text-bold shadow mobile-only">Veni Vidi Vici Sponsors</h4>
                         <big class="text-italic">"I came. I saw. I conquered."</big>
                         <hr color="red" class="hr">
-                                                <div class="mid row wrap justify-center">
+                        <div class="mid row wrap justify-center">
 
-                        <div v-for="sponsor in l1" class="mid row wrap justify-center">
-                            <div id="bar" class="col-xs-12 col-md-12">
-                                <q-btn flat class="el" data-x="360" @click="openURL(sponsor.link)">
-                                    <img class="responsive gold desktop-only" :src="sponsor.logo" alt="sponsor.name">
-                                    <img class="responsive gold-mobile mobile-only" :src="sponsor.logo"
-                                        alt="sponsor.name">
-                                </q-btn>
+                            <div v-for="sponsor in l1" class="mid row wrap justify-center">
+                                <div id="bar" class="col-xs-12 col-md-12">
+                                    <q-btn flat class="el" data-x="360" @click="openURL(sponsor.link)">
+                                        <img class="responsive gold desktop-only" :src="sponsor.logo"
+                                            alt="sponsor.name">
+                                        <img class="responsive gold-mobile mobile-only" :src="sponsor.logo"
+                                            alt="sponsor.name">
+                                    </q-btn>
+                                </div>
                             </div>
+                            <q-btn v-if="l1.length === 0" class="row wrap btn shadow-24 text-center" no-caps
+                                @click="$router.push('/contact')">Become the
+                                Premier Ride For
+                                Hope Sponsor</q-btn>
                         </div>
-                         <q-btn v-if="l1.length === 0" class="row wrap btn shadow-24 text-center" no-caps @click="$router.push('/contact')">Become the
-                            Premier Ride For
-                            Hope Sponsor</q-btn>
-                         </div>
                     </div>
                 </div>
                 <div class="row wrap justify-center text-center"
@@ -125,6 +127,9 @@
         data() {
             return {
             }
+        },
+        mounted() {
+            this.$store.dispatch('sponsors/getSponsors')
         },
         computed: {
             pictures() {

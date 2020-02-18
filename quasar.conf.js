@@ -60,6 +60,9 @@ module.exports = function (ctx) {
         'QCarousel',
         'QCarouselSlide',
         'QInput',
+        'QForm',
+        'QCheckbox',
+        'QDialog'
       ],
 
       directives: [

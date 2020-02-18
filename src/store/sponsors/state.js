@@ -1,39 +1,13 @@
 export default {
+  allSponsors: [],
+  hiddenSponsors: [],
+  visibleSponsors: [],
   lvl1: [
   ],
   lvl2: [
-    {
-      name: 'Ebenezer Websites LLC',
-      logo: './statics/sponsors/ebenezer.png',
-      link: 'https://www.ebenezerwebsites.com/'
-    },
-    {
-      name: 'Lyle Pearson',
-      logo: './statics/sponsors/lyle.jpg',
-      link: 'https://www.lylepearson.com/'
-    },
-    {
-      name: 'Imago Caeli LLC',
-      logo: './statics/sponsors/imago.jpg',
-      link: 'https://www.imagocaeli.com/'
-    },
-    // {
-    //   name: 'Big K BBQ',
-    //   logo: './statics/sponsors/bigk.jpg',
-    //   link: 'https://bigkbbqidaho.com'
-    // },
-    {
-      name: 'Meridian Cycles',
-      logo: './statics/sponsors/meridian.png',
-      link: 'http://www.meridian-cycles.com/'
-    }
+
   ],
   lvl3: [
-    // {
-    //   name: '10 Barrel Brewing Co.',
-    //   logo: './statics/sponsors/10barrel.png',
-    //   link: 'https://10barrel.com/'
-    // },
     // {
     //   name: '1st Interstate Bank',
     //   logo: './statics/sponsors/1stInterstate.png',
@@ -56,6 +30,11 @@ export default {
     // }
   ],
   lvl4: [
+    // {
+    //   name: '10 Barrel Brewing Co.',
+    //   logo: './statics/sponsors/10barrel.png',
+    //   link: 'https://10barrel.com/'
+    // },
     // {
     //   name: 'Idaho Urologic Institute',
     //   logo: './statics/sponsors/iui.png',

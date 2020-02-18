@@ -7,6 +7,7 @@ import raffle from './raffle'
 import routes from './routes'
 import sponsors from './sponsors'
 import state from './state'
+import auth from './auth'
 
 
 Vue.use(Vuex)
@@ -24,7 +25,8 @@ export default function (/* { ssrContext } */) {
       raffle,
       routes,
       sponsors,
-      state
+      state,
+      auth
     },
 
     // enable strict mode (adds overhead!)
