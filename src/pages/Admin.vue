@@ -1,5 +1,5 @@
 <template>
-    <div v-if="admin" class="background">
+    <div class="background">
         <div class="row justify-center" v-if="!loggedIn">
             <div class="col-xs-10">
                 <div class="row justify-center">
@@ -17,69 +17,73 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-center text-center" v-else>
-            <h3 class="col-xs-10 text-center">Sponsors</h3>
-            <q-btn @click="addingSponsor = !addingSponsor" class="col-xs-4 text-center" color="red">Toggle Sponsor Form
-            </q-btn>
-            <div v-if="addingSponsor" class="col-xs-12 dark-back q-mt-lg">
-                <div class="row justify-center">
-                    <div class="col-xs-6">
-                        <h5 class="text-white">Add Sponsor</h5>
-                    </div>
-                    <div class="col-xs-12">
-                        <q-form @submit="addSponsor" class="q-gutter-md">
-                            <div class="row justify-center">
-                                <q-input square class="col-xs-10" filled v-model="name" label="Name" bg-color="white"
-                                    lazy-rules :rules="[ val => val && val.length > 0 || '']" />
-                                <q-input square class="col-xs-10" filled v-model="logo" label="Logo Link (Optional)"
-                                    bg-color="white" />
-                                <q-input square class="col-xs-10" filled v-model="link" label="Website Link (Optional)"
-                                    bg-color="white" />
-                                <q-input square class="col-xs-10" filled v-model="level" label="Sponsor Level"
-                                    bg-color="white" lazy-rules :rules="[ val => val && val.length > 0 || '']" />
-                                <q-input square class="col-xs-10" filled v-model="description"
-                                    label="Description (Optional)" bg-color="white" type="textarea" />
-                                <q-checkbox v-model="visible" class="col-xs-10 text-white">Publicly Visible
-                                </q-checkbox>
-                            </div>
-                            <div>
+        <template v-if="admin">
+            <div class="row justify-center text-center" v-else>
+                <h3 class="col-xs-10 text-center">Sponsors</h3>
+                <q-btn @click="addingSponsor = !addingSponsor" class="col-xs-4 text-center" color="red">Toggle Sponsor
+                    Form
+                </q-btn>
+                <div v-if="addingSponsor" class="col-xs-12 dark-back q-mt-lg">
+                    <div class="row justify-center">
+                        <div class="col-xs-6">
+                            <h5 class="text-white">Add Sponsor</h5>
+                        </div>
+                        <div class="col-xs-12">
+                            <q-form @submit="addSponsor" class="q-gutter-md">
                                 <div class="row justify-center">
-                                    <div class="col-xs-10">
-                                        <q-btn label="Submit" type="submit" class="full-width" color="white" size="xl"
-                                            flat no-caps unelevated />
+                                    <q-input square class="col-xs-10" filled v-model="name" label="Name"
+                                        bg-color="white" lazy-rules :rules="[ val => val && val.length > 0 || '']" />
+                                    <q-input square class="col-xs-10" filled v-model="logo" label="Logo Link (Optional)"
+                                        bg-color="white" />
+                                    <q-input square class="col-xs-10" filled v-model="link"
+                                        label="Website Link (Optional)" bg-color="white" />
+                                    <q-input square class="col-xs-10" filled v-model="level" label="Sponsor Level"
+                                        bg-color="white" lazy-rules :rules="[ val => val && val.length > 0 || '']" />
+                                    <q-input square class="col-xs-10" filled v-model="description"
+                                        label="Description (Optional)" bg-color="white" type="textarea" />
+                                    <q-checkbox v-model="visible" class="col-xs-10 text-white">Publicly Visible
+                                    </q-checkbox>
+                                </div>
+                                <div>
+                                    <div class="row justify-center">
+                                        <div class="col-xs-10">
+                                            <q-btn label="Submit" type="submit" class="full-width" color="white"
+                                                size="xl" flat no-caps unelevated />
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </q-form>
+                            </q-form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 q-mt-xl q-mb-xl">
+                    <div class="row justify-center q-gutter-sm">
+                        <div v-for="sponsor in sponsors" class="col-xs-3 self-center">
+                            <q-card>
+                                Sponsor Level: {{sponsor.level}}
+                                <q-btn v-if="sponsor.visible" flat @click="openURL(sponsor.link)" class="greenCard">
+                                    <img class="responsive silver silver-space desktop-only" :src="sponsor.logo"
+                                        :alt="sponsor.name">
+                                    <img class="responsive silver-big-mobile mobile-only" :src="sponsor.logo"
+                                        :alt="sponsor.name">
+                                </q-btn>
+                                <q-btn v-else flat @click="openURL(sponsor.link)" class="redCard">
+                                    <img class="responsive silver silver-space desktop-only" :src="sponsor.logo"
+                                        :alt="sponsor.name">
+                                    <img class="responsive silver-big-mobile mobile-only" :src="sponsor.logo"
+                                        :alt="sponsor.name">
+                                </q-btn>
+                                <q-separator />
+                                <q-btn @click="pickSponsor(sponsor)" flat no-caps>Edit</q-btn>
+                                <q-btn @click="toggleVisiblity(sponsor._id, sponsor.visible)" flat no-caps>Toggle
+                                    visibility
+                                </q-btn>
+                            </q-card>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-xs-12 q-mt-xl q-mb-xl">
-                <div class="row justify-center q-gutter-sm">
-                    <div v-for="sponsor in sponsors" class="col-xs-3 self-center">
-                        <q-card>
-                            Sponsor Level: {{sponsor.level}}
-                            <q-btn v-if="sponsor.visible" flat @click="openURL(sponsor.link)" class="greenCard">
-                                <img class="responsive silver silver-space desktop-only" :src="sponsor.logo"
-                                    :alt="sponsor.name">
-                                <img class="responsive silver-big-mobile mobile-only" :src="sponsor.logo"
-                                    :alt="sponsor.name">
-                            </q-btn>
-                            <q-btn v-else flat @click="openURL(sponsor.link)" class="redCard">
-                                <img class="responsive silver silver-space desktop-only" :src="sponsor.logo"
-                                    :alt="sponsor.name">
-                                <img class="responsive silver-big-mobile mobile-only" :src="sponsor.logo"
-                                    :alt="sponsor.name">
-                            </q-btn>
-                            <q-separator />
-                            <q-btn @click="pickSponsor(sponsor)" flat no-caps>Edit</q-btn>
-                            <q-btn @click="toggleVisiblity(sponsor._id, sponsor.visible)" flat no-caps>Toggle visibility
-                            </q-btn>
-                        </q-card>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </template>
         <q-dialog v-model="editModal" class="">
             <div class="editModal text-center">
                 <q-input dark v-model="chosenItemName" type="text" label="Name" />
