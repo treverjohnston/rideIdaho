@@ -1,6 +1,6 @@
 <template>
     <div class="background">
-        <div class="row justify-center" v-if="!loggedIn">
+        <div class="row justify-center q-mt-md q-mb-md" v-if="!loggedIn">
             <div class="col-xs-10">
                 <div class="row justify-center">
                     <div class="col-xs-10 col-md-6">
@@ -17,8 +17,8 @@
                 </div>
             </div>
         </div>
-        <template v-if="admin">
-            <div class="row justify-center text-center" v-else>
+        <div class="row justify-center text-center" v-else>
+            <template v-if="admin">
                 <h3 class="col-xs-10 text-center">Sponsors</h3>
                 <q-btn @click="addingSponsor = !addingSponsor" class="col-xs-4 text-center" color="red">Toggle Sponsor
                     Form
@@ -82,8 +82,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </template>
+            </template>
+        </div>
         <q-dialog v-model="editModal" class="">
             <div class="editModal text-center">
                 <q-input dark v-model="chosenItemName" type="text" label="Name" />
