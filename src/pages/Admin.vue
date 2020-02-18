@@ -90,7 +90,7 @@
                 <q-input dark v-model="chosenItemDescription" type="text" label="Description" />
                 <q-input dark v-model="chosenItemLogo" type="text" label="Logo" />
                 <q-input dark v-model="chosenItemLink" type="text" label="URL" />
-                <q-input dark v-model="chosenItemLevel" type="text" label="Level" />
+                <q-input dark v-model="chosenItemLevel" type="text" label="Sponsor Level" />
                 <q-btn color="red" no-caps @click="editSponsor" class="q-mt-sm">Submit Edits</q-btn>
                 <q-btn color="red" @click="deleteSponsor(chosenItemId)" class="q-mt-sm">Delete</q-btn>
             </div>

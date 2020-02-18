@@ -69,6 +69,13 @@ export function deleteSponsor({ commit, dispatch }, id) {
 export function editSponsor({ commit, dispatch }, obj) {
     api.put(`sponsors/${obj._id}`, obj)
         .then(res => {
+            Notify.create({
+                message: res.data.data.message,
+                type: 'primary',
+                color: 'secondary',
+                textColor: 'white',
+                position: 'top',
+            });
             dispatch('getSponsors')
         })
         .catch(err => {
