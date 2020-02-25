@@ -268,6 +268,7 @@
     },
     mounted() {
       this.$store.dispatch('state/getParticipantTotal');
+      this.$store.dispatch('sponsors/getSponsors')
     },
 
   };

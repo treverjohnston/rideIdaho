@@ -1,6 +1,6 @@
 <template>
     <div class="background">
-        <div class="row justify-center q-mt-md q-mb-md" v-if="!loggedIn">
+        <div class="row justify-center q-pt-xl q-pb-xl" v-if="!loggedIn">
             <div class="col-xs-10">
                 <div class="row justify-center">
                     <div class="col-xs-10 col-md-6">
@@ -59,25 +59,32 @@
                 <div class="col-xs-12 q-mt-xl q-mb-xl">
                     <div class="row justify-center q-gutter-sm">
                         <div v-for="sponsor in sponsors" class="col-xs-3 self-center">
-                            <q-card>
-                                Sponsor Level: {{sponsor.level}}
-                                <q-btn v-if="sponsor.visible" flat @click="openURL(sponsor.link)" class="greenCard">
-                                    <img class="responsive silver silver-space desktop-only" :src="sponsor.logo"
-                                        :alt="sponsor.name">
-                                    <img class="responsive silver-big-mobile mobile-only" :src="sponsor.logo"
-                                        :alt="sponsor.name">
-                                </q-btn>
-                                <q-btn v-else flat @click="openURL(sponsor.link)" class="redCard">
-                                    <img class="responsive silver silver-space desktop-only" :src="sponsor.logo"
-                                        :alt="sponsor.name">
-                                    <img class="responsive silver-big-mobile mobile-only" :src="sponsor.logo"
-                                        :alt="sponsor.name">
-                                </q-btn>
-                                <q-separator />
-                                <q-btn @click="pickSponsor(sponsor)" flat no-caps>Edit</q-btn>
-                                <q-btn @click="toggleVisiblity(sponsor._id, sponsor.visible)" flat no-caps>Toggle
-                                    visibility
-                                </q-btn>
+                            <q-card class="adminCard">
+                                <div class="row justify-center">
+                                    <div class="col-xs-12">
+                                        Sponsor Level: {{sponsor.level}}
+                                    </div>
+                                    <div class="col-xs-12">
+
+                                        <q-btn v-if="sponsor.visible" flat @click="openURL(sponsor.link)"
+                                            class="greenCard">
+                                            <img class="responsive" :src="sponsor.logo" :alt="sponsor.name">
+                                        </q-btn>
+                                        <q-btn v-else flat @click="openURL(sponsor.link)" class="redCard">
+                                            <img class="responsive" :src="sponsor.logo" :alt="sponsor.name">
+                                        </q-btn>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <q-separator />
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <q-btn @click="pickSponsor(sponsor)" flat no-caps>Edit</q-btn>
+                                        <q-btn @click="toggleVisiblity(sponsor._id, sponsor.visible)" flat no-caps>
+                                            Toggle
+                                            visibility
+                                        </q-btn>
+                                    </div>
+                                </div>
                             </q-card>
                         </div>
                     </div>
@@ -212,6 +219,8 @@
         background-color: rgb(0, 0, 0);
         padding: 1rem;
     }
+
+    .adminCard {}
 
     .greenCard {
         border: 3px solid green;
