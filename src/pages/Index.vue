@@ -21,42 +21,50 @@
       </div>
       <div class="col-xs-11 col-sm-3 "
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['400px', '0px'], duration: 1000},  easing: 'linear' }">
-        <div class="text-h5 text-weight-bold">
-          Location
-        </div>
-        <div class="text-h6 text-weight-medium">
-          Kuna, Idaho
-        </div>
+        <router-link to="ride" class="routerLink">
+          <div class="text-h5 text-weight-bold">
+            Location
+          </div>
+          <div class="text-h6 text-weight-medium">
+            Kuna, Idaho
+          </div>
+        </router-link>
         <hr class="hr">
       </div>
       <div class="col-xs-11 col-sm-3 "
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
-        <div class="text-h5 text-weight-bold">
-          2020 Date
-        </div>
-        <div class="text-h6 text-weight-medium">
-          Saturday, June 20
-        </div>
+        <router-link to="ride" class="routerLink">
+          <div class="text-h5 text-weight-bold">
+            2020 Date
+          </div>
+          <div class="text-h6 text-weight-medium">
+            Saturday, June 20
+          </div>
+        </router-link>
         <hr class="hr">
       </div>
-      <div class="col-xs-11 col-sm-3 "
+      <div class="col-xs-11 col-sm-3"
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['200px', '0px'], duration: 1000},  easing: 'linear' }">
-        <div class="text-h5 text-weight-bold">
-          Routes
-        </div>
-        <div class="text-h6 text-weight-medium">
-          5
-        </div>
+        <router-link to="all-routes" class="routerLink">
+          <div class="text-h5 text-weight-bold">
+            Routes
+          </div>
+          <div class="text-h6 text-weight-medium">
+            5
+          </div>
+        </router-link>
         <hr class="hr">
       </div>
       <div class="col-xs-11 col-sm-3" v-if="participantTotal >= 10"
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['100px', '0px'], duration: 1000},  easing: 'linear' }">
-        <div class="text-h5 text-weight-bold">
-          Current Riders
-        </div>
-        <div class="text-h6 text-weight-medium" @click="openURL(participantUrl)">
-          {{participantTotal}}
-        </div>
+        <router-link to="ride" class="routerLink">
+          <div class="text-h5 text-weight-bold">
+            Current Riders
+          </div>
+          <div class="text-h6 text-weight-medium">
+            {{participantTotal}}
+          </div>
+        </router-link>
         <hr class="hr">
       </div>
     </div>

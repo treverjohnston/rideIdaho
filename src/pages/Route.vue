@@ -179,6 +179,15 @@
                 }
             });
         },
+        watch: {
+            $route(to, from) {
+                this.$store.state.routes.routes.forEach(route => {
+                    if (this.$route.path.includes(route.url)) {
+                        return this.route = route;
+                    }
+                });
+            }
+        },
         computed: {
             pictures() {
                 return this.$store.state.gallery.pictures;

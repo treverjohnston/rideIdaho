@@ -15,6 +15,10 @@ const routes = [
         component: () => import('pages/Register.vue')
       },
       {
+        path: 'all-routes',
+        component: () => import('pages/Register.vue')
+      },
+      {
         path: 'routes',
         component: () => import('pages/Route.vue'),
         children: [

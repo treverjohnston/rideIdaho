@@ -2,18 +2,20 @@
     <q-layout class="black">
         <div class="row wrap justify-center">
             <div class="col-xs-11 col-md-10 black-back shadow-24 text-center q-pa-lg">
-                <h4 class="desktop-only">Online Registration open January 1, 2020. Online registration closes at
-                    midnight
-                    on June 18, 2020. You may also register in person at packet pick-up and at the ride.</h4>
-                <h6 class="mobile-only">Online Registration open January 1, 2020. Online registration closes at
-                    midnight
-                    on June 18, 2020. You may also register in person at packet pick-up and at the ride.</h6>
-                <hr class="width_90">
-                <h4 class="desktop-only">Early packet pickup will be on Friday, June 19, 2020 from 4:00 PM
-                    to 7:00 PM at Meridian Cycles, 1203 N. Main St., Meridian, Idaho</h4>
-                <h6 class="mobile-only">Early packet pickup will be on Friday, June 19, 2020 from 4:00 PM
-                    to 7:00 PM at Meridian Cycles, 1203 N. Main St., Meridian, Idaho</h6>
+                <template v-if="!openRegistration">
+                    <h4 class="desktop-only">Online Registration open January 1, 2020. Online registration closes at
+                        midnight
+                        on June 18, 2020. You may also register in person at packet pick-up and at the ride.</h4>
+                    <h6 class="mobile-only">Online Registration open January 1, 2020. Online registration closes at
+                        midnight
+                        on June 18, 2020. You may also register in person at packet pick-up and at the ride.</h6>
+                    <hr class="width_90">
+                    <h4 class="desktop-only">Early packet pickup will be on Friday, June 19, 2020 from 4:00 PM
+                        to 7:00 PM at Meridian Cycles, 1203 N. Main St., Meridian, Idaho</h4>
+                    <h6 class="mobile-only">Early packet pickup will be on Friday, June 19, 2020 from 4:00 PM
+                        to 7:00 PM at Meridian Cycles, 1203 N. Main St., Meridian, Idaho</h6>
 
+                </template>
                 <div class="row justify-between desktop-only second-header">
                     <q-list separator class="col-md-4">
                         <q-item clickable v-for="route in routes">
@@ -89,6 +91,9 @@
         computed: {
             routes() {
                 return this.$store.state.routes.routes;
+            },
+            openRegistration() {
+                return this.$store.state.state.openRegistration;
             }
         },
         methods: {
