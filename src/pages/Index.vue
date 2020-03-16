@@ -55,7 +55,7 @@
         </router-link>
         <hr class="hr">
       </div>
-      <div class="col-xs-11 col-sm-3" v-if="participantTotal >= 10"
+      <div class="col-xs-11 col-sm-3" v-if="participantTotal >= 10 && openRegistration"
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['100px', '0px'], duration: 1000},  easing: 'linear' }">
         <div class="text-h5 text-weight-bold" @click="openURL(participantUrl)">
           Current Riders
