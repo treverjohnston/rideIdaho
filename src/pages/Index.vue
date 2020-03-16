@@ -35,10 +35,10 @@
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
         <router-link to="ride" class="routerLink">
           <div class="text-h5 text-weight-bold">
-            2020 Date
+            2021 Date
           </div>
           <div class="text-h6 text-weight-medium">
-            Saturday, June 20
+            Saturday, June 19
           </div>
         </router-link>
         <hr class="hr">
@@ -57,14 +57,12 @@
       </div>
       <div class="col-xs-11 col-sm-3" v-if="participantTotal >= 10"
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['100px', '0px'], duration: 1000},  easing: 'linear' }">
-        <router-link to="ride" class="routerLink">
-          <div class="text-h5 text-weight-bold">
-            Current Riders
-          </div>
-          <div class="text-h6 text-weight-medium">
-            {{participantTotal}}
-          </div>
-        </router-link>
+        <div class="text-h5 text-weight-bold" @click="openURL(participantUrl)">
+          Current Riders
+        </div>
+        <div class="text-h6 text-weight-medium" @click="openURL(participantUrl)">
+          {{participantTotal}}
+        </div>
         <hr class="hr">
       </div>
     </div>
@@ -76,11 +74,18 @@
             <h1 class="text-weight-bold">Ride For Hope Idaho</h1>
             <div class="text-weight-bold text-h4 soft-red q-mb-md">Supporting Healthcare for the Medically Underserved
             </div>
-            <div class="q-title text-h5">Online registration ends 6/18/2020.</div>
-            <div class="q-title text-h5">Day of ride registration available.</div>
-            <div class="q-title text-h5">Discount offered for teams of 5 or more and for families. Contact for more
-              details.
-            </div>
+            <span v-if="openRegistration">
+              <div class="q-title text-h5">Online registration ends 6/18/2020.</div>
+              <div class="q-title text-h5">Day of ride registration available.</div>
+              <div class="q-title text-h5">Discount offered for teams of 5 or more and for families. Contact for more
+                details.
+              </div>
+            </span>
+            <span v-if="showCovid">
+              <div class="q-title text-h5">{{covidCallout1}}</div>
+              <div class="q-title text-h5">{{covidCallout2}}</div>
+              <q-btn class="cbtnm" @click="openURL('https://genesiscommunityhealth.com/donate/')">Donate</q-btn>
+            </span>
           </div>
         </div>
         <div class="promo text-center mobile-only">
@@ -88,10 +93,17 @@
             v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
             <div class="text-weight-bold text-h5 soft-red q-mb-lg">Supporting Healthcare for the Medically Underserved
             </div>
-            <div class="text-h6 q-title">Online registration ends 6/18/2020.</div>
-            <div class="text-h6 q-title">Day of ride registration available.</div>
-            <div class="text-h6 q-title">Discount offered for teams of 5 or more and for families. Contact for more
-              details.</div>
+            <span v-if="openRegistration">
+              <div class="text-h6 q-title">Online registration ends 6/18/2020.</div>
+              <div class="text-h6 q-title">Day of ride registration available.</div>
+              <div class="text-h6 q-title">Discount offered for teams of 5 or more and for families. Contact for more
+                details.</div>
+            </span>
+            <span v-if="showCovid">
+              <div class="text-body1 q-title">{{covidCallout1}}</div>
+              <div class="text-body1 q-title">{{covidCallout2}}</div>
+              <q-btn class="cbtnm" @click="openURL('https://genesiscommunityhealth.com/donate/')">Donate</q-btn>
+            </span>
           </div>
         </div>
       </div>
@@ -225,6 +237,35 @@
       </q-carousel>
 
     </div>
+    <q-dialog v-model="covidDialog">
+      <q-card>
+        <q-toolbar>
+          <q-avatar>
+            <img src="statics/logos/RFHIdahoLogo.png">
+          </q-avatar>
+
+          <q-toolbar-title><span class="text-weight-bold">Ride For Hope Idaho</span></q-toolbar-title>
+
+          <q-btn flat round dense icon="close" v-close-popup />
+        </q-toolbar>
+
+        <q-card-section>
+          <span class="text-body1">
+            {{covidCallout1}}
+          </span>
+
+        </q-card-section>
+        <q-card-section>
+          <span class="text-body1">
+            {{covidCallout2}}
+          </span>
+
+        </q-card-section>
+        <q-card-section class="text-center">
+          <q-btn class="cbtnm" @click="openURL('https://genesiscommunityhealth.com/donate/')">Donate</q-btn>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
   </div>
 
 </template>
@@ -239,10 +280,14 @@
         showVid: false,
         showSplash: false,
         showSwal: false,
+        showCovid: false,
+        covidDialog: false,
         video: `./statics/video/head.mp4`,
         slide: "Ebenezer Websites LLC",
         slide2: "Lyle Pearson",
-        slide3: "Imago Caeli LLC"
+        slide3: "Imago Caeli LLC",
+        covidCallout1: "We regret that due to COVID-19, the 2020 Ride For Hope Idaho has been canceled. Those already registered will be contacted soon by email.",
+        covidCallout2: "If you would still like to support the cause, you can donate directly to Genesis Community Health by following the link below. Any donation they recieve will be all the more appreciated during this time of stress on the healthcare system. We look forward to riding with you in 2021!"
       };
     },
     computed: {
@@ -277,6 +322,14 @@
     mounted() {
       this.$store.dispatch('state/getParticipantTotal');
       this.$store.dispatch('sponsors/getSponsors')
+
+      let covidDate = new Date("June 30, 2020 00:00:00")
+
+      let date = new Date();
+      if (date < covidDate) {
+        this.showCovid = true;
+        this.covidDialog = true;
+      }
     },
 
   };

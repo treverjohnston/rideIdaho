@@ -3,16 +3,16 @@
         <div class="row wrap justify-center">
             <div class="col-xs-11 col-md-10 black-back shadow-24 text-center q-pa-lg">
                 <template v-if="!openRegistration">
-                    <h4 class="desktop-only">Online Registration open January 1, 2020. Online registration closes at
+                    <h4 class="desktop-only">Online Registration open January 1, 2021. Online registration closes at
                         midnight
-                        on June 18, 2020. You may also register in person at packet pick-up and at the ride.</h4>
-                    <h6 class="mobile-only">Online Registration open January 1, 2020. Online registration closes at
+                        on June 17, 2021. You may also register in person at packet pick-up and at the ride.</h4>
+                    <h6 class="mobile-only">Online Registration open January 1, 2021. Online registration closes at
                         midnight
-                        on June 18, 2020. You may also register in person at packet pick-up and at the ride.</h6>
+                        on June 17, 2021. You may also register in person at packet pick-up and at the ride.</h6>
                     <hr class="width_90">
-                    <h4 class="desktop-only">Early packet pickup will be on Friday, June 19, 2020 from 4:00 PM
+                    <h4 class="desktop-only">Early packet pickup will be on Friday, June 18, 2021 from 4:00 PM
                         to 7:00 PM at Meridian Cycles, 1203 N. Main St., Meridian, Idaho</h4>
-                    <h6 class="mobile-only">Early packet pickup will be on Friday, June 19, 2020 from 4:00 PM
+                    <h6 class="mobile-only">Early packet pickup will be on Friday, June 18, 2021 from 4:00 PM
                         to 7:00 PM at Meridian Cycles, 1203 N. Main St., Meridian, Idaho</h6>
 
                 </template>
