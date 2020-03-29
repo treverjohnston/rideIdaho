@@ -1,22 +1,6 @@
 <template>
     <div class="background">
-        <div class="row justify-center q-pt-xl q-pb-xl" v-if="!loggedIn">
-            <div class="col-xs-10">
-                <div class="row justify-center">
-                    <div class="col-xs-10 col-md-6">
-                        <q-input filled v-model="email" label="Email" lazy-rules
-                            :rules="[ val => val && val.length > 0 || '']" />
-                        <q-input filled v-model="password" label="Password" type="password" lazy-rules
-                            :rules="[ val => val && val.length > 0 || '']" />
-                    </div>
-                </div>
-                <div class="row justify-center">
-                    <div class="col-xs-6">
-                        <q-btn @click="login" color="blue" class="q-mt-sm">Login</q-btn>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <Login v-if="!loggedIn"></Login>
         <div class="row justify-center text-center" v-else>
             <template v-if="admin">
                 <h3 class="col-xs-10 text-center">Sponsors</h3>
@@ -107,6 +91,7 @@
 
 <script>
     import { openURL } from 'quasar'
+    import Login from 'components/Login.vue'
     export default {
         name: 'Admin',
         data() {
@@ -129,6 +114,7 @@
             }
         },
         components: {
+            Login
         },
         computed: {
             loggedIn() {
@@ -172,16 +158,6 @@
                 this.$store.dispatch('sponsors/deleteSponsor', id)
                 this.editModal = false;
             },
-            login() {
-                var obj = {
-                    email: this.email,
-                    password: this.password
-                }
-                this.$store.dispatch('auth/login', obj)
-                if (this.loggedIn) {
-                    this.$router.push('/admin/reports');
-                }
-            },
             toggleVisiblity(id, visible) {
                 var obj = {
                     _id: id,
@@ -214,33 +190,5 @@
 </script>
 
 <style>
-    .editModal {
-        width: 85vw;
-        background-color: rgb(0, 0, 0);
-        padding: 1rem;
-    }
 
-    .adminCard {}
-
-    .greenCard {
-        border: 3px solid green;
-    }
-
-    .redCard {
-        border: 3px solid red;
-    }
-
-    .a-style {
-        text-decoration: underline;
-        color: blue;
-    }
-
-    .background {
-        background-color: rgba(255, 255, 255, 0.85);
-        color: black;
-    }
-
-    .dark-back {
-        background-color: rgba(0, 0, 117, 0.699);
-    }
 </style>

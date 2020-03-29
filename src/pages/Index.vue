@@ -84,7 +84,7 @@
             <span v-if="showCovid">
               <div class="q-title text-h5">{{covidCallout1}}</div>
               <div class="q-title text-h5">{{covidCallout2}}</div>
-              <q-btn class="cbtnm" @click="openURL('https://genesiscommunityhealth.com/donate/')">Donate</q-btn>
+              <q-btn class="cbtnm" @click="openURL(donateUrl)">Donate</q-btn>
             </span>
           </div>
         </div>
@@ -102,7 +102,7 @@
             <span v-if="showCovid">
               <div class="text-body1 q-title">{{covidCallout1}}</div>
               <div class="text-body1 q-title">{{covidCallout2}}</div>
-              <q-btn class="cbtnm" @click="openURL('https://genesiscommunityhealth.com/donate/')">Donate</q-btn>
+              <q-btn class="cbtnm" @click="openURL(donateUrl)">Donate</q-btn>
             </span>
           </div>
         </div>
@@ -262,7 +262,7 @@
 
         </q-card-section>
         <q-card-section class="text-center">
-          <q-btn class="cbtnm" @click="openURL('https://genesiscommunityhealth.com/donate/')">Donate</q-btn>
+          <q-btn class="cbtnm" @click="openURL(donateUrl)">Donate</q-btn>
         </q-card-section>
       </q-card>
     </q-dialog>
@@ -305,6 +305,9 @@
       },
       participantUrl() {
         return this.$store.state.state.participantUrl;
+      },
+      donateUrl() {
+        return this.$store.state.state.donateUrl;
       },
       l2() {
         return this.$store.state.sponsors.lvl2;

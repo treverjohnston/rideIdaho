@@ -12,7 +12,7 @@
               label="Register" />
           </q-tabs>
         </q-item>
-        <q-item class="black-bg">
+        <q-item v-if="participantTotal >= 10" class="black-bg">
           <q-tabs class="width_100">
             <q-tab @click="openURL(participantUrl)" name="home" class="tab inner-tab width_100 black-bg" color=""
               label="Participants" />
@@ -20,7 +20,7 @@
         </q-item>
         <q-item class="black-bg">
           <q-tabs class="width_100">
-            <q-tab @click="openURL(merchandiseUrl)" name="home" class="tab inner-tab width_100 black-bg" color=""
+            <q-tab @click="openURL(donateUrl)" name="home" class="tab inner-tab width_100 black-bg" color=""
               label="Just Donate" />
           </q-tabs>
         </q-item>
@@ -109,7 +109,7 @@
       <!-- <q-btn @click="$router.push('/')">
         <img src="statics/logos/RFHIdahoLogo.png" alt="logo" class="mini">
       </q-btn> -->
-      <q-btn class="q-mr-xs" outline dense color="red" @click="openURL(merchandiseUrl)">
+      <q-btn class="q-mr-xs" outline dense color="red" @click="openURL(donateUrl)">
         Just Donate
       </q-btn>
       <q-btn v-if="openRegistration" dense class="mobile-only q-mr-xs" outline @click="openURL(registrationUrl)"
@@ -118,7 +118,8 @@
       </q-btn>
       <q-btn v-else class="mobile-only q-mr-xs" dense outline @click="$router.push('/register')" color="red">Register
       </q-btn>
-      <q-btn outline dense color="red" @click="openURL(participantUrl)">
+      <q-btn v-if="participantTotal >= 10 && openRegistration" outline dense color="red"
+        @click="openURL(participantUrl)">
         Participants
       </q-btn>
     </q-toolbar>
@@ -323,8 +324,8 @@
       participantUrl() {
         return this.$store.state.state.participantUrl;
       },
-      merchandiseUrl() {
-        return this.$store.state.state.merchandiseUrl;
+      donateUrl() {
+        return this.$store.state.state.donateUrl;
       }
     },
     methods: {
