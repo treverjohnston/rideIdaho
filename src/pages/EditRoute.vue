@@ -33,7 +33,24 @@
                                     <q-input square class="col-xs-10" filled bg-color="white" lazy-rules
                                         :rules="[ val => val && val.length > 0 || '']" v-model="MapLink" type="text"
                                         label="Map My Ride link" />
-                                    <q-input square class="col-xs-10" filled bg-color="white" lazy-rules
+
+                                    <span class="col-xs-8" v-for="stop in RestStops">
+                                        <div class="box">
+                                            <div class="title">
+                                                {{stop}}
+                                            </div>
+                                            <q-btn @click="removeRestFromForm(stop)">Remove Rest Stop
+                                            </q-btn>
+                                            <hr>
+                                        </div>
+                                    </span>
+                                    <q-input square class="col-xs-5 q-mt-md" filled bg-color="white" lazy-rules
+                                        :rules="[ val => val && val.length > 0 || '']" v-model="tempRestStop"
+                                        type="text" label="Rest Stop" />
+                                    <q-btn color="red" class="col-xs-3" @click.native="addRestToForm">Add Rest Stop
+                                    </q-btn>
+
+                                    <q-input square class="col-xs-10" disabled filled bg-color="white" lazy-rules
                                         :rules="[ val => val && val.length > 0 || '']" v-model="RestStops"
                                         type="textarea" label="Rest Stop (Array of Strings)" />
                                     <q-input square class="col-xs-10" filled bg-color="white" lazy-rules
@@ -50,7 +67,15 @@
                                         label="Start Time (11:00 AM*)" />
 
                                     <span class="col-xs-8" v-for="map in OtherMaps">
-                                        {{map.title}} - {{map.link}}
+                                        <div class="box">
+                                            <div class="title">
+                                                Title: {{map.title}}
+                                            </div>
+                                            <div class="link">{{map.link}}</div>
+                                            <q-btn @click="removeMapLinkFromForm(map.title,map.link)">Remove Link
+                                            </q-btn>
+                                            <hr>
+                                        </div>
                                     </span>
                                     <q-input square class="col-xs-8 q-mt-md" filled bg-color="white" lazy-rules
                                         :rules="[ val => val && val.length > 0 || '']" v-model="mapLinkLink" type="text"
@@ -60,6 +85,9 @@
                                         type="text" label="Map Link Name (Map My Ride)" />
                                     <q-btn color="red" class="col-xs-3" @click.native="addMapLinkToForm">Add Map Link
                                     </q-btn>
+                                    <q-input disabled square class="col-xs-10" filled bg-color="white" lazy-rules
+                                        :rules="[ val => val && val.length > 0 || '']" v-model="OtherMaps"
+                                        type="textarea" label="Short Description (Front Page)" />
 
                                     <q-input square class="col-xs-10" filled bg-color="white" lazy-rules
                                         :rules="[ val => val && val.length > 0 || '']" v-model="ShortDescription"
@@ -125,6 +153,7 @@
         name: 'Admin',
         data() {
             return {
+                tempRestStop: '',
                 mapLinkTitle: '',
                 mapLinkLink: '',
                 visible: false,
@@ -227,7 +256,6 @@
 
             },
             addRoute() {
-                this.updateRestStops();
                 var obj = {
                     earlyReg: this.EarlyReg,
                     reg: this.Reg,
@@ -251,28 +279,47 @@
             addMapLinkToForm() {
                 var obj = { title: this.mapLinkTitle, link: this.mapLinkLink };
                 var tempMaps = this.OtherMaps;
-                tempMaps.Push(obj);
+                tempMaps.push(obj);
                 this.OtherMaps = tempMaps;
             },
             removeMapLinkFromForm(title, link) {
                 var validObjects = [];
                 var maps = this.OtherMaps;
                 maps.forEach(obj => {
-                    if (obj.title != title && obj.link != link) {
-                        validObjects.Push(obj);
+                    if (obj.title === title) {
+                    }
+                    else {
+                        validObjects.push(obj);
+
                     }
                 });
                 this.OtherMaps = validObjects;
+            },
+            addRestToForm() {
+                this.RestStops.push(this.tempRestStop);
+            },
+            removeRestFromForm(title) {
+                var validObjects = [];
+                var rests = this.RestStops;
+                rests.forEach(obj => {
+                    if (obj === title) {
+                    }
+                    else {
+                        validObjects.push(obj);
+                    }
+                });
+                this.RestStops = validObjects;
             }
+
         }
 
     }
 </script>
 
 <style>
-    .editModal {
-        width: 85vw;
-        background-color: rgb(0, 0, 0);
-        padding: 1rem;
+    .box {
+        background-color: white;
+        color: black;
+        padding: .5rem;
     }
 </style>
