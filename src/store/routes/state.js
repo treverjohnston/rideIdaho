@@ -209,8 +209,8 @@ export default {
       ],
       btnClass: 'btn color bg-green',
       headline: 'Veni Vidi Vici - "I Came. I Saw. I Conquered."',
-      frame: '//snippets.mapmycdn.com/routes/view/embedded/1462908562?width=600&height=400&elevation=true&line_color=E636d90d&rgbhex=0dd936&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-12-16T22:25:01-06:00&show_marker_every=10',
-      frameMobile: '//snippets.mapmycdn.com/routes/view/embedded/1462908562?width=600&height=400&elevation=true&line_color=E636d90d&rgbhex=0dd936&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-12-16T22:25:01-06:00&show_marker_every=10',
+      frame: '//snippets.mapmycdn.com/routes/view/embedded/1462908562?width=600&height=400&elevation=true&line_color=E636d90d&rgbhex=0dd936&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2020-04-03T18:54:21-06:00&show_marker_every=10',
+      frameMobile: '//snippets.mapmycdn.com/routes/view/embedded/1462908562?width=600&height=400&elevation=true&line_color=E636d90d&rgbhex=0dd936&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2020-04-03T18:54:21-06:00&show_marker_every=10',
       startTime: '7:00 AM*',
       otherMaps: [
         {
