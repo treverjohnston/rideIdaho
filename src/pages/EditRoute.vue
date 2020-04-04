@@ -69,7 +69,7 @@
                                     <span class="col-xs-8" v-for="map in OtherMaps">
                                         <div class="box">
                                             <div class="title">
-                                                Title: {{map.title}}
+                                                {{map.order}}: {{map.title}}
                                             </div>
                                             <div class="link">{{map.link}}</div>
                                             <q-btn @click="removeMapLinkFromForm(map.title,map.link)">Remove Link
@@ -84,6 +84,12 @@
                                         :rules="[ val => val && val.length > 0 || '']" v-model="mapLinkTitle"
                                         type="text" label="Map Link Name (Map My Ride)" />
                                     <q-btn color="red" class="col-xs-3" @click.native="addMapLinkToForm">Add Map Link
+                                    </q-btn>
+                                    <q-btn color="red" class="col-xs-3" @click.native="changeMapLinkOrderUp">Up Map Link
+                                        Order
+                                    </q-btn>
+                                    <q-btn color="red" class="col-xs-3" @click.native="changeMapLinkOrderDown">Down Map
+                                        Link Order
                                     </q-btn>
                                     <q-input disabled square class="col-xs-10" filled bg-color="white" lazy-rules
                                         :rules="[ val => val && val.length > 0 || '']" v-model="OtherMaps"
@@ -277,10 +283,18 @@
                 this.addingRoute = false;
             },
             addMapLinkToForm() {
-                var obj = { title: this.mapLinkTitle, link: this.mapLinkLink };
+                var obj = { title: this.mapLinkTitle, link: this.mapLinkLink, order: this.otherMaps.length };
                 var tempMaps = this.OtherMaps;
                 tempMaps.push(obj);
                 this.OtherMaps = tempMaps;
+            },
+            upMapLinkOrder(title, order) {
+                this.otherMaps.forEach(obj => {
+                    if (obj.title === title) {
+                        this.otherMaps.order = order;
+                    }
+                })
+                this.otherMaps.sort(function (a, b) { return a.order - b.order });
             },
             removeMapLinkFromForm(title, link) {
                 var validObjects = [];
@@ -290,7 +304,6 @@
                     }
                     else {
                         validObjects.push(obj);
-
                     }
                 });
                 this.OtherMaps = validObjects;
