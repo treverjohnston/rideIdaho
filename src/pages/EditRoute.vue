@@ -44,6 +44,7 @@
                                             <hr>
                                         </div>
                                     </span>
+
                                     <q-input square class="col-xs-5 q-mt-md" filled bg-color="white" lazy-rules
                                         :rules="[ val => val && val.length > 0 || '']" v-model="tempRestStop"
                                         type="text" label="Rest Stop" />
@@ -77,23 +78,21 @@
                                             <hr>
                                         </div>
                                     </span>
-                                    <q-input square class="col-xs-8 q-mt-md" filled bg-color="white" lazy-rules
-                                        :rules="[ val => val && val.length > 0 || '']" v-model="mapLinkLink" type="text"
-                                        label="Map Link URL" />
-                                    <q-input square class="col-xs-5" filled bg-color="white" lazy-rules
-                                        :rules="[ val => val && val.length > 0 || '']" v-model="mapLinkTitle"
+                                    <q-input square class="col-xs-8" filled bg-color="white" v-model="mapLinkTitle"
                                         type="text" label="Map Link Name (Map My Ride)" />
-                                    <q-btn color="red" class="col-xs-3" @click.native="addMapLinkToForm">Add Map Link
+                                    <q-input square class="col-xs-8 q-mt-md" filled bg-color="white"
+                                        v-model="mapLinkLink" type="text" label="Map Link URL" />
+                                    <q-btn color="red" class="col-xs-5" @click.native="addMapLinkToForm">Add Map Link
                                     </q-btn>
-                                    <q-btn color="red" class="col-xs-3" @click.native="changeMapLinkOrderUp">Up Map Link
+                                    <q-btn color="red" class="col-xs-2" @click.native="changeMapLinkOrderUp">Up Map Link
                                         Order
                                     </q-btn>
-                                    <q-btn color="red" class="col-xs-3" @click.native="changeMapLinkOrderDown">Down Map
+                                    <q-btn color="red" class="col-xs-2" @click.native="changeMapLinkOrderDown">Down Map
                                         Link Order
                                     </q-btn>
-                                    <q-input disabled square class="col-xs-10" filled bg-color="white" lazy-rules
-                                        :rules="[ val => val && val.length > 0 || '']" v-model="OtherMaps"
-                                        type="textarea" label="Short Description (Front Page)" />
+                                    <q-input disabled square class="col-xs-10 q-mt-lg" filled bg-color="white"
+                                        lazy-rules :rules="[ val => val && val.length > 0 || '']" v-model="OtherMaps"
+                                        type="textarea" label="Other Maps" />
 
                                     <q-input square class="col-xs-10" filled bg-color="white" lazy-rules
                                         :rules="[ val => val && val.length > 0 || '']" v-model="ShortDescription"
@@ -119,10 +118,18 @@
                 <div class="col-xs-12 q-mt-xl q-mb-xl">
                     <div class="row justify-center q-gutter-sm">
                         <div v-for="route in routes" class="col-xs-3 self-center">
-                            <q-card class="adminCard">
-                                <div class="row justify-center">
-                                    {{route}}
-                                </div>
+                            <q-card :id="route.id" class="text-center card-container shadow-24"
+                                @click="editModal = !editModal, setChosen(route)">
+                                <q-card-section>
+                                    <q-btn class="route-btn grow" @click="$router.push(route.url.trim('/'))" outline
+                                        color="red">
+                                        <span class="text-h3 q-pa-sm">{{route.length}}</span>
+                                    </q-btn>
+                                </q-card-section>
+                                <q-card-section class="text-justify">
+                                    <span class="white text-body1">
+                                        {{route.shortDescription}}</span>
+                                </q-card-section>
                             </q-card>
                         </div>
                     </div>
@@ -143,10 +150,31 @@
                 <q-input dark v-model="cFrameMobile" type="text" label="Mobile iFrame Link" />
                 <q-input dark v-model="cStartTime" type="text" label="Start Time (11:00 AM*)" />
                 <q-input dark v-model="cOtherMaps" type="text" label="Other Maps (Array of Objects {title, link})" />
-                <q-input dark v-model="cShortDescription" type="text" label="Short Description (Front Page)" />
-                <q-input dark v-model="cDescription" type="text" label="Description (Route Page" />
+                <span class="col-xs-8" v-for="map in cOtherMaps">
+                    <div class="box">
+                        <div class="title">
+                            {{map.order}}: {{map.title}}
+                        </div>
+                        <div class="link">{{map.link}}</div>
+                        <q-btn @click="removeMapLinkFromForm(map.title,map.link)">Remove Link
+                        </q-btn>
+                        <q-btn color="green" class="col-xs-2" @click.native="upMapLinkOrder">Up
+                        </q-btn>
+                        <q-btn color="red" class="col-xs-2" @click.native="changeMapLinkOrderDown">Down
+                        </q-btn>
+                        <hr>
+                    </div>
+                </span>
+                <q-input square class="col-xs-8" filled bg-color="white" v-model="mapLinkTitle" type="text"
+                    label="Map Link Name (Map My Ride)" />
+                <q-input square class="col-xs-8 q-mt-md" filled bg-color="white" v-model="mapLinkLink" type="text"
+                    label="Map Link URL" />
+                <q-btn color="red" class="col-xs-5" @click.native="addMapLinkToForm">Add Map Link
+                </q-btn>
+                <q-input dark v-model="cShortDescription" type="textarea" label="Short Description (Front Page)" />
+                <q-input dark v-model="cDescription" type="textarea" label="Description (Route Page" />
                 <q-btn color="red" no-caps @click="editRoute" class="q-mt-sm">Submit Edits</q-btn>
-                <q-btn color="red" @click="deleteRoute(chosenItemId)" class="q-mt-sm">Delete</q-btn>
+                <q-btn color="red" @click="deleteRoute(c_id)" class="q-mt-sm">Delete</q-btn>
             </div>
         </q-dialog>
     </div>
@@ -180,6 +208,7 @@
                 OtherMaps: [],
                 ShortDescription: '',
                 Description: '',
+                c_id: 0,
                 cId: 0,
                 cEarlyReg: '',
                 cReg: '',
@@ -220,7 +249,7 @@
             editRoute() {
                 var obj = {
                     id: this.cId,
-                    _id: this.cId,
+                    _id: this.c_id,
                     earlyReg: this.cEarlyReg,
                     reg: this.cReg,
                     url: this.cUrl,
@@ -283,18 +312,10 @@
                 this.addingRoute = false;
             },
             addMapLinkToForm() {
-                var obj = { title: this.mapLinkTitle, link: this.mapLinkLink, order: this.otherMaps.length };
+                var obj = { title: this.mapLinkTitle, link: this.mapLinkLink, order: this.OtherMaps.length };
                 var tempMaps = this.OtherMaps;
                 tempMaps.push(obj);
                 this.OtherMaps = tempMaps;
-            },
-            upMapLinkOrder(title, order) {
-                this.otherMaps.forEach(obj => {
-                    if (obj.title === title) {
-                        this.otherMaps.order = order;
-                    }
-                })
-                this.otherMaps.sort(function (a, b) { return a.order - b.order });
             },
             removeMapLinkFromForm(title, link) {
                 var validObjects = [];
@@ -322,6 +343,24 @@
                     }
                 });
                 this.RestStops = validObjects;
+            },
+            setChosen(route) {
+                this.c_id = route._id
+                this.cId = route.id,
+                    this.cEarlyReg = route.earlyReg,
+                    this.cReg = route.reg,
+                    this.cUrl = route.url,
+                    this.cLength = route.length,
+                    this.cMapLink = route.mapLink,
+                    this.cRestStops = route.restStops,
+                    this.cBtnClass = route.btnClass,
+                    this.cHeadline = route.headline,
+                    this.cFrame = route.frame,
+                    this.cFrameMobile = route.frameMobile,
+                    this.cStartTime = route.startTime,
+                    this.cOtherMaps = route.otherMaps,
+                    this.cShortDescription = route.shortDescription,
+                    this.cDescription = route.description
             }
 
         }
