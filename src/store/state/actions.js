@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Notify } from 'quasar'
 
 var production = !window.location.host.includes('localhost');
-var baseUrl = production ? '//www.unorthodoxgifts.com/' : '//localhost:3000/';
+var baseUrl = production ? '//www.unorthodoxtech.com/' : '//localhost:3000/';
 
 var api = axios.create({
     baseURL: baseUrl,
@@ -17,7 +17,7 @@ var imathleteAPI = axios.create({
 })
 
 export function sendEmail({ commit, dispatch }, obj) {
-    api.post('email', obj)
+    api.post('api/emails', obj)
         .then(res => {
             Notify.create({ message: 'Message Sent', color: 'green' });
         })
