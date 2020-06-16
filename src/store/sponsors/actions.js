@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Notify } from 'quasar'
 
 var production = !window.location.host.includes('localhost');
-var baseUrl = production ? '//www.unorthodoxgifts.com/api/' : '//localhost:3000/api/';
+var baseUrl = production ? '//www.unorthodoxtech.com/api/' : '//localhost:3000/api/';
 
 var api = axios.create({
     baseURL: baseUrl,
@@ -15,9 +15,9 @@ export function getSponsors({ commit }) {
         .then(res => {
             var visibleSponsors = [];
             var hiddenSponsors = [];
-            for (const item in res.data.data) {
-                if (res.data.data.hasOwnProperty(item)) {
-                    const element = res.data.data[item];
+            for (const item in res.data) {
+                if (res.data.hasOwnProperty(item)) {
+                    const element = res.data[item];
                     if (element.visible) {
                         visibleSponsors.push(element);
                     } else {
@@ -25,7 +25,7 @@ export function getSponsors({ commit }) {
                     }
                 }
             }
-            commit('setSponsors', res.data.data)
+            commit('setSponsors', res.data)
             commit('setHiddenSponsors', hiddenSponsors)
             commit('setVisibleSponsors', visibleSponsors)
         })
@@ -70,7 +70,7 @@ export function editSponsor({ commit, dispatch }, obj) {
     api.put(`sponsors/${obj._id}`, obj)
         .then(res => {
             Notify.create({
-                message: res.data.data.message,
+                message: res.data.message,
                 type: 'primary',
                 color: 'secondary',
                 textColor: 'white',

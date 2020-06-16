@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Notify } from 'quasar'
 
 var production = !window.location.host.includes('localhost');
-var baseUrl = production ? '//www.unorthodoxgifts.com/' : '//localhost:3000/';
+var baseUrl = production ? '//www.unorthodoxtech.com/' : '//localhost:3000/account';
 
 let auth_api = axios.create({
     baseURL: baseUrl,
@@ -13,13 +13,13 @@ let auth_api = axios.create({
 export function getAuth({ commit, dispatch }) {
     auth_api('authenticate')
         .then(res => {
-            if (res.data.data == null) {
+            if (res.data == null) {
                 commit('setLoginStatus', false)
                 console.error("Login Failed")
             }
-            else if (res.data.data._id !== null) {
+            else if (res.data._id !== null) {
                 commit('setLoginStatus', true)
-                commit('setUserInfo', res.data.data)
+                commit('setUserInfo', res.data)
             } else {
                 commit('setLoginStatus', false)
                 console.error("Login Failed")
@@ -41,7 +41,7 @@ export function login({ commit, dispatch }, obj) {
                 return;
             }
             commit('setLoginStatus', true)
-            commit('setUserInfo', res.data.data)
+            commit('setUserInfo', res.data)
 
         })
         .catch(err => {
