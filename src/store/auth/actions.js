@@ -2,7 +2,7 @@ import axios from 'axios'
 import { Notify } from 'quasar'
 
 var production = !window.location.host.includes('localhost');
-var baseUrl = production ? '//www.unorthodoxtech.com/' : '//localhost:3000/account';
+var baseUrl = production ? '//unorthodox-posts.herokuapp.com/account/' : '//localhost:3000/account';
 
 let auth_api = axios.create({
     baseURL: baseUrl,

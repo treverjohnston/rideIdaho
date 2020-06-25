@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Notify } from 'quasar'
 
 var production = !window.location.host.includes('localhost');
-var baseUrl = production ? '//www.unorthodoxtech.com/' : '//localhost:3000/';
+var baseUrl = production ? '//www.unorthodox-posts.herokuapp.com/' : '//localhost:3000/';
 
 var api = axios.create({
     baseURL: baseUrl,
@@ -30,7 +30,7 @@ export function getParticipantTotal({ commit, dispatch }) {
 
     api.get('api/participants/count')
         .then(res => {
-            var body = res.data.data.body;
+            var body = res.data.body;
             var totalStates = body.split('<State>').length - 1;
             var splitRes = body.split('<StateParticipants>');
             var totalParticipants = 0;
