@@ -36,6 +36,10 @@
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
                     </div>
+                    <div class="para col-xs-10 col-md-9 text-center q-mt-sm">
+                        <p>Special thanks to <a href="https://imagocaeli.com/" target="_blank">Imago Caeli</a> for
+                            RFHI video.</p>
+                    </div>
                     <div class="para col-md-9 col-xs-10"
                         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
                         <h2 class="text-bold col-xs-10 text-center text-italic top-marg">Our Mission</h2>
