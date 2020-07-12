@@ -24,6 +24,18 @@
                         </div>
                     </div>
                     <!-- <hr class="offset-md-2 col-md-8 return offset-xs-1 col-xs-10 "> -->
+                    <div class="para col-xs-10 col-md-9 text-center q-mt-md desktop-only">
+                        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3fNAnhqBxGo"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div class="para col-xs-10 col-md-9 text-center q-mt-md mobile-only">
+                        <iframe width="250" height="315" src="https://www.youtube-nocookie.com/embed/3fNAnhqBxGo"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
                     <div class="para col-md-9 col-xs-10"
                         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
                         <h2 class="text-bold col-xs-10 text-center text-italic top-marg">Our Mission</h2>
@@ -123,12 +135,12 @@
                             their time and services to care for those who otherwise do not have access to
                             healthcare. The clinic depends heavily upon volunteers and charitable contributions to
                             continue to provide these services.
-                            <p class="text-justify">
-                                With outstanding support provided by the Treasure Valley Bicycle community we are
-                                confident that our upward fundraising trajectory will continue. We can’t do it alone. We
-                                need your help. Collectively we can make a difference . Please come join us in helping
-                                the most vulnerable in our Treasure Valley Community.”
-                            </p>
+                        <p class="text-justify">
+                            With outstanding support provided by the Treasure Valley Bicycle community we are
+                            confident that our upward fundraising trajectory will continue. We can’t do it alone. We
+                            need your help. Collectively we can make a difference . Please come join us in helping
+                            the most vulnerable in our Treasure Valley Community.”
+                        </p>
                     </div>
                     <div class="paragroup offset-md-1 col-md-11 top-marg text-center">
                         <div class="row justify-center">

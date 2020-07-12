@@ -19,6 +19,9 @@
         </div>
         <div class="row justify-center text-center" v-else>
             <template v-if="admin">
+                <div class="col-xs-12">
+                    <span>Cross-site cookies must be enabled to ensure proper functionality</span>
+                </div>
                 <h3 class="col-xs-10 text-center">Sponsors</h3>
                 <q-btn @click="addingSponsor = !addingSponsor" class="col-xs-4 text-center" color="red">Toggle Sponsor
                     Form
