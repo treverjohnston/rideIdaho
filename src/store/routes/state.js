@@ -9,7 +9,7 @@ export default {
       pic: '',
       mapLink: '//www.mapmyride.com/routes/view/2264365960',
       restStops: ['East Kuna Mora Road -  4.6 Miles'],
-      btnClass: 'btn color bg-purple',
+      btnClass: 'bg-purple text-white col-xs-4 col-sm-3',
       headline: 'Virtutem Spei - "Hope and Strength"',
       frame: '//snippets.mapmycdn.com/routes/view/embedded/2264365960?width=600&height=400&elevation=true&line_color=E6d90d8e&rgbhex=8e0dd9&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-09-28T15:24:15-05:00',
       frameMobile: '//snippets.mapmycdn.com/routes/view/embedded/2264365960?width=300&height=450&elevation=true&line_color=E6d90d8e&rgbhex=8e0dd9&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-09-28T15:24:15-05:00',
@@ -57,7 +57,7 @@ export default {
         'North Stewart Road – 7.6 Miles',
         'East Kuna Mora Road – 15 Miles'
       ],
-      btnClass: 'btn color',
+      btnClass: 'text-white col-xs-5 col-sm-3 bg-primary-3',
       headline: 'Virtutem Spei - "Hope and Strength"',
       frame: '//snippets.mapmycdn.com/routes/view/embedded/996049745?width=600&height=400&elevation=true&line_color=E60400ff&rgbhex=ff0004&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-09-28T15:24:15-05:00',
       frameMobile: '//snippets.mapmycdn.com/routes/view/embedded/996049745?width=300&height=450&elevation=true&line_color=E60400ff&rgbhex=ff0004&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-09-28T15:24:15-05:00',
@@ -104,7 +104,7 @@ export default {
         'W. Dickman - 18.5 Miles',
         'Bowmont - 25.5 Miles'
       ],
-      btnClass: 'btn color bg-blue',
+      btnClass: 'bg-blue text-white col-xs-4 col-sm-3 ',
       headline: 'Carpe Diem - "Seize The Day"',
       frame: '//snippets.mapmycdn.com/routes/view/embedded/1478990992?width=600&height=400&elevation=true&line_color=E6d9430d&rgbhex=0d43d9&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-09-21T10:32:52-05:00&show_marker_every=3',
       frameMobile: '//snippets.mapmycdn.com/routes/view/embedded/1478990992?width=300&height=450&elevation=true&line_color=E6d9430d&rgbhex=0d43d9&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-09-21T10:32:52-05:00&show_marker_every=3',
@@ -155,7 +155,7 @@ export default {
         'Lakeshore Dr. - 44 Miles',
         'Bowmont - 56 Miles'
       ],
-      btnClass: 'btn color bg-orange',
+      btnClass: 'bg-orange text-black col-xs-4 col-sm-3',
       headline: 'Semper Fidelis - "Always Faithful"',
       frame: '//snippets.mapmycdn.com/routes/view/embedded/981667107?width=600&height=400&elevation=true&line_color=E60d5ed9&rgbhex=d95e0d&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-12-16T22:22:58-06:00&show_marker_every=6"',
       frameMobile: '//snippets.mapmycdn.com/routes/view/embedded/981667107?width=300&height=450&elevation=true&line_color=E60d5ed9&rgbhex=d95e0d&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-12-16T22:22:58-06:00&show_marker_every=6"',
@@ -207,7 +207,7 @@ export default {
         'Lakeshore Dr. - 82 Miles',
         'Bowmont - 94 Miles'
       ],
-      btnClass: 'btn color bg-green',
+      btnClass: 'bg-green text-white col-xs-4 col-sm-3 ',
       headline: 'Veni Vidi Vici - "I Came. I Saw. I Conquered."',
       frame: '//snippets.mapmycdn.com/routes/view/embedded/1462908562?width=600&height=400&elevation=true&line_color=E636d90d&rgbhex=0dd936&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2020-04-03T18:54:21-06:00&show_marker_every=10',
       frameMobile: '//snippets.mapmycdn.com/routes/view/embedded/1462908562?width=600&height=400&elevation=true&line_color=E636d90d&rgbhex=0dd936&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2020-04-03T18:54:21-06:00&show_marker_every=10',

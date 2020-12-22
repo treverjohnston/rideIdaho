@@ -1,62 +1,62 @@
 <template>
-    <q-layout class="black">
+    <q-layout class="bg-neutral-9 text-neutral-1">
         <div class="row wrap justify-center">
-            <div class="col-xs-11 col-md-10 white-back shadow-24">
+            <div class="col-xs-11 col-md-10 ">
                 <div class="row justify-center">
                     <div class="col-xs-11 col-md-8 text-center">
-                        <h3 class="desktop-only">Rules of the Road</h3>
-                        <h4 class="mobile-only">Rules of the Road</h4>
+                        <h2 class="desktop-only">Rules of the Road</h2>
+                        <h3 class="mobile-only">Rules of the Road</h3>
                         <hr class="width_90">
-                        <h4 class="desktop-only text-italic">
+                        <h3 class="desktop-only text-italic">
                             Be Predictable
-                        </h4>
+                        </h3>
                         <h5 class="mobile-only text-italic">
                             Be Predictable
                         </h5>
-                        <p>Make your intentions clear to everyone on the road. Ride in a straight line and don’t swerve
+                        <h6>Make your intentions clear to everyone on the road. Ride in a straight line and don’t swerve
                             between
-                            parked cars. Signal turns, and check behind you well before turning or changing lanes.</p>
+                            parked cars. Signal turns, and check behind you well before turning or changing lanes.</h6>
                         <hr class="width_90">
-                        <h4 class="desktop-only text-italic">
+                        <h3 class="desktop-only text-italic">
                             Be Conspicuous
-                        </h4>
+                        </h3>
                         <h5 class="mobile-only text-italic">
                             Be Conspicuous
                         </h5>
-                        <p>Ride where people can see you and wear bright clothing. Use a front white light, red rear
+                        <h6>Ride where people can see you and wear bright clothing. Use a front white light, red rear
                             light and
                             reflectors when visibility is poor. Make eye contact with others and don’t ride on
                             sidewalks.
-                        </p>
+                        </h6>
                         <hr class="width_90">
-                        <h4 class="desktop-only text-italic">
+                        <h3 class="desktop-only text-italic">
                             Think Ahead
-                        </h4>
+                        </h3>
                         <h5 class="mobile-only text-italic">
                             Think Ahead
                         </h5>
-                        <p>Anticipate what drivers, pedestrians, and other people on bikes will do next. Watch for
+                        <h6>Anticipate what drivers, pedestrians, and other people on bikes will do next. Watch for
                             turning vehicles
                             and ride outside the door zone of parked cars. Look out for debris, potholes, and other road
                             hazards. Cross railroad tracks at right angles.
-                        </p>
+                        </h6>
                         <hr class="width_90">
-                        <h4 class="desktop-only text-italic">
+                        <h3 class="desktop-only text-italic">
                             Ride Ready
-                        </h4>
+                        </h3>
                         <h5 class="mobile-only text-italic">
                             Ride Ready
                         </h5>
-                        <p>Check that your tires are sufficiently inflated, brakes are working, chain runs smoothly, and
+                        <h6>Check that your tires are sufficiently inflated, brakes are working, chain runs smoothly, and
                             quick
                             release levers are closed. Carry tools and supplies that are appropriate for your ride. Wear
                             a helmet.
-                        </p>
+                        </h6>
                         <hr class="width_90">
 
                     </div>
                     <div class="col-xs-12">
-                        <div class="spacer">
+                        <div class="spacer bg-neutral-2">
                             <img class="ride" src="statics/logos/RFHIdahoLogo.png" alt="ride for hope logo">
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                         <h3 class="desktop-only text-center">Idaho Biking Laws</h3>
                         <h4 class="mobile-only text-center">Idaho Biking Laws</h4>
                         <hr class="width_90">
-                        <dl>
+                        <dl class="text-h6">
                             <dt> 49-714: TRAFFIC LAWS APPLY TO PERSONS ON BICYCLES AND OTHER HUMAN-POWERED VEHICLES —
                                 DUE CARE
                             </dt>
@@ -82,7 +82,7 @@
                         </dl>
                         <hr class="width_90">
 
-                        <dl>
+                        <dl class="text-h6">
                             <dt>49-717: POSITION ON HIGHWAY
                             </dt>
                             <dd>(1) Any person operating a bicycle upon a roadway at less than the normal speed of
@@ -105,7 +105,7 @@
                                 lanes may ride as near the left-hand curb or edge of the roadway as practicable.</dd>
                         </dl>
                         <hr class="width_90">
-                        <dl>
+                        <dl class="text-h6">
                             <dt>49-718: RIDING TWO ABREAST
                             </dt>
                             <dd>Persons riding bicycles upon a highway shall not ride more than two (2) abreast except
@@ -117,7 +117,7 @@
                         </dl>
                         <hr class="width_90">
 
-                        <dl>
+                        <dl class="text-h6">
                             <dt> 49-720: STOPPING — TURN AND STOP SIGNALS.
                             </dt>
                             <dd>(1) A person operating a bicycle or human-powered vehicle approaching a stop sign shall
@@ -154,19 +154,19 @@
                         </dl>
                         <hr class="width_90">
 
-                        <dt>49-721: BICYCLES ON SIDEWALKS.
+                        <dt class="text-h6">49-721: BICYCLES ON SIDEWALKS.
 
                         </dt>
-                        <dd>(1) A person operating a bicycle upon and along a sidewalk, or across a highway upon and
+                        <dd class="text-h6">(1) A person operating a bicycle upon and along a sidewalk, or across a highway upon and
                             along a
                             crosswalk, shall yield the right-of-way to any pedestrian, and shall give an audible signal
                             before
                             overtaking and passing a pedestrian or another bicyclist. </dd>
-                        <dd> (2) A person shall not operate a bicycle along and upon a sidewalk or across a highway upon
+                        <dd class="text-h6"> (2) A person shall not operate a bicycle along and upon a sidewalk or across a highway upon
                             and along
                             a crosswalk, where the use of bicycles is prohibited by official traffic control devices.
                         </dd>
-                        <dd> (3) A person operating a vehicle by human power, or operating a motorized wheelchair or an
+                        <dd class="text-h6"> (3) A person operating a vehicle by human power, or operating a motorized wheelchair or an
                             electric
                             personal assistive mobility device upon and along a sidewalk, or across a highway upon and
                             along

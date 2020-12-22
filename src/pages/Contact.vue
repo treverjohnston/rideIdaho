@@ -1,23 +1,23 @@
 <template>
     <q-layout class="black">
         <div class="row justify-center">
-            <div class="col-xs-11 col-md-10 white-back shadow-24">
+            <div class="col-xs-12 bg-neutral-9 full-page">
                 <div class=""
                     v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['-300px', '25px'], duration: 1000},  easing: 'linear' }">
                     <div class="row wrap justify-center">
                         <div class="col-xs-12 text-center">
-                            <h3>Contact Us</h3>
+                            <h2>Contact Us</h2>
                             <hr class="hr">
                             <h5 class="desktop-only">Please contact us anytime with any questions or inquiries!</h5>
                             <h6 class="mobile-only">Please contact us anytime with any questions or inquiries!</h6>
                         </div>
                     </div>
                     <div class="row justify-center bot desktop-only xs-gutter">
-                        <div class="col-xs-5 self-center space">
+                        <div class="col-xs-3 self-center space">
                             <img src="statics/logos/RFHIdahoLogo.png" class="responsive img"
                                 alt="Ride for hope idaho logo">
                         </div>
-                        <div class="col-xs-5 self-center">
+                        <div class="col-xs-7 self-center">
                             <q-input v-model="name" label="Name" name="name" type="text" />
                             <q-input v-model="email" label="Email" name="email" type="email" />
                             <q-input v-model="phone" label="Phone" name="phone" type="tel" />
@@ -86,6 +86,9 @@
 </script>
 
 <style scoped>
+    .full-page{
+        min-height: 100vh;
+    }
     .space {
         padding-right: 3rem;
     }

@@ -8,8 +8,9 @@
   }
 
   .grow:hover {
-    transform: scale(1.03);
+     transform: scale(1.03,1);
   }
+  
   .width_90 {
         width: 90%;
     }
@@ -21,7 +22,16 @@
     background-color: rgba(75, 75, 75, 0.39);
     border: 1px solid white;
   }
+  .white-border{
+        border: 1px solid white;
+    }
+.text-output {
+        background-color: transparent;
+        border: none;
+        text-align: center;
+        /* font-family: "Bellefair", serif; */
 
+    }
   .border {
     padding: 5em
   }
@@ -125,8 +135,20 @@
   }
 
   body {
-    font-family: 'Quattrocento', serif;
+    font-family: 'Quattrocento', serif
+  }
 
+  .non-selected {
+        background-color: transparent;
+  }
+
+  .selected {
+        background-color: #3a3a3a; 
+        // Neutral 3 ^
+        border: 3px solid ;
+        //Neutral 4^
+        padding: 1rem;
+        /* border-radius: 15px; */
   }
 
   .red-back {
@@ -208,5 +230,8 @@
 
   .routerLink{
     text-decoration: none;
-    color: white;
+  }
+  .route-item{
+    padding: 1rem 0 0 1rem;
+    margin-bottom: 1rem;
   }

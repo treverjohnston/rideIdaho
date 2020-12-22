@@ -14,14 +14,14 @@
         </template>
       </q-media-player>
     </div>
-    <div class="row justify-center spacer text-center dark-background">
+    <div class="row justify-center spacer text-center bg-neutral-2 text-neutral-8">
       <div class="col-xs-11 mobile-only">
         <span class="text-weight-bold text-h4">Ride For Hope Idaho</span>
         <hr class="hr">
       </div>
-      <div class="col-xs-11 col-sm-3 "
+      <div class="col-xs-11 col-sm-3"
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['400px', '0px'], duration: 1000},  easing: 'linear' }">
-        <router-link to="ride" class="routerLink">
+        <router-link to="ride" class="routerLink text-neutral-8">
           <div class="text-h5 text-weight-bold">
             Location
           </div>
@@ -33,19 +33,19 @@
       </div>
       <div class="col-xs-11 col-sm-3 "
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
-        <router-link to="ride" class="routerLink">
+        <router-link to="ride" class="routerLink text-neutral-8">
           <div class="text-h5 text-weight-bold">
             2021 Date
           </div>
           <div class="text-h6 text-weight-medium">
-            Saturday, June 19
+            Saturday, June 26
           </div>
         </router-link>
         <hr class="hr">
       </div>
       <div class="col-xs-11 col-sm-3"
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['200px', '0px'], duration: 1000},  easing: 'linear' }">
-        <router-link to="all-routes" class="routerLink">
+        <router-link to="all-routes" class="routerLink text-neutral-8">
           <div class="text-h5 text-weight-bold">
             Routes
           </div>
@@ -55,7 +55,19 @@
         </router-link>
         <hr class="hr">
       </div>
-      <div class="col-xs-11 col-sm-3" v-if="participantTotal >= 10 && openRegistration"
+      <div class="col-xs-11 col-sm-3"
+        v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['200px', '0px'], duration: 1000},  easing: 'linear' }">
+        <router-link to="about" class="routerLink text-neutral-8">
+          <div class="text-h5 text-weight-bold">
+            Amount Donated
+          </div>
+          <div class="text-h6 text-weight-medium" id="number">
+            <input readonly class="text-output large-text text-neutral-8" value="$0">
+          </div>
+        </router-link>
+        <hr class="hr">
+      </div>
+      <div class="col-xs-11 col-sm-3 text-neutral-8" v-if="participantTotal >= 10 && openRegistration"
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['100px', '0px'], duration: 1000},  easing: 'linear' }">
         <div class="text-h5 text-weight-bold" @click="openURL(participantUrl)">
           Current Riders
@@ -67,15 +79,16 @@
       </div>
     </div>
 
-    <div class="row justify-center dark-background">
+    <div class="row justify-center bg-neutral-2 text-neutral-9">
       <div class="col-xs-12">
         <div class="text-center">
           <div class="promo text-center desktop-only">
             <h1 class="text-weight-bold">Ride For Hope Idaho</h1>
-            <div class="text-weight-bold text-h4 soft-red q-mb-md">Supporting Healthcare for the Medically Underserved
+            <div class="text-weight-bold text-h4 text-primary-3 q-mb-md">Supporting Healthcare for the Medically
+              Underserved
             </div>
             <span v-if="openRegistration">
-              <div class="q-title text-h5">Online registration ends 6/18/2020.</div>
+              <div class="q-title text-h5">Online registration ends 6/18/2021.</div>
               <div class="q-title text-h5">Day of ride registration available.</div>
               <div class="q-title text-h5">Discount offered for teams of 5 or more and for families. Contact for more
                 details.
@@ -91,10 +104,11 @@
         <div class="promo text-center mobile-only">
           <div
             v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
-            <div class="text-weight-bold text-h5 soft-red q-mb-lg">Supporting Healthcare for the Medically Underserved
+            <div class="text-weight-bold text-h5 text-primary-3 q-mb-lg">Supporting Healthcare for the Medically
+              Underserved
             </div>
             <span v-if="openRegistration">
-              <div class="text-h6 q-title">Online registration ends 6/18/2020.</div>
+              <div class="text-h6 q-title">Online registration ends 6/18/2021.</div>
               <div class="text-h6 q-title">Day of ride registration available.</div>
               <div class="text-h6 q-title">Discount offered for teams of 5 or more and for families. Contact for more
                 details.</div>
@@ -108,69 +122,74 @@
         </div>
       </div>
     </div>
-    <div class="spacer row wrap light-background">
-      <h6 class="text-italic text-center light-paragraph col-xs-10 col-md-3 self-center text">
-        <b>Ride For Hope Idaho</b> is a charity bicycle event with the firm belief that quality healthcare should be
-        accessible
-        to everyone. We support the holistic approach to healthcare where true healing focuses not only on symptoms,
-        but
-        the underlying root cause of disease.
-      </h6>
-      <div class="text-center col-xs-12 col-md-3">
-        <img class="ride self-center xs-gutter" src="statics/logos/RFHIdahoLogo.png" alt="ride for hope logo">
+    <div class="spacer row justify-center bg-neutral-9 text-neutral-2 ">
+
+      <div class="para col-xs-10 col-md-5 text-center desktop-only self-center q-mr-xl">
+        <iframe width="100%" height="550" src="https://www.youtube-nocookie.com/embed/3fNAnhqBxGo" frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
-      <h6 class="text-italic text-center light-paragraph col-xs-10 col-md-3 self-center text"
-        v-scroll-fire="fadeInImage">
-        <b>Ride For Hope Idaho</b> is committed to ensuring that 100% of participant fees and donations go directly
-        to charity.
-        This unique commitment is made possible by charitable contributions from local sponsors which cover the
-        entire
-        cost of the event.
-      </h6>
+      <div class="text-center light-paragraph col-xs-12 col-md-3 self-center text desktop-only q-ml-xl">
+        <div class="row justify-center">
+          <h6 class="text-center light-paragraph col-xs-12 self-center text">
+            <b>Ride For Hope Idaho</b> is a charity bicycle event with the firm belief that quality healthcare should be
+            accessible
+            to everyone. We support the holistic approach to healthcare where true healing focuses not only on symptoms,
+            but
+            the underlying root cause of disease.
+          </h6>
+
+          <h6 class="text-center light-paragraph col-xs-12 self-center text" v-scroll-fire="fadeInImage">
+            <b>Ride For Hope Idaho</b> is committed to ensuring that 100% of participant fees and donations go directly
+            to charity.
+            This unique commitment is made possible by charitable contributions from local sponsors which cover the
+            entire
+            cost of the event.
+          </h6>
+        </div>
+      </div>
+
+      <div class="text-center light-paragraph col-xs-12 self-center text mobile-only">
+        <div class="row justify-center">
+
+          <span class="text-center light-paragraph col-xs-12 col-sm-8  self-center text text-body1">
+            <b>Ride For Hope Idaho</b> is a charity bicycle event with the firm belief that quality healthcare should be
+            accessible
+            to everyone. We support the holistic approach to healthcare where true healing focuses not only on symptoms,
+            but
+            the underlying root cause of disease.
+          </span>
+
+          <div class="para col-xs-11 text-center  mobile-only">
+            <iframe width="100%" height="500" src="https://www.youtube-nocookie.com/embed/3fNAnhqBxGo" frameborder="0"
+              allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <span class="text-center light-paragraph col-xs-12 col-sm-8  self-center text text-body1"
+            v-scroll-fire="fadeInImage">
+            <b>Ride For Hope Idaho</b> is committed to ensuring that 100% of participant fees and donations go directly
+            to charity.
+            This unique commitment is made possible by charitable contributions from local sponsors which cover the
+            entire
+            cost of the event.
+          </span>
+        </div>
+      </div>
     </div>
-    <div class="row justify-around dark-background">
+    <div class="row justify-around bg-neutral-2 text-neutral-8">
       <div class="col-xs-12 text-center">
         <q-card-section>
           <h2>Routes</h2>
         </q-card-section>
         <hr class="routeshr" v-scroll-fire="fadeInImage">
       </div>
-      <div class="col-xs-12 col-sm-6 col-md-5 border desktop-only self-center grow" v-for="route in routes">
-        <q-card :id="route.id" class="text-center card-container shadow-24 not-loaded">
-          <q-card-section>
-            <q-btn class="route-btn grow" @click="$router.push(route.url.trim('/'))" outline color="red">
-              <span class="text-h3 q-pa-sm">{{route.length}}</span>
-            </q-btn>
-          </q-card-section>
-          <q-card-section class="text-justify">
-            <span class="white text-body1">
-              {{route.shortDescription}}</span>
-          </q-card-section>
-        </q-card>
-      </div>
-      <div class="col-xs-11 col-sm-6 col-md-5 mobile-border mobile-only" v-for="route in routes">
-        <q-card class="text-center card-container shadow-24">
-          <q-card-section>
-            <q-btn class="route-btn" @click="$router.push(route.url.trim('/'))" outline color="red">
-              <span class="text-h4">{{route.length}}</span>
-            </q-btn>
-          </q-card-section>
-          <q-card-section>
-            <span class="white text-justify text-h6">
-              {{route.shortDescription}}</span>
-          </q-card-section>
-        </q-card>
-      </div>
+
+       <RouteCarousel></RouteCarousel>
     </div>
-    <div class="row wrap justify-center gen light-background q-mb-md">
-      <div class="text-center col-xs-12 col-md-4 self-center">
-        <q-btn @click="openURL('https://genesiscommunityhealth.com/about-us/')" flat>
-          <img class="gch responsive" src="statics/logos/gch.png" alt="genesis community health logo">
-        </q-btn>
-      </div>
-      <div class="text-italic text-center light-paragraph col-xs-12 col-md-4 self-center text" data-x="80">
+
+    <div class="row wrap justify-center gen bg-neutral-9">
+      <div class="text-center light-paragraph col-xs-12 col-sm-7 col-md-4 self-center text text-neutral-2 desktop-only"
+        data-x="80">
         <h6>
-          Ride For Hope Idaho is proud to support Genesis Community Health. Genesis Community
+          <b>Ride For Hope Idaho</b> is proud to support Genesis Community Health. Genesis Community
           Health is an integrated healthcare facility providing primary medical care, basic dental, mental
           health, specialty referral and medication to the low-income and uninsured in the Treasure
           Valley. The clinic is staffed by volunteers and healthcare providers who donate their time and
@@ -178,58 +197,81 @@
           heavily upon charitable contributions and volunteers to continue to provide these services.
         </h6>
       </div>
+      <div class="text-center light-paragraph col-xs-11 col-sm-8 col-md-7 self-center text text-neutral-2 mobile-only"
+        data-x="80">
+        <span class="text-body1">
+          <b>Ride For Hope Idaho</b> is proud to support Genesis Community Health. Genesis Community
+          Health is an integrated healthcare facility providing primary medical care, basic dental, mental
+          health, specialty referral and medication to the low-income and uninsured in the Treasure
+          Valley. The clinic is staffed by volunteers and healthcare providers who donate their time and
+          services to care for those who otherwise do not have access to healthcare. The clinic depends
+          heavily upon charitable contributions and volunteers to continue to provide these services.
+        </span>
+      </div>
       <div class="col-xs-12 col-md-4 text-center self-center">
-        <q-btn class="cbtnm" @click="$router.push('/charities')">Learn More</q-btn>
+        <div class="row justify-center">
+          <div class="col-xs-12">
+            <q-btn @click="openURL('https://genesiscommunityhealth.com/')" class=" q-mb-lg " flat>
+              <img class="gch responsive" src="statics/logos/gch.png" alt="genesis community health logo">
+            </q-btn>
+          </div>
+          <div class="col-xs-12">
+            <q-btn class="mobile-only" size="md" color="accent-4" @click="openURL('https://genesiscommunityhealth.com/')">Learn More</q-btn>
+            <q-btn class="desktop-only" size="lg" color="accent-4" @click="openURL('https://genesiscommunityhealth.com/')">Learn More</q-btn>
+          </div>
+
+        </div>
       </div>
     </div>
-    <div class="q-gutter-md row wrap justify-center carousel-container bg-white">
+
+    <div class="q-gutter-md row wrap justify-center carousel-container bg-neutral-9">
       <!-- MOBILE -->
       <q-carousel v-model="slide" transition-prev="scale" transition-next="scale" swipeable animated padding infinite
-        autoplay control-color="black" class="bg-white col-xs-5 mobile-only">
+        autoplay control-color="black" class="bg-neutral-9 col-xs-5 mobile-only">
         <q-carousel-slide v-for="sponsor in l2" :name="sponsor.name" class="no-wrap flex-center">
           <div class="q-mt-md text-center">
-            <q-btn flat class="absolute-center" to="sponsors">
+            <q-btn flat class="absolute-center" @click="openURL(sponsor.link)">
               <img class="slide-img-mobile absolute-center" :src="sponsor.logo" :alt="sponsor.name" />
             </q-btn>
           </div>
         </q-carousel-slide>
       </q-carousel>
       <q-carousel v-model="slide2" transition-prev="scale" transition-next="scale" swipeable animated padding infinite
-        autoplay control-color="black" class="bg-white col-xs-5 mobile-only">
+        autoplay control-color="black" class="bg-neutral-9 col-xs-5 mobile-only">
         <q-carousel-slide v-for="sponsor in l2" :name="sponsor.name" class="no-wrap flex-center">
           <div class="q-mt-md text-center">
-            <q-btn flat class="absolute-center" to="sponsors">
+            <q-btn flat class="absolute-center" @click="openURL(sponsor.link)">
               <img class="slide-img-mobile absolute-center" :src="sponsor.logo" :alt="sponsor.name" />
             </q-btn>
           </div>
         </q-carousel-slide>
       </q-carousel>
       <!-- DESKTOP -->
-      <q-carousel v-model="slide" transition-prev="scale" transition-next="scale" swipeable animated padding arrows
-        infinite autoplay class="bg-white col-xs-10 col-sm-4 col-md-3 desktop-only">
+      <q-carousel v-model="slide" transition-prev="scale" transition-next="scale" animated padding infinite autoplay
+        class="bg-neutral-9 col-xs-10 col-sm-4 col-md-3 desktop-only">
         <q-carousel-slide v-for="sponsor in l2" :name="sponsor.name" class=" no-wrap flex-center">
           <div class="q-mt-md text-center">
-            <q-btn flat class="absolute-center" to="sponsors">
+            <q-btn flat class="absolute-center" @click="openURL(sponsor.link)">
               <img class="slide-img absolute-center" :src="sponsor.logo" :alt="sponsor.name" />
             </q-btn>
           </div>
         </q-carousel-slide>
       </q-carousel>
-      <q-carousel v-model="slide2" transition-prev="scale" transition-next="scale" swipeable animated padding arrows
-        infinite autoplay class="bg-white col-xs-10 col-sm-4 col-md-3 desktop-only">
+      <q-carousel v-model="slide2" transition-prev="scale" transition-next="scale" animated padding infinite autoplay
+        class="bg-neutral-9 col-xs-10 col-sm-4 col-md-3 desktop-only">
         <q-carousel-slide v-for="sponsor in l2" :name="sponsor.name" class=" no-wrap flex-center">
           <div class="q-mt-md text-center">
-            <q-btn flat class="absolute-center" to="sponsors">
+            <q-btn flat class="absolute-center" @click="openURL(sponsor.link)">
               <img class="slide-img absolute-center" :src="sponsor.logo" :alt="sponsor.name" />
             </q-btn>
           </div>
         </q-carousel-slide>
       </q-carousel>
-      <q-carousel v-model="slide3" transition-prev="scale" transition-next="scale" swipeable animated padding arrows
-        infinite autoplay class="bg-white col-xs-10 col-sm-4 col-md-3 desktop-only">
+      <q-carousel v-model="slide3" transition-prev="scale" transition-next="scale" animated padding infinite autoplay
+        class="bg-neutral-9 col-xs-10 col-sm-4 col-md-3 desktop-only">
         <q-carousel-slide v-for="sponsor in l2" :name="sponsor.name" class=" no-wrap flex-center">
           <div class="q-mt-md text-center">
-            <q-btn flat class="absolute-center" to="sponsors">
+            <q-btn flat class="absolute-center" @click="openURL(sponsor.link)">
               <img class="slide-img absolute-center" :src="sponsor.logo" :alt="sponsor.name" />
             </q-btn>
           </div>
@@ -272,6 +314,8 @@
 
 <script>
   import { openURL } from "quasar";
+  import anime from "animejs";
+  import RouteCarousel from '../components/RouteCarousel.vue'
 
   export default {
     name: "index",
@@ -289,6 +333,9 @@
         covidCallout1: "We regret that due to COVID-19, the 2020 Ride For Hope Idaho has been canceled. Those already registered will be contacted soon by email.",
         covidCallout2: "If you would still like to support the cause, you can donate directly to Genesis Community Health by following the link below. Any donation they recieve will be all the more appreciated during this time of stress on the healthcare system. We look forward to riding with you in 2021!"
       };
+    },
+    components:{
+      RouteCarousel
     },
     computed: {
       routes() {
@@ -317,6 +364,15 @@
           var el = document.getElementById(route.id)
           el.classList.add('loaded')
         });
+      },
+      animateNumber() {
+        anime({
+          targets: '#number input',
+          value: '$' + '66500',
+          round: 1,
+          easing: 'easeInOutExpo',
+          duration: 3333
+        });
       }
     },
     mounted() {
@@ -330,6 +386,7 @@
         this.showCovid = true;
         this.covidDialog = true;
       }
+      this.animateNumber();
     },
 
   };
@@ -352,7 +409,7 @@
     position: relative;
   }
 
-  .soft-red {
+  .text-primary-3 {
     color: rgb(190, 30, 30);
   }
 

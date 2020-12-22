@@ -22,7 +22,7 @@ export function sendEmail({ commit, dispatch }, obj) {
             Notify.create({ message: 'Message Sent', color: 'green' });
         })
         .catch(err => {
-            Notify.create({ message: 'Message send failed: \n If issue persists, please email rideforhope@gmail.com  \n\n Error:  ' + err, color: 'red' });
+            Notify.create({ message: 'Message send failed: \n If issue persists, please email support@rideforhopeidaho.com  \n\n Error:  ' + err, color: 'red' });
         })
 }
 

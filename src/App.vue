@@ -8,7 +8,7 @@
   export default {
     name: 'App',
     mounted() {
-      let closeDate = new Date("June 18, 2021 00:00:00")
+      let closeDate = new Date("June 25, 2021 00:00:00")
       let openDate = new Date("January 1, 2021 00:00:00")
 
       let date = new Date();

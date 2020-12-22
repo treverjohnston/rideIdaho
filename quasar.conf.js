@@ -12,7 +12,8 @@ module.exports = function (ctx) {
     ],
 
     css: [
-      'app.styl'
+      'app.styl',
+      'pallete.css'
     ],
 
     extras: [
@@ -74,7 +75,8 @@ module.exports = function (ctx) {
 
       // Quasar plugins
       plugins: [
-        'Notify'
+        'Notify',
+        'Meta'
       ]
     },
 

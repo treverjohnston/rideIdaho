@@ -1,50 +1,56 @@
 <template>
-    <q-layout class="black">
-        <div class="row justify-center">
-            <div class="col-xs-11 col-md-10 white-back shadow-24">
+    <q-layout class="black ">
+        <div class="row justify-center bg-neutral-9">
+            <div class="col-xs-11 col-md-9">
                 <div class="row wrap justify-center">
-                    <div class="col-xs-9 text-center desktop-only spacers">
-                        <div class="row wrap justify-center" id="number">
-                            <input readonly class="text-output large-text text-bold " value="$0">
-                            <h4 class="text-bold col-xs-9 text-center text-italic">Donated by Ride For Hope Idaho
-                                With
-                                <u>YOUR</u> Help</h4>
-                        </div>
+                    <div class="col-xs-12 text-center">
+                        <h2>About Ride For Hope Idaho</h2>
+                        <hr class="hr">
                     </div>
-                    <div class="col-xs-10 text-center mobile-only spacers">
-                        <div class="row wrap justify-center" id="number">
-                            <big>
-                                <input readonly class="text-output text-bold col-xs-10 emphasize" value="$0">
-                            </big>
-
-                            <p class="text-bold col-xs-9 text-center text-italic">Donated by Ride For Hope Idaho
-                                With
-                                <u>YOUR</u> Help</p>
+                </div>
+                <div class="row wrap justify-around q-mt-lg">
+                    <div class="col-xs-9 col-sm-5 text-center desktop-only self-center">
+                        <span class="text-h4">Since 2015, over <b>$66,500</b> has been donated by Ride
+                            For Hope Idaho
+                            with <u>YOUR</u> help!</span>
+                    </div>
+                    <div class="col-xs-10 text-center mobile-only">
+                        <div class="row wrap justify-center">
+                            <div class="col-xs-12">
+                                <span class="text-h5">Since 2015, over <b>$66,500</b> has been donated by Ride For Hope Idaho
+                                    With
+                                    <u>YOUR</u> Help</span>
+                            </div>
 
                         </div>
                     </div>
                     <!-- <hr class="offset-md-2 col-md-8 return offset-xs-1 col-xs-10 "> -->
-                    <div class="para col-xs-10 col-md-9 text-center q-mt-md desktop-only">
-                        <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/3fNAnhqBxGo"
+                    <div class="para col-xs-10 col-sm-5 col-md-8 text-center q-mt-md desktop-only self-center">
+                        <iframe width="860" height="515" src="https://www.youtube-nocookie.com/embed/3fNAnhqBxGo"
                             frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
+                        <p>Special thanks to <a href="https://imagocaeli.com/" target="_blank">Imago Caeli</a> for
+                            RFHI video.</p>
                     </div>
-                    <div class="para col-xs-10 col-md-9 text-center q-mt-md mobile-only">
+                    <div class="para col-xs-10 col-sm-9 text-center q-mt-md mobile-only">
                         <iframe width="250" height="315" src="https://www.youtube-nocookie.com/embed/3fNAnhqBxGo"
                             frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             allowfullscreen></iframe>
-                    </div>
-                    <div class="para col-xs-10 col-md-9 text-center q-mt-sm">
                         <p>Special thanks to <a href="https://imagocaeli.com/" target="_blank">Imago Caeli</a> for
                             RFHI video.</p>
                     </div>
-                    <div class="para col-md-9 col-xs-10"
+                    <div class="para col-xs-10 col-md-9 text-center q-mt-sm">
+
+                    </div>
+                </div>
+                <div class="row justify-center">
+                    <div class="para col-md-9 col-xs-12"
                         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
-                        <h2 class="text-bold col-xs-10 text-center text-italic top-marg">Our Mission</h2>
+                        <h2 class="text-bold col-xs-12 col-md-10 text-center top-marg">Our Mission</h2>
                         <!-- <hr class="offset-md-2 col-md-8 return offset-xs-1 col-xs-10 "> -->
-                        <p class="text-justify">
+                        <h5 class="text-justify">
                             <em>
                                 <b>Ride For Hope Idaho</b>
                             </em> is a charity bicycle event with the firm belief that quality
@@ -52,8 +58,8 @@
                             be accessible to everyone. We support the holistic approach to healthcare where true healing
                             focuses
                             not only on symptoms, but the underlying root cause of disease.
-                        </p>
-                        <p class="text-justify">
+                        </h5>
+                        <h5 class="text-justify ">
                             <em>
                                 <b>Ride For Hope Idaho</b>
                             </em> is committed to ensuring that 100% of participant fees and
@@ -62,16 +68,15 @@
                             to charity. This unique commitment is made possible by charitable contributions from local
                             sponsors
                             which cover the entire cost of the event.
-                        </p>
+                        </h5>
                     </div>
-                    <!-- <hr class="offset-md-2 col-md-8 return offset-xs-1 col-xs-10"> -->
-                    <h3 class="text-bold col-xs-10 text-center text-italic top-marg"
+                    <span class="text-bold text-h2 col-xs-12 col-md-10 text-center top-marg"
                         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
-                        About Us</h3>
-                    <div class="para col-md-5 col-xs-10"
+                        About Us</span>
+                    <div class="para col-md-5 col-xs-12"
                         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
 
-                        <p class="text-justify">
+                        <h5 class="text-justify">
                             <em>
                                 <b>Ride For Hope Idaho</b>
                             </em> is a small, but growing group of volunteers who have been moved to action for a deep
@@ -82,8 +87,8 @@
                             individuals
                             and families are grappling with exorbitant healthcare costs and preexisting conditions.
 
-                        </p>
-                        <p class="text-justify">
+                        </h5>
+                        <h5 class="text-justify">
                             We want to help give these families and individuals
                             <b>
                                 <em>"Hope"</em>
@@ -105,27 +110,27 @@
                             <b>
                                 <em>"Hope"</em>
                             </b> that those of us that are more fortunate can help them with basic human needs.
-                        </p>
-                        <p class="text-justify">
+                        </h5>
+                        <h5 class="text-justify">
                             <em>
                                 <b>Ride For Hope Idaho</b>
-                            </em> has donated over $66,500 in five years:</p>
+                            </em> has donated over $66,500 in five years:</h5>
                         <ul>
-                            <li>In 2015 over $7,000 was raised.</li>
-                            <li>In 2016 over $9,000 was raised.</li>
-                            <li>In 2017 over $12,500 was raised.</li>
-                            <li>In 2018 over $18,000 was raised.</li>
-                            <li>In 2019 over $20,000 was raised.</li>
+                            <li class="text-h5">In 2015 over $7,000 was raised.</li>
+                            <li class="text-h5">In 2016 over $9,000 was raised.</li>
+                            <li class="text-h5">In 2017 over $12,500 was raised.</li>
+                            <li class="text-h5">In 2018 over $18,000 was raised.</li>
+                            <li class="text-h5">In 2019 over $20,000 was raised.</li>
                         </ul>
                     </div>
-                    <div class="pic col-md-4 col-sm-12 col-xs-12 text-center">
-                        <q-img class="rider responsive"
+                    <div class="pic col-md-4 col-sm-12 col-xs-12 text-center self-center desktop-only">
+                        <q-img class="rider responsive q-ml-xl"
                             src="https://res.cloudinary.com/treverscloud/image/upload/v1517606065/margo_kuo44h.jpg"
                             alt="rider" />
                     </div>
-                    <div class="paragroup col-md-10 col-xs-10"
+                    <div class="paragroup col-md-9 col-xs-12"
                         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
-                        <p class="text-justify">
+                        <h5 class="text-justify">
                             We are proud to support
                             <b>
                                 <em>Genesis Community Health</em>
@@ -139,41 +144,35 @@
                             their time and services to care for those who otherwise do not have access to
                             healthcare. The clinic depends heavily upon volunteers and charitable contributions to
                             continue to provide these services.
-                        <p class="text-justify">
+                        </h5>
+                        <h5 class="text-justify">
                             With outstanding support provided by the Treasure Valley Bicycle community we are
                             confident that our upward fundraising trajectory will continue. We can’t do it alone. We
                             need your help. Collectively we can make a difference . Please come join us in helping
                             the most vulnerable in our Treasure Valley Community.”
-                        </p>
+                        </h5>
                     </div>
-                    <div class="paragroup offset-md-1 col-md-11 top-marg text-center">
-                        <div class="row justify-center">
-                            <div class="paragroup col-md-10 col-xs-10">
-                                <h4 class="text-center signature">
-                                    <em>
-                                        <b>Team Ride For Hope Idaho</b>
-                                    </em>
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="row justify-center">
-                            <div class="col-md-6 col-xs-5 self-center">
-                                <q-btn @click="openURL('https://genesiscommunityhealth.com/about-us/')" flat>
-                                    <img class="responsive check" src="statics/logos/gch.png"
-                                        alt="Genesis Community Health Logo">
-                                </q-btn>
-                            </div>
-                        </div>
+                </div>
+                <div class="row justify-center q-mb-xl">
+                    <div class="col-md-10 col-xs-12">
+                        <h4 class="text-center signature">
+                            <em>
+                                <b>Team Ride For Hope Idaho</b>
+                            </em>
+                        </h4>
+                    </div>
+                    <div class="col-md-5 col-xs-5 self-center">
+                        <q-btn @click="openURL('https://genesiscommunityhealth.com/about-us/')" flat>
+                            <img class="responsive check" src="statics/logos/gch.png" alt="Genesis Community Health Logo">
+                        </q-btn>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </q-layout>
 </template>
 
 <script>
-    import anime from "animejs";
     import { openURL } from 'quasar'
     export default {
         name: "About",
@@ -184,18 +183,9 @@
         },
         methods: {
             openURL,
-            animate() {
-                anime({
-                    targets: '#number input',
-                    value: '$' + '66500',
-                    round: 1,
-                    easing: 'easeInOutExpo',
-                    duration: 3333
-                });
-            }
+            
         },
         mounted() {
-            this.animate()
         }
     };
 </script>
@@ -273,14 +263,6 @@
         font-size: 5rem;
     }
 
-    .text-output {
-        background-color: transparent;
-        border: none;
-        text-align: center;
-        /* font-family: "Bellefair", serif; */
-
-    }
-
     .white {
         color: transparent;
     }
@@ -305,7 +287,7 @@
     .rider {
         border: 5px solid black;
         /* height: 18rem; */
-        max-width: 18rem;
+        /* max-width: 18rem; */
     }
 
 

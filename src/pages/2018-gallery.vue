@@ -2,7 +2,7 @@
     <q-layout class="gallery">
         <div class="row justify-center">
             <div class="col-xs-11 col-sm-8 col-md-6 text-center">
-                <iframe width="100%" height="315" src="https://www.youtube.com/embed/7lIGXzunu2A?rel=0" frameborder="0"
+                <iframe width="100%" height="515" src="https://www.youtube.com/embed/7lIGXzunu2A?rel=0" frameborder="0"
                     allowfullscreen></iframe>
             </div>
         </div>

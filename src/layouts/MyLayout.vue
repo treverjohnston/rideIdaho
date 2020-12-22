@@ -1,36 +1,37 @@
 <template>
   <q-layout ref="layout" class="back ride-back" view="lHh Lpr fff">
     <!-- DESKTOP TABS START -->
-    <q-tabs align="center" class="shadow-2 tabs head desktop-only">
+    <q-tabs align="center" color="neutral-1" class="shadow-2 bg-neutral-2 desktop-only">
       <q-route-tab stretch flat class="tab" label="Home" name="home" to="/" />
 
-      <q-btn-dropdown v-if="openRegistration" auto-close stretch flat label="Register" name="merchandise"
-        class="text-red">
-        <q-item class="black-bg">
+      <!-- <q-btn-dropdown v-if="openRegistration" auto-close stretch flat label="Register" name="merchandise"
+        color="primary-4">
+        <q-item class="">
           <q-tabs class="width_100">
-            <q-tab @click="openURL(registrationUrl)" name="home" class="tab inner-tab width_100 black-bg" color=""
+            <q-tab @click="openURL(registrationUrl)" name="home" class="tab inner-tab width_100 " color=""
               label="Register" />
           </q-tabs>
         </q-item>
-        <q-item class="black-bg">
+        <q-item class="">
           <q-tabs class="width_100">
-            <q-tab @click="openURL(participantUrl)" name="home" class="tab inner-tab width_100 black-bg" color=""
+            <q-tab @click="openURL(participantUrl)" name="home" class="tab inner-tab width_100 " color=""
               label="Participants" />
           </q-tabs>
         </q-item>
-        <q-item class="black-bg">
+        <q-item class="">
           <q-tabs class="width_100">
-            <q-tab @click="openURL(merchandiseUrl)" name="home" class="tab inner-tab width_100 black-bg" color=""
+            <q-tab @click="openURL(merchandiseUrl)" name="home" class="tab inner-tab width_100 " color=""
               label="Just Donate" />
           </q-tabs>
         </q-item>
-      </q-btn-dropdown>
-      <q-route-tab v-else stretch flat class="tab text-red" color="red" label="Register" name="register"
-        to="/register" />
+      </q-btn-dropdown> -->
+      <!-- <q-route-tab v-else stretch flat class="tab text-red" color="red" label="Register" name="register"
+        to="/register" /> -->
+      <q-route-tab stretch flat class="tab text-red" color="red" label="Register" name="register" to="/register" />
 
       <q-btn-dropdown stretch flat label="Rider Info" name="rider">
         <q-list>
-          <q-item class="black-bg">
+          <q-item class="">
             <q-btn-dropdown flat auto-close stretch label="Routes" name="rider" class="width_100 tab inner-tab">
               <q-list>
                 <q-tabs v-for="route in routes">
@@ -41,61 +42,62 @@
           </q-item>
         </q-list>
         <q-item v-close-popup>
-          <q-tabs class="width_100 black-bg">
+          <q-tabs class="width_100 ">
             <q-tab v-if="openRegistration" @click="openURL(registrationUrl)" name="home"
-              class="tab inner-tab width_100 text-red black-bg" color="red" label="Register" />
-            <q-route-tab v-else name="register" class="tab inner-tab width_100 text-red black-bg" color="red"
+              class="tab inner-tab width_100 text-red " color="red" label="Register" />
+            <q-route-tab v-else name="register" class="tab inner-tab width_100 text-red " color="red"
               label="Register" to="/register" />
           </q-tabs>
         </q-item>
-        <q-item v-close-popup class="black-bg">
+        <q-item v-close-popup class="">
           <q-tabs class="width_100">
             <q-route-tab class="tab inner-tab" label="Packet Pick Up" name="rider" to="/packet" />
           </q-tabs>
         </q-item>
-        <q-item v-close-popup class="black-bg">
+        <q-item v-close-popup class="">
           <q-tabs class="width_100">
             <q-route-tab class="tab inner-tab" label="Rules Of The Road" name="rider" to="/rules" />
           </q-tabs>
         </q-item>
-        <q-item v-close-popup class="black-bg">
+        <q-item v-close-popup class="">
           <q-tabs class="width_100">
             <q-route-tab class="tab inner-tab" label="Start Times And Directions" name="rider" to="/ride" />
           </q-tabs>
         </q-item>
-        <q-item v-close-popup class="black-bg">
+        <q-item v-close-popup class="">
           <q-tabs class="width_100">
             <q-route-tab class="tab inner-tab" label="How Climbs Are Categorized" name="rider" to="/climbs" />
           </q-tabs>
         </q-item>
       </q-btn-dropdown>
-      <q-btn-dropdown auto-close stretch flat label="Merchandise" name="merchandise" class="">
-        <q-item class="black-bg">
+      <!-- TODO: add back in iff merch/raffle tickets are a thing for 2021 -->
+      <!-- <q-btn-dropdown auto-close stretch flat label="Merchandise" name="merchandise" class="">
+        <q-item class="">
           <q-tabs class="width_100">
             <q-route-tab class="tab inner-tab" label="Jerseys and More" name="merchandise" to="/merchandise" />
           </q-tabs>
         </q-item>
-        <q-item class="black-bg">
+        <q-item class="">
           <q-tabs class="width_100">
             <q-route-tab class="tab inner-tab" label="Raffle Items" name="merchandise" to="/raffle" />
           </q-tabs>
         </q-item>
-      </q-btn-dropdown>
-      <q-route-tab class="tab black-bg" label="Sponsors" name="sponsors" to="/sponsors" />
+      </q-btn-dropdown> -->
+      <q-route-tab class="tab " label="Sponsors" name="sponsors" to="/sponsors" />
       <q-btn-dropdown stretch flat auto-close class="" label="Galleries" name="gallery">
-        <q-item class="black-bg">
+        <q-item class="">
           <q-tabs class="width_100">
             <q-route-tab class="tab inner-tab" label="2018 Gallery" name="gallery" to="/2018-gallery" />
           </q-tabs>
         </q-item>
-        <q-item class="black-bg">
+        <q-item class="">
           <q-tabs class="width_100">
             <q-route-tab class="tab inner-tab" label="Past Rides" name="gallery" to="/gallery" />
           </q-tabs>
         </q-item>
       </q-btn-dropdown>
-      <q-route-tab class="tab black-bg" label="About" name="about" to="/about" />
-      <q-route-tab class="tab black-bg" label="Contact" name="contact" to="/contact" />
+      <q-route-tab class="tab " label="About" name="about" to="/about" />
+      <q-route-tab class="tab " label="Contact" name="contact" to="/contact" />
     </q-tabs>
     <!-- DESKTOP TABS END -->
     <!--  -->
@@ -109,18 +111,18 @@
       <!-- <q-btn @click="$router.push('/')">
         <img src="statics/logos/RFHIdahoLogo.png" alt="logo" class="mini">
       </q-btn> -->
-      <q-btn class="q-mr-xs" outline dense color="red" @click="openURL(merchandiseUrl)">
+      <!-- <q-btn class="q-mr-xs" outline dense color="red" @click="openURL(merchandiseUrl)">
         Just Donate
-      </q-btn>
+      </q-btn> -->
       <q-btn v-if="openRegistration" dense class="mobile-only q-mr-xs" outline @click="openURL(registrationUrl)"
         color="red">
         Register
       </q-btn>
       <q-btn v-else class="mobile-only q-mr-xs" dense outline @click="$router.push('/register')" color="red">Register
       </q-btn>
-      <q-btn outline dense color="red" @click="openURL(participantUrl)">
+      <!-- <q-btn outline dense color="red" @click="openURL(participantUrl)">
         Participants
-      </q-btn>
+      </q-btn> -->
     </q-toolbar>
     <!-- MOBILE TOOLBAR END -->
     <!-- MOBILE DRAWER START -->
@@ -170,15 +172,15 @@
             How Climbs are Categorized </q-item>
         </q-expansion-item>
         <hr class="tabhr">
-        <q-expansion-item class="side-collapse text-black" label="Merchandise">
+        <!-- TODO: add back in if merch/raffle is a thing for 2021 -->
+        <!-- <q-expansion-item class="side-collapse text-black" label="Merchandise">
           <hr class="tabhr">
           <q-item class="small-side left" @click.native="push('/merchandise')">
             Jerseys and More </q-item>
           <hr class="tabhrs">
           <q-item class="small-side left" @click.native="push('/raffle')">
             Raffle Items </q-item>
-        </q-expansion-item>
-        <hr class="tabhr">
+        </q-expansion-item> -->
         <q-item @click.native="push('/sponsors')" class="text-black">
           Sponsors
         </q-item>
@@ -189,7 +191,7 @@
             2018 Gallery </q-item>
           <hr class="tabhrs">
           <q-item class="small-side" @click.native="push('/gallery')">
-            Past Gallery </q-item>
+            Past Rides </q-item>
         </q-expansion-item>
         <hr class="tabhr">
         <q-item class="side" @click.native="push('/about')">
@@ -211,13 +213,13 @@
 
 
     <!-- Footer -->
-    <div class="footer text-center text-bold">
+    <div class="footer text-center text-bold bg-neutral-2">
       <div class="row justify-center">
         <div class="col-xs-11">
-          <h3 class="text-center desktop-only white">
+          <h3 class="text-center desktop-only text-neutral-8">
             Thank you for supporting healthcare for the medically underserved!
           </h3>
-          <h6 class="text-center mobile-only white">
+          <h6 class="text-center mobile-only text-neutral-8">
             Thank you for supporting healthcare for the medically underserved!
           </h6>
         </div>
@@ -574,8 +576,6 @@
   }
 
   .footer {
-    background-color: rgba(17, 17, 17, 0.88);
-    color: rgb(180, 0, 0);
     padding-bottom: 1rem;
   }
 
@@ -633,7 +633,6 @@
 
   .tab {
     text-transform: none;
-    background-color: transparent;
     color: white;
   }
 

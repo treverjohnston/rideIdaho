@@ -1,8 +1,8 @@
 <template>
-    <q-layout class="black">
+    <q-layout class="bg-neutral-9 text-neutral-1">
         <div class="row wrap justify-center">
-            <div class="col-xs-11 col-md-10 white-back shadow-24 text-center">
-                <h3 class="desktop-only">Merchandise</h3>
+            <div class="col-xs-11 col-md-10 text-center">
+                <h2 class="desktop-only">Merchandise</h2>
                 <h4 class="mobile-only">Merchandise</h4>
                 <hr class="width_90">
                 <h5>Check back soon for Merchandise</h5>

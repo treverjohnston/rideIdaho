@@ -1,19 +1,21 @@
 <template>
-    <q-layout class="black">
-        <div class="row wrap justify-center">
-            <div class="col-xs-11 col-md-10 white-back shadow-24 text-center">
-                <h3 class="desktop-only">Packet Pick Up</h3>
+    <q-layout class="bg-neutral-9 text-neutral-1">
+        <div class="row wrap justify-center text-center">
+            <div class="col-xs-11 col-md-10 text-center">
+                <h2 class="desktop-only">Packet Pick Up</h2>
                 <h4 class="mobile-only">Packet Pick Up</h4>
                 <hr class="width_90">
+            </div>
+            <div class="col-xs-12 col-sm-5">
                 <h5>
-                    <b>Date: </b>Friday, June 19, 2020</h5>
+                    <b>Date: </b>Friday, June 25, 2021</h5>
                 <h5>
                     <b>Time: </b>4pm-7pm</h5>
-                <hr class="width_90">
-                <h4>Meridian Cycles</h4>
+            </div>
+            <div class="col-xs-12 col-sm-5">
+                <h4 class="text-bold">Meridian Cycles</h4>
                 <h5>1203 N. Main St.</h5>
-                <h5> Meridian, ID</h5>
-                <h5>83642</h5>
+                <h5> Meridian, ID 83642</h5>
             </div>
 
         </div>

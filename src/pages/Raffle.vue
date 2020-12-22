@@ -1,14 +1,14 @@
 <template>
-    <q-layout class="black">
+    <q-layout class="bg-neutral-9 text-neutral-1">
         <div v-if="!openRegistration" class="row wrap justify-center">
-            <div class="col-xs-11 col-md-10 white-back shadow-24 text-center">
+            <div class="col-xs-11 col-md-10 text-center">
                 <hr color="red" class="hr">
                 <h4 class="fancy">Raffle tickets are available for purchase once registration opens</h4>
                 <hr color="red" class="hr">
             </div>
         </div>
         <div v-if="openRegistration" class="row wrap justify-center desktop-only">
-            <div class="col-xs-11 col-md-10 white-back shadow-24 text-center">
+            <div class="col-xs-11 col-md-10 text-center">
                 <hr color="red" class="hr">
                 <h3 class="headline text-bold">2020 RAFFLE ITEMS ANNOUNCED AT EVENT</h3>
                 <h4 class="fancy">Raffle tickets are available for purchase: </h4>
@@ -23,7 +23,7 @@
             </div>
         </div>
         <div v-if="openRegistration" class="row wrap justify-center mobile-only">
-            <div class="col-xs-11 white-back shadow-24 text-center">
+            <div class="col-xs-11 text-center">
                 <hr color="red" class="hr">
                 <h4 class="headline text-bold">2020 RAFFLE ITEMS ANNOUNCED AT EVENT</h4>
                 <h5 class="fancy ">Raffle tickets are available for purchase: </h5>
