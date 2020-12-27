@@ -37,15 +37,15 @@
         <div class=" q-pt-lg">
             <RouteCarousel :onRegisterPage="true"></RouteCarousel>
         </div>
-        <!-- <div class="row justify-center q-pb-xl">
+        <div class="row justify-center q-pb-xl">
             <div class="col-xs-10">
                 <hr>
             </div>
-            <div id="athleteRegWidget"></div>
-        </div> -->
+            <div id="athleteRegIframe"></div>
+        </div>
     </q-layout>
 </template>
-
+<!-- <script id="athleteRegWidget" src="https://www.bikereg.com/Scripts/athleteRegWidget.js" data-event="48687"></script> -->
 <script>
     import { openURL } from 'quasar'
     import RouteCarousel from '../components/RouteCarousel.vue'
@@ -68,19 +68,13 @@
             bikeReg() {
                 let promise = new Promise((resolve, reject) => {
                     let script = document.createElement('script')
-                    script.charset = 'utf-8'
-                    script.id = 'athleteRegWidget'
-                    script.src = 'https://www.bikereg.com/Scripts/athleteRegWidget.js'
-                    script.type = 'text/javascript'
-                    script.data = 'ride-for-hope0'
-                    script.async = true
-                    script.onload = () => {
-                        resolve()
-                    }
-                    script.onerror = (err) => {
-                        reject(err)
-                    }
-                    document.appendChild(script)
+                     script.setAttribute('src', 'https://www.bikereg.com/Scripts/athleteRegWidget.js')
+                     script.setAttribute('id', 'athleteRegWidget')
+                     script.setAttribute('data-event', '48687')
+                     var iframe = document.getElementById('athleteRegIframe')
+                     iframe.appendChild(script)
+                    // document.head.appendChild(script)
+                
                 })
                 return promise
 
