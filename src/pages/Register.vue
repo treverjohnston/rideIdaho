@@ -1,7 +1,6 @@
 <template>
     <q-layout class="bg-neutral-2">
         <div class="bg-neutral-9">
-
             <div class="row wrap justify-center bg-neutral-9 text-neutral-1">
                 <div class="col-xs-12 text-center">
                     <h3>2021 Registration</h3>
@@ -10,7 +9,7 @@
             </div>
             <div class="row wrap justify-center bg-neutral-9 text-neutral-1">
                 <div class="col-xs-12 col-sm-8 text-justify q-pa-lg">
-                    <div v-if="!openRegistration">
+                    <div>
                         <h5 class="desktop-only">Online Registration opens January 1, 2021. Online registration closes
                             at
                             midnight
@@ -34,18 +33,14 @@
                 </div>
             </div>
         </div>
-        <div class=" q-pt-lg">
+        <div v-if="!openRegistration" class=" q-pt-lg">
             <RouteCarousel :onRegisterPage="true"></RouteCarousel>
         </div>
-        <div class="row justify-center q-pb-xl">
-            <div class="col-xs-10">
-                <hr>
-            </div>
+        <div v-else class=" q-pb-xl">
             <div id="athleteRegIframe"></div>
         </div>
     </q-layout>
 </template>
-<!-- <script id="athleteRegWidget" src="https://www.bikereg.com/Scripts/athleteRegWidget.js" data-event="48687"></script> -->
 <script>
     import { openURL } from 'quasar'
     import RouteCarousel from '../components/RouteCarousel.vue'
@@ -57,7 +52,15 @@
         },
         computed: {
             openRegistration() {
-                return this.$store.state.state.openRegistration;
+                let closeDate = new Date("June 25, 2021 00:00:00")
+                let openDate = new Date("January 1, 2021 00:00:00")
+
+                let date = new Date();
+                if (date > openDate && date < closeDate) {
+                    return true;
+                }
+                return false;
+                // return this.$store.state.state.openRegistration;
             }
         },
         components: {
@@ -66,17 +69,17 @@
         methods: {
             openURL,
             bikeReg() {
-                let promise = new Promise((resolve, reject) => {
-                    let script = document.createElement('script')
-                     script.setAttribute('src', 'https://www.bikereg.com/Scripts/athleteRegWidget.js')
-                     script.setAttribute('id', 'athleteRegWidget')
-                     script.setAttribute('data-event', '48687')
-                     var iframe = document.getElementById('athleteRegIframe')
-                     iframe.appendChild(script)
-                    // document.head.appendChild(script)
-                
-                })
-                return promise
+                if (this.openRegistration) {
+                    let promise = new Promise((resolve, reject) => {
+                        let script = document.createElement('script')
+                        script.setAttribute('src', 'https://www.bikereg.com/Scripts/athleteRegWidget.js')
+                        script.setAttribute('id', 'athleteRegWidget')
+                        script.setAttribute('data-event', '48687')
+                        var iframe = document.getElementById('athleteRegIframe')
+                        iframe.appendChild(script)
+                    })
+                    return promise
+                }
 
             }
         },

@@ -39,9 +39,9 @@
                 Register
             </q-btn>
             <!-- TODO: Update this to do the pop up store and also the mobile -->
-            <q-btn v-else color="primary-3" size="lg" no-caps
+            <q-btn v-else color="primary-3" size="lg" no-caps @click="registrationClosedDialog = !registrationClosedDialog"
                 class="quote-btn shadow-24 float-right gray-bg q-mt-md text-neutral-9 ">
-                TEMP Register
+                Register
             </q-btn>
             <q-btn :to="routes[selected].url" color="text-neutral-9" size="lg" no-caps outline
                 class="quote-btn shadow-24 float-right gray-bg q-mt-md q-mr-lg">
@@ -71,23 +71,62 @@
                         <q-btn v-if="!openRegistration && !onRegisterPage" to="register" color="primary-3" size="md" no-caps class="text-neutral-9 ">
                             Register
                         </q-btn>
-                        <q-btn v-else to="" color="primary-3" size="md" no-caps class="text-neutral-9 ">
-                            TEMP Register
+                        <q-btn v-else color="primary-3" size="md" no-caps class="text-neutral-9 " @click="registrationClosedDialog = !registrationClosedDialog">
+                            Register
                         </q-btn>
                     </q-card-section>
                 </q-card>
             </div>
         </div>
+        <q-dialog v-model="registrationClosedDialog">
+            <q-card>
+                <q-toolbar>
+                    <q-avatar>
+                        <img src="statics/logos/RFHIdahoLogo.png">
+                    </q-avatar>
+        
+                    <q-toolbar-title><span class="text-weight-bold">Ride For Hope Idaho</span></q-toolbar-title>
+        
+                    <q-btn flat round dense icon="close" v-close-popup />
+                </q-toolbar>
+        
+                <q-card-section>
+                    <span class="text-body1">
+                        Online registration for the 2021 Ride For Hope Idaho is open between January 1 and June 24, 2021.
+                    </span>
+        
+                </q-card-section>
+                <q-card-section>
+                    <span class="text-body1">
+                        In-person registration is available at packet pickup on June 25, or on the day of the ride, June 26.
+                    </span>
+        
+                </q-card-section>
+                <q-card-section>
+                    <span class="text-body1">
+                        If you are looking to help the cause without riding, you can donate directly to Genesis Community Health with the button below, or contact us to volunteer.
+                    </span>
+        
+                </q-card-section>
+                <q-card-section class="text-center">
+                    <q-btn class="cbtnm" no-caps color="primary-3" to="contact">Contact</q-btn>
+                    <q-btn class="cbtnm q-ml-md q-mr-md" no-caps color="accent-4" @click="openURL('https://genesiscommunityhealth.com/donate/')">Donate</q-btn>
+                    <q-btn class="cbtnm" no-caps color="neutral-3" @click="registrationClosedDialog = false">Close</q-btn>
+                </q-card-section>
+            </q-card>
+        </q-dialog>
     </div>
 </template>
 
 <script>
+    import { openURL } from "quasar";
 
     export default {
         name: 'RouteCarousel',
         data() {
             return {
-                selected: 0
+                selected: 0,
+                registrationClosedDialog: false
             }
         },
         props: {
@@ -105,6 +144,9 @@
             openRegistration() {
                 return this.$store.state.state.openRegistration;
             }
+        },
+        methods: {
+            openURL
         },
         mounted() {
         },
