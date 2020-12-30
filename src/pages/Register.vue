@@ -3,7 +3,8 @@
         <div class="bg-neutral-9">
             <div class="row wrap justify-center bg-neutral-9 text-neutral-1">
                 <div class="col-xs-12 text-center">
-                    <h3>2021 Registration</h3>
+                    <h3 v-if="openRegistration">2021 Registration</h3>
+                    <h3 v-else>2021 Registration is Open</h3>
                     <hr class="hr">
                 </div>
             </div>
