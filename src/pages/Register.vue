@@ -74,7 +74,7 @@
                         let script = document.createElement('script')
                         script.setAttribute('src', 'https://www.bikereg.com/Scripts/athleteRegWidget.js')
                         script.setAttribute('id', 'athleteRegWidget')
-                        script.setAttribute('data-event', '48687')
+                        script.setAttribute('data-event', 'ride-for-hope-idaho')
                         var iframe = document.getElementById('athleteRegIframe')
                         iframe.appendChild(script)
                     })
