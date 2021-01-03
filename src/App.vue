@@ -9,7 +9,7 @@
     name: 'App',
     mounted() {
       this.$store.commit('state/setOpenReg');
-      this.$store.dispatch('dates/getDates')
+      
     }
   }
 </script>
