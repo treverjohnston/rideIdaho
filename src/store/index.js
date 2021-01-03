@@ -8,6 +8,7 @@ import routes from './routes'
 import sponsors from './sponsors'
 import state from './state'
 import auth from './auth'
+import dates from './dates'
 
 
 Vue.use(Vuex)
@@ -26,7 +27,8 @@ export default function (/* { ssrContext } */) {
       routes,
       sponsors,
       state,
-      auth
+      auth,
+      dates
     },
 
     // enable strict mode (adds overhead!)

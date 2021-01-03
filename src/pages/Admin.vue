@@ -91,6 +91,7 @@
                             </q-card>
                         </div>
                     </div>
+                    <Dates></Dates>
                 </div>
             </template>
         </div>
@@ -110,6 +111,8 @@
 
 <script>
     import { openURL } from 'quasar'
+    import Dates from '../components/Dates.vue'
+
     export default {
         name: 'Admin',
         data() {
@@ -132,6 +135,7 @@
             }
         },
         components: {
+            Dates
         },
         computed: {
             loggedIn() {
@@ -147,6 +151,7 @@
         mounted() {
             this.$store.dispatch('auth/getAuth');
             this.$store.dispatch('sponsors/getSponsors')
+            this.$store.dispatch('dates/getDates')
         },
         methods: {
             openURL,

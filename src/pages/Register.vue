@@ -53,8 +53,11 @@
         },
         computed: {
             openRegistration() {
+                if(window.location.hash.includes('?openreg=true')){
+                    return true;
+                }
                 let closeDate = new Date("June 25, 2021 00:00:00")
-                let openDate = new Date("January 1, 2021 00:00:00")
+                let openDate = new Date("January 10, 2021 00:00:00")
 
                 let date = new Date();
                 if (date > openDate && date < closeDate) {

@@ -3,7 +3,7 @@ export default {
     {
       id: 0,
       earlyReg: '$50',
-      reg: '$60',
+      reg: '$15',
       url: '/routes/9-mile',
       length: '9 Mile',
       pic: '',
@@ -48,7 +48,7 @@ export default {
     {
       id: 1,
       earlyReg: '$65',
-      reg: '$75',
+      reg: '$25',
       url: '/routes/19-mile',
       length: '19 Mile',
       pic: '',
@@ -94,7 +94,7 @@ export default {
     {
       id: 2,
       earlyReg: '$65',
-      reg: '$75',
+      reg: '$35',
       url: '/routes/34-mile',
       length: '34 Mile',
       pic:
@@ -143,7 +143,7 @@ export default {
     {
       id: 3,
       earlyReg: '$75',
-      reg: '$85',
+      reg: '$55',
       url: '/routes/metric',
       length: 'Metric Century',
       pic:
@@ -193,7 +193,7 @@ export default {
     {
       id: 4,
       earlyReg: '$75',
-      reg: '$85',
+      reg: '$65',
       url: '/routes/Century',
       length: 'Century',
       pic:

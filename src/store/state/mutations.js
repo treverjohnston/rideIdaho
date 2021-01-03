@@ -1,7 +1,7 @@
 export function setOpenReg(state) {
     // NOTE: This logic is duplicated on Register.vue bc it wasn't loading quick enough. I know, shoddy fix, but it'll do. Just make sure to change the date both places
     let closeDate = new Date("June 25, 2021 00:00:00")
-    let openDate = new Date("January 1, 2021 00:00:00")
+    let openDate = new Date("January 10, 2021 00:00:00")
 
     let date = new Date();
     if (date > openDate && date < closeDate) {

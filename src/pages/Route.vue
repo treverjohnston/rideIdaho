@@ -22,11 +22,11 @@
                         <div class="row wrap justify-center q-mt-xl">
                             <div class="col-xs-12 col-md-11 text-center router-border bg-neutral-t-3">
                                 <div class="q-pt-sm q-mt-lg text-h5">
-                                    Regular Registration: {{route.reg}}
+                                    Registration Cost: {{route.reg}}
                                 </div>
-                                <div class="q-pt-sm q-mt-lg text-h5">
+                                <!-- <div class="q-pt-sm q-mt-lg text-h5">
                                     Early Registration: {{route.earlyReg}}
-                                </div>
+                                </div> -->
                                 <div class="q-pt-sm q-mt-lg q-mb-lg text-h6">
                                     Discount offered for teams of 5 or more and for families. Contact for more details.
                                 </div>

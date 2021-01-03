@@ -63,7 +63,9 @@ module.exports = function (ctx) {
         'QForm',
         'QCheckbox',
         'QDialog',
-        'QAvatar'
+        'QAvatar',
+        'QDate',
+        'QTime'
       ],
 
       directives: [
