@@ -1,5 +1,9 @@
 export default function () {
   return {
-    allDates:[]
+    allDates:[],
+    rideDate:[],
+    openReg:[],
+    closeReg:[],
+    openRegistration: false
   }
 }

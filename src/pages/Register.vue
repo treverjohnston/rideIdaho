@@ -37,7 +37,7 @@
         <div v-if="!openRegistration" class=" q-pt-lg">
             <RouteCarousel :onRegisterPage="true"></RouteCarousel>
         </div>
-        <div v-else class=" q-pb-xl">
+        <div class="q-pb-xl">
             <div id="athleteRegIframe"></div>
         </div>
     </q-layout>
@@ -49,31 +49,30 @@
         name: 'Register',
         data() {
             return {
+                isReg: false
             }
         },
         computed: {
+            override() {
+                return window.location.hash.includes('?openreg=true');
+            },
             openRegistration() {
-                if(window.location.hash.includes('?openreg=true')){
-                    return true;
-                }
-                let closeDate = new Date("June 25, 2021 00:00:00")
-                let openDate = new Date("January 10, 2021 00:00:00")
-
-                let date = new Date();
-                if (date > openDate && date < closeDate) {
-                    return true;
-                }
-                return false;
-                // return this.$store.state.state.openRegistration;
-            }
+                return (this.$store.state.dates.openRegistration || this.override);
+            },
         },
         components: {
             RouteCarousel
         },
         methods: {
             openURL,
+            retryLoad() {
+                if (!this.isReg) {
+                    this.bikeReg();
+                }
+            },
             bikeReg() {
                 if (this.openRegistration) {
+                    this.isReg = true;
                     let promise = new Promise((resolve, reject) => {
                         let script = document.createElement('script')
                         script.setAttribute('src', 'https://www.bikereg.com/Scripts/athleteRegWidget.js')
@@ -84,11 +83,12 @@
                     })
                     return promise
                 }
+            },
 
-            }
         },
         mounted() {
             this.bikeReg();
+            setTimeout(this.retryLoad, 1000);
         }
 
     }

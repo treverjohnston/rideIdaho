@@ -38,7 +38,7 @@
             2021 Date
           </div>
           <div class="text-h6 text-weight-medium">
-            Saturday, June 26
+            {{rideDate}}
           </div>
         </router-link>
         <hr class="hr">
@@ -182,7 +182,7 @@
         <hr class="routeshr" v-scroll-fire="fadeInImage">
       </div>
 
-       <RouteCarousel></RouteCarousel>
+      <RouteCarousel></RouteCarousel>
     </div>
 
     <div class="row wrap justify-center gen bg-neutral-9">
@@ -216,8 +216,10 @@
             </q-btn>
           </div>
           <div class="col-xs-12">
-            <q-btn class="mobile-only" size="md" color="accent-4" @click="openURL('https://genesiscommunityhealth.com/')">Learn More</q-btn>
-            <q-btn class="desktop-only" size="lg" color="accent-4" @click="openURL('https://genesiscommunityhealth.com/')">Learn More</q-btn>
+            <q-btn class="mobile-only" size="md" color="accent-4"
+              @click="openURL('https://genesiscommunityhealth.com/')">Learn More</q-btn>
+            <q-btn class="desktop-only" size="lg" color="accent-4"
+              @click="openURL('https://genesiscommunityhealth.com/')">Learn More</q-btn>
           </div>
 
         </div>
@@ -316,6 +318,7 @@
   import { openURL } from "quasar";
   import anime from "animejs";
   import RouteCarousel from '../components/RouteCarousel.vue'
+  import { date } from 'quasar'
 
   export default {
     name: "index",
@@ -334,7 +337,7 @@
         covidCallout2: "If you would still like to support the cause, you can donate directly to Genesis Community Health by following the link below. Any donation they recieve will be all the more appreciated during this time of stress on the healthcare system. We look forward to riding with you in 2021!"
       };
     },
-    components:{
+    components: {
       RouteCarousel
     },
     computed: {
@@ -356,6 +359,9 @@
       l2() {
         return this.$store.state.sponsors.lvl2;
       },
+      rideDate() {
+        return date.formatDate(this.$store.state.dates.rideDate.date, "dddd, MMMM DD");
+      }
     },
     methods: {
       openURL,

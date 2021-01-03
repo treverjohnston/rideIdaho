@@ -11,7 +11,6 @@ var api = axios.create({
 })
 
 export function getDates({ commit }) {
-    console.log('get dates')
     api(`dates`)
         .then(res => {
             commit('setDates', res.data)
