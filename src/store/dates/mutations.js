@@ -7,17 +7,17 @@ export function setDates(state, dates) {
             case "rideDate":
                 state.rideDate = d;
                 break;
-        
+
             case "openReg":
                 state.openReg = d;
                 openDate = new Date(d.date);
                 break;
-        
+
             case "closeReg":
                 state.closeReg = d;
                 closeDate = new Date(d.date);
                 break;
-        
+
             default:
                 break;
         }
@@ -25,5 +25,10 @@ export function setDates(state, dates) {
     let date = new Date();
     if (date > openDate && date < closeDate) {
         state.openRegistration = true;
+        localStorage.openRegistration = true;
+    }
+    else {
+        state.openRegistration = false;
+        localStorage.openRegistration = false;
     }
 }

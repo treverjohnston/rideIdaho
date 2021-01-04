@@ -109,14 +109,14 @@
         },
         methods: {
             formatDate(timeStamp) {
-                return date.formatDate(timeStamp, 'MMMM DD, YYYY')
+                return date.formatDate(timeStamp, 'MMMM D, YYYY')
             },
             openURL,
             pickDate(d) {
                 this.chosenItemName = d.name
                 this.chosenItemDate = date.formatDate(d.date, 'YYYY-MM-DD HH:mm')
                 this.chosenItemId = d._id
-                this.chosenItemSimpleId = d.Simple
+                this.chosenItemSimpleId = d.simpleId
                 this.editModal = true
             },
             addDate() {

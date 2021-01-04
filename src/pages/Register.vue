@@ -11,14 +11,14 @@
             <div class="row wrap justify-center bg-neutral-9 text-neutral-1">
                 <div class="col-xs-12 col-sm-8 text-justify q-pa-lg">
                     <div>
-                        <h5 class="desktop-only">Online Registration opens January 1, 2021. Online registration closes
+                        <h5 class="desktop-only">Online Registration opens {{openReg}}. Online registration closes
                             at
                             midnight
-                            on June 24, 2021. You may also register in person at packet pick-up and at the ride.</h5>
-                        <span class="mobile-only text-h6">Online Registration opens January 1, 2021. Online registration
+                            on {{closeReg}}. You may also register in person at packet pick-up and at the ride.</h5>
+                        <span class="mobile-only text-h6">Online Registration opens {{openReg}}. Online registration
                             closes at
                             midnight
-                            on June 24, 2021. You may also register in person at packet pick-up and at the ride.</span>
+                            on {{closeReg}}. You may also register in person at packet pick-up and at the ride.</span>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-8 text-justify q-pa-lg">
@@ -37,7 +37,18 @@
         <div v-if="!openRegistration" class=" q-pt-lg">
             <RouteCarousel :onRegisterPage="true"></RouteCarousel>
         </div>
-        <div class="q-pb-xl">
+        <div class="q-pb-xl bg-neutral-9 text-neutral-1">
+            <div class="row justify-center">
+                <div class="col-xs-12 text-center">
+                    <span class="text-h5">If there is a problem loading registration, please <a
+                            href="https://www.rideforhopeidaho.com/#/register?openreg=true">Click Here.</a></span>
+                </div>
+            </div>
+            <div v-if="openRegistration && !regIsLoaded" class="row justify-center">
+                <q-spinner-gears color="primary-4" class="col-xs-1 q-mt-lg" />
+            </div>
+        </div>
+        <div class="q-pb-xl bg-neutral-9 text-neutral-1">
             <div id="athleteRegIframe"></div>
         </div>
     </q-layout>
@@ -49,46 +60,77 @@
         name: 'Register',
         data() {
             return {
-                isReg: false
+                regIsLoaded: false
             }
         },
         computed: {
-            override() {
-                return window.location.hash.includes('?openreg=true');
+            openReg() {
+                return this.$store.state.dates.openReg.stringDate
+            },
+            closeReg() {
+                return this.$store.state.dates.closeReg.stringDate
             },
             openRegistration() {
-                return (this.$store.state.dates.openRegistration || this.override);
+                return (this.$store.state.dates.openRegistration || window.location.hash.includes('?openreg=true'));
             },
+            // regIsLoaded() {
+            //     return document.getElementById('regFrame') != undefined;
+            //     // console.log('iframe', iframe)
+            //     //  if(iframe != null){
+            //     //      return true;
+            //     //  }
+            //     //  return false;
+            // }
         },
         components: {
             RouteCarousel
         },
         methods: {
             openURL,
-            retryLoad() {
-                if (!this.isReg) {
-                    this.bikeReg();
+            loadBikeReg() {
+                console.log('Loading BikeReg Registration')
+
+                let script = document.createElement('script')
+                script.setAttribute('src', 'https://www.bikereg.com/Scripts/athleteRegWidget.js')
+                script.setAttribute('id', 'athleteRegWidget')
+                script.setAttribute('data-event', 'ride-for-hope-idaho')
+                script.setAttribute('defer', 'true')
+                var iframe = document.getElementById('athleteRegIframe')
+                iframe.appendChild(script)
+            },
+            beginLoadingSequence() {
+                if (this.openRegistration == true || localStorage.openRegistration == 'true') {
+                    setTimeout(this.checkForReg, 5000)
+                    setTimeout(this.updateLoader, 500)
+                    this.loadBikeReg();
+                    if (!localStorage.openRegistration) {
+                        localStorage.openRegistration = true;
+                        window.location.reload();
+                    }
                 }
             },
-            bikeReg() {
-                if (this.openRegistration) {
-                    this.isReg = true;
-                    let promise = new Promise((resolve, reject) => {
-                        let script = document.createElement('script')
-                        script.setAttribute('src', 'https://www.bikereg.com/Scripts/athleteRegWidget.js')
-                        script.setAttribute('id', 'athleteRegWidget')
-                        script.setAttribute('data-event', 'ride-for-hope-idaho')
-                        var iframe = document.getElementById('athleteRegIframe')
-                        iframe.appendChild(script)
-                    })
-                    return promise
+            checkForReg() {
+                var iframe = document.getElementById('athleteRegIframe').children.length > 1
+                if (iframe.children && iframe.children.length > 1) {
+                    console.log('Loaded BikeReg Registration')
+                }
+                else {
+                    console.log('Failed to load BikeReg. Reloading')
+                    window.location.reload();
                 }
             },
+            updateLoader() {
+                var frameExists = document.getElementById('regFrame') != undefined;
+                console.log('frame', frameExists)
+                if (frameExists) {
+                    this.regIsLoaded = true;
+                }
+
+            }
 
         },
         mounted() {
-            this.bikeReg();
-            setTimeout(this.retryLoad, 1000);
+            this.beginLoadingSequence()
         }
 
     }

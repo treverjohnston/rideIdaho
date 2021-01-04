@@ -65,7 +65,8 @@ module.exports = function (ctx) {
         'QDialog',
         'QAvatar',
         'QDate',
-        'QTime'
+        'QTime',
+        'QSpinnerGears'
       ],
 
       directives: [

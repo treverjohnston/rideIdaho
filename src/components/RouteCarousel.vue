@@ -92,7 +92,7 @@
         
                 <q-card-section>
                     <span class="text-body1">
-                        Online registration for the 2021 Ride For Hope Idaho is open between January 1 and June 24, 2021.
+                        Online registration for the 2021 Ride For Hope Idaho is open between {{openReg}} and {{closeReg}}.
                     </span>
         
                 </q-card-section>
@@ -138,6 +138,12 @@
 
         },
         computed: {
+             openReg() {
+                return this.$store.state.dates.openReg.stringDate
+            },
+            closeReg() {
+                return this.$store.state.dates.closeReg.stringDate
+            },
             routes() {
                 return this.$store.state.routes.routes;
             },

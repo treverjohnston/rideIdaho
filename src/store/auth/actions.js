@@ -13,6 +13,7 @@ let auth_api = axios.create({
 export function getAuth({ commit, dispatch }) {
     auth_api('authenticate')
         .then(res => {
+            console.log('res',res)
             if (res.data == null) {
                 commit('setLoginStatus', false)
                 console.error("Login Failed")
