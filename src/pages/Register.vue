@@ -37,7 +37,7 @@
         <div v-if="!openRegistration" class=" q-pt-lg">
             <RouteCarousel :onRegisterPage="true"></RouteCarousel>
         </div>
-        <div class="q-pb-xl bg-neutral-9 text-neutral-1">
+        <div v-if="openRegistration" class="q-pb-xl bg-neutral-9 text-neutral-1">
             <div class="row justify-center">
                 <div class="col-xs-12 text-center">
                     <span class="text-h5">If there is a problem loading registration, please <a
@@ -48,7 +48,7 @@
                 <q-spinner-gears color="primary-4" class="col-xs-1 q-mt-lg" />
             </div>
         </div>
-        <div class="q-pb-xl bg-neutral-9 text-neutral-1">
+        <div class="q-pb-xl">
             <div id="athleteRegIframe"></div>
         </div>
     </q-layout>
