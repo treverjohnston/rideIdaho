@@ -61,7 +61,6 @@
         data() {
             return {
                 regIsLoaded: false,
-                regChecks: 0
             }
         },
         computed: {
@@ -103,11 +102,6 @@
                 }
             },
             checkForReg() {
-                if(this.regChecks > 5){
-                    console.log('BikeReg reload failed')
-                    return;
-                }
-                this.regChecks++
                 var iframe = document.getElementById('athleteRegIframe').children.length > 1
                 if (iframe.children && iframe.children.length > 1) {
                     console.log('Loaded BikeReg Registration')

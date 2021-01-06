@@ -6,7 +6,6 @@ export function setDates(state, dates) {
         switch (d.simpleId) {
             case "rideDate":
                 state.rideDate = d;
-                console.log('ride', d)
                 break;
 
             case "openReg":
