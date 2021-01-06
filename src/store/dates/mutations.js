@@ -27,7 +27,7 @@ export function setDates(state, dates) {
         state.openRegistration = true;
         localStorage.openRegistration = true;
     }
-    else if (!window.location.hash.includes('?openreg=true')) {
+    else {
         state.openRegistration = false;
         localStorage.openRegistration = false;
     }
