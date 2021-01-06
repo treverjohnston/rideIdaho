@@ -95,7 +95,7 @@
                     setTimeout(this.checkForReg, 5000)
                     setTimeout(this.updateLoader, 500)
                     this.loadBikeReg();
-                    if (localStorage.openRegistration && localStorage.openRegistration == 'false') {
+                    if (localStorage.openRegistration == 'false') {
                         localStorage.openRegistration = true;
                         window.location.reload();
                     }
