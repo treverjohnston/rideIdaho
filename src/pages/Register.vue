@@ -92,9 +92,9 @@
             },
             beginLoadingSequence() {
                 if (this.openRegistration == true || localStorage.openRegistration == 'true') {
+                    this.loadBikeReg();
                     setTimeout(this.checkForReg, 5000)
                     setTimeout(this.updateLoader, 500)
-                    this.loadBikeReg();
                     if (localStorage.openRegistration == 'false') {
                         localStorage.openRegistration = true;
                         window.location.reload();
