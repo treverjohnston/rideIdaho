@@ -6,6 +6,7 @@ export function setDates(state, dates) {
         switch (d.simpleId) {
             case "rideDate":
                 state.rideDate = d;
+                console.log('ride', d)
                 break;
 
             case "openReg":
@@ -23,11 +24,12 @@ export function setDates(state, dates) {
         }
     });
     let date = new Date();
+
     if (date > openDate && date < closeDate) {
         state.openRegistration = true;
         localStorage.openRegistration = true;
-    }
-    else if(window.location.hash.includes('?openreg=true')) {
+    } else if(!window.location.hash.includes('?openreg=true')) { 
        localStorage.openRegistration = false;
+       state.openRegistration = false;
     }
 }

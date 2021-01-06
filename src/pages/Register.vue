@@ -60,7 +60,8 @@
         name: 'Register',
         data() {
             return {
-                regIsLoaded: false
+                regIsLoaded: false,
+                regChecks: 0
             }
         },
         computed: {
@@ -71,16 +72,8 @@
                 return this.$store.state.dates.closeReg.stringDate
             },
             openRegistration() {
-                return (this.$store.state.dates.openRegistration || window.location.hash.includes('?openreg=true'));
-            },
-            // regIsLoaded() {
-            //     return document.getElementById('regFrame') != undefined;
-            //     // console.log('iframe', iframe)
-            //     //  if(iframe != null){
-            //     //      return true;
-            //     //  }
-            //     //  return false;
-            // }
+                return (window.location.hash.includes('?openreg=true') || this.$store.state.dates.openRegistration);
+            }
         },
         components: {
             RouteCarousel
@@ -103,13 +96,18 @@
                     setTimeout(this.checkForReg, 5000)
                     setTimeout(this.updateLoader, 500)
                     this.loadBikeReg();
-                    if (!localStorage.openRegistration == 'false') {
+                    if (localStorage.openRegistration && localStorage.openRegistration == 'false') {
                         localStorage.openRegistration = true;
                         window.location.reload();
                     }
                 }
             },
             checkForReg() {
+                if(this.regChecks > 5){
+                    console.log('BikeReg reload failed')
+                    return;
+                }
+                this.regChecks++
                 var iframe = document.getElementById('athleteRegIframe').children.length > 1
                 if (iframe.children && iframe.children.length > 1) {
                     console.log('Loaded BikeReg Registration')
@@ -121,7 +119,6 @@
             },
             updateLoader() {
                 var frameExists = document.getElementById('regFrame') != undefined;
-                console.log('frame', frameExists)
                 if (frameExists) {
                     this.regIsLoaded = true;
                 }
