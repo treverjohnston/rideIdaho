@@ -7,6 +7,12 @@ export default function () {
       'simpleId': "rideDate",
       'stringDate': "June 26, 2021"
     },
+    endRideDate:{
+      'date': "",
+      'name': "",
+      'simpleId': "endRideDate",
+      'stringDate': ""
+    },
     openReg: {
       'date': "2021-01-17T00:00:00.000Z",
       'name': "Open Registration",

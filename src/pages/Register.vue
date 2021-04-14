@@ -14,14 +14,18 @@
                         <h5 class="desktop-only">Online Registration opens {{openReg}}. Online registration closes
                             at
                             midnight
-                            on {{closeReg}}. You may also register in person at packet pick-up and at the ride.</h5>
+                            on {{closeReg}}. 
+                        </h5>
+                            <!-- You may also register in person at packet pick-up and at the ride.</h5> -->
                         <span class="mobile-only text-h6">Online Registration opens {{openReg}}. Online registration
                             closes at
                             midnight
-                            on {{closeReg}}. You may also register in person at packet pick-up and at the ride.</span>
+                            on {{closeReg}}. 
+                        </span>
+                            <!-- You may also register in person at packet pick-up and at the ride.</span> -->
                     </div>
                 </div>
-                <div class="col-xs-12 col-sm-8 text-justify q-pa-lg">
+                <!-- <div class="col-xs-12 col-sm-8 text-justify q-pa-lg">
                     <div v-if="!openRegistration">
 
                         <h5 class="desktop-only">Early packet pickup will be on Friday, June 25, 2021 from 4:00 PM
@@ -31,7 +35,7 @@
                             to 7:00 PM at Meridian Cycles, 1203 N. Main St., Meridian, Idaho</span>
 
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div v-if="!openRegistration" class=" q-pt-lg">
@@ -41,7 +45,7 @@
             <div class="row justify-center">
                 <div class="col-xs-12 text-center">
                     <span class="text-h5">If there is a problem loading registration, please <a
-                            href="https://www.rideforhopeidaho.com/#/register?openreg=true">Click Here.</a></span>
+                            href="https://www.bikereg.com/ride-for-hope-idaho?nif=1">Click Here.</a></span>
                 </div>
             </div>
             <div v-if="openRegistration && !regIsLoaded" class="row justify-center">
@@ -102,8 +106,7 @@
                 }
             },
             checkForReg() {
-                var iframe = document.getElementById('athleteRegIframe').children.length > 1
-                if (iframe.children && iframe.children.length > 1) {
+                if (this.regIsLoaded) {
                     console.log('Loaded BikeReg Registration')
                 }
                 else {

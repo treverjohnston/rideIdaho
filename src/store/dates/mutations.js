@@ -8,6 +8,10 @@ export function setDates(state, dates) {
                 state.rideDate = d;
                 break;
 
+            case "endRideDate":
+                state.endRideDate = d;
+                break;
+
             case "openReg":
                 state.openReg = d;
                 openDate = new Date(d.date);

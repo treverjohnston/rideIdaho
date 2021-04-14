@@ -360,7 +360,12 @@
         return this.$store.state.sponsors.lvl2;
       },
       rideDate() {
-        return date.formatDate(this.$store.state.dates.rideDate.date, "dddd, MMMM DD");
+        var start = date.formatDate(this.$store.state.dates.rideDate.date, "dddd, MMMM DD");
+        var end = date.formatDate(this.$store.state.dates.endRideDate.date, "dddd, MMMM DD");
+        if(new Date(end) > new Date(start)){
+          return start + " - " + end;
+        }
+        return start;
       }
     },
     methods: {
