@@ -25,6 +25,12 @@ export default function () {
       'simpleId': "closenReg",
       'stringDate': "June 24, 2021"
     },
+    modalDate: {
+      'date': "2021-07-5T00:00:00.000Z",
+      'name': "Modal Show Date",
+      'simpleId': "modalDate",
+      'stringDate': "July 4, 2021"
+    },
     openRegistration: false
   }
 }

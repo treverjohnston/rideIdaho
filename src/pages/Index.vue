@@ -87,17 +87,25 @@
             <div class="text-weight-bold text-h4 text-primary-3 q-mb-md">Supporting Healthcare for the Medically
               Underserved
             </div>
-            <span v-if="openRegistration">
-              <div class="q-title text-h5">Online registration ends 6/18/2021.</div>
+            <!-- <span v-if="openRegistration">
+              <div class="q-title text-h5">Online registration ends 7/4/2021.</div>
               <div class="q-title text-h5">Day of ride registration available.</div>
               <div class="q-title text-h5">Discount offered for teams of 5 or more and for families. Contact for more
                 details.
               </div>
-            </span>
-            <span v-if="showCovid">
-              <div class="q-title text-h5">{{covidCallout1}}</div>
-              <div class="q-title text-h5">{{covidCallout2}}</div>
-              <q-btn class="cbtnm" @click="openURL('https://genesiscommunityhealth.com/donate/')">Donate</q-btn>
+            </span> -->
+            <span v-if="openRegistration">
+              <div class="q-title text-h5">Registration is now open for <i><b>Ride For Hope Idaho 2021 </b></i> Virtual
+                Event!</div>
+              <div class="q-title text-h5">Registration Fee: $35.00 —
+                100% donation for Genesis Community Health in Garden City</div>
+              <div class="q-title text-h5">Log in to any of the great platforms out there that you use and name the
+                ride:
+                <b><i><u>“Ride For Hope Idaho 2021”</u></i></b>
+              </div>
+              <div class="q-title text-h5">For more information, check out the Registration page</div>
+              <q-btn class="cbtnm" @click="$router.push('/register')">Register</q-btn>
+
             </span>
           </div>
         </div>
@@ -107,16 +115,24 @@
             <div class="text-weight-bold text-h5 text-primary-3 q-mb-lg">Supporting Healthcare for the Medically
               Underserved
             </div>
-            <span v-if="openRegistration">
-              <div class="text-h6 q-title">Online registration ends 6/18/2021.</div>
+            <!-- <span v-if="openRegistration">
+              <div class="text-h6 q-title">Online registration ends 7/4/2021.</div>
               <div class="text-h6 q-title">Day of ride registration available.</div>
               <div class="text-h6 q-title">Discount offered for teams of 5 or more and for families. Contact for more
                 details.</div>
-            </span>
-            <span v-if="showCovid">
-              <div class="text-body1 q-title">{{covidCallout1}}</div>
-              <div class="text-body1 q-title">{{covidCallout2}}</div>
-              <q-btn class="cbtnm" @click="openURL('https://genesiscommunityhealth.com/donate/')">Donate</q-btn>
+            </span> -->
+            <span v-if="openRegistration">
+              <div class="text-body1 q-title">{{modalCallout1}}</div>
+              <div class="text-body1 q-title">Registration is now open for <i><b>Ride For Hope Idaho 2021 </b></i> Virtual
+                Event!</div>
+              <div class="text-body1 q-title">Registration Fee: $35.00 —
+                100% donation for Genesis Community Health in Garden City</div>
+              <div class="text-body1 q-title">Log in to any of the great platforms out there that you use and name the
+                ride:
+                <b><i><u>“Ride For Hope Idaho 2021”</u></i></b>
+              </div>
+              <div class="text-body1 q-title">For more information, check out the Registration page</div>
+              <q-btn class="cbtnm" @click="$router.push('/register')">Register</q-btn>
             </span>
           </div>
         </div>
@@ -281,7 +297,7 @@
       </q-carousel>
 
     </div>
-    <q-dialog v-model="covidDialog">
+    <q-dialog v-model="modalDialog">
       <q-card>
         <q-toolbar>
           <q-avatar>
@@ -293,20 +309,13 @@
           <q-btn flat round dense icon="close" v-close-popup />
         </q-toolbar>
 
-        <q-card-section>
+        <q-card-section v-for="modal in modalCallouts">
           <span class="text-body1">
-            {{covidCallout1}}
+            {{modal}}
           </span>
-
-        </q-card-section>
-        <q-card-section>
-          <span class="text-body1">
-            {{covidCallout2}}
-          </span>
-
         </q-card-section>
         <q-card-section class="text-center">
-          <q-btn class="cbtnm" @click="openURL('https://genesiscommunityhealth.com/donate/')">Donate</q-btn>
+          <q-btn class="cbtnm" @click="$router.push('/register')">Register</q-btn>
         </q-card-section>
       </q-card>
     </q-dialog>
@@ -327,14 +336,21 @@
         showVid: false,
         showSplash: false,
         showSwal: false,
-        showCovid: false,
-        covidDialog: false,
+        showModal: false,
+        modalDialog: true,
         video: `./statics/video/head.mp4`,
         slide: "Ebenezer Websites LLC",
         slide2: "Lyle Pearson",
         slide3: "Imago Caeli LLC",
-        covidCallout1: "We regret that due to COVID-19, the 2020 Ride For Hope Idaho has been canceled. Those already registered will be contacted soon by email.",
-        covidCallout2: "If you would still like to support the cause, you can donate directly to Genesis Community Health by following the link below. Any donation they recieve will be all the more appreciated during this time of stress on the healthcare system. We look forward to riding with you in 2021!"
+        modalCallouts: [
+          "We have made the decision to make this year’s event  a “virtual ride” for all to enjoy at your own pace and distance, wherever you want to ride.  If you choose to ride in Kuna, Ride For Hope Idaho route maps can be printed or downloaded to your bike computer from this website.",
+          "If you would like to participate in a group ride, refer to any of the amazing local bike clubs for details regarding club rides.",
+          "We know this is not the perfect situation — but wanted to be fair to all riders and ensure we are all safe as we progress through our current situations with COVID-19.",
+          "Please feel free to contact us for any questions.  If you would like more information on cycling clubs we can get  you that information too!",
+          "Thank you so much for your support and are looking forward to an awesome event in 2022!",
+          "See you on the road!!",
+          "YOUR RIDE FOR HOPE IDAHO TEAM"
+        ]
       };
     },
     components: {
@@ -362,10 +378,24 @@
       rideDate() {
         var start = date.formatDate(this.$store.state.dates.rideDate.date, "dddd, MMMM DD");
         var end = date.formatDate(this.$store.state.dates.endRideDate.date, "dddd, MMMM DD");
-        if(new Date(end) > new Date(start)){
+        if (new Date(end) > new Date(start)) {
           return start + " - " + end;
         }
         return start;
+      },
+      modalDate() {
+        return date.formatDate(this.$store.state.dates.modalDate.date, "dddd, MMMM DD");
+      },
+      showModal() {
+        let modalDate = this.modalDate;
+
+        let date = new Date();
+        console.log(this.$store.state.dates.modalDate.date)
+        console.log('modal', modalDate)
+        if (date < modalDate) {
+          this.modalDate = true;
+          this.modalDialog = true;
+        }
       }
     },
     methods: {
@@ -389,14 +419,6 @@
     mounted() {
       this.$store.dispatch('state/getParticipantTotal');
       this.$store.dispatch('sponsors/getSponsors')
-
-      let covidDate = new Date("June 30, 2020 00:00:00")
-
-      let date = new Date();
-      if (date < covidDate) {
-        this.showCovid = true;
-        this.covidDialog = true;
-      }
       this.animateNumber();
     },
 
