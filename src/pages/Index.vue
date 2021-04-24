@@ -31,19 +31,20 @@
         </router-link>
         <hr class="hr">
       </div>
-      <div class="col-xs-11 col-sm-3 "
+      <!-- TODO: 2022 add back in -->
+      <!-- <div class="col-xs-11 col-sm-3 "
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['300px', '0px'], duration: 1000},  easing: 'linear' }">
         <router-link to="ride" class="routerLink text-neutral-8">
           <div class="text-h5 text-weight-bold">
-            2021 Date
+            2022 Date
           </div>
           <div class="text-h6 text-weight-medium">
             {{rideDate}}
           </div>
         </router-link>
         <hr class="hr">
-      </div>
-      <div class="col-xs-11 col-sm-3"
+      </div>-->
+      <div class="col-xs-11 col-sm-3" 
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['200px', '0px'], duration: 1000},  easing: 'linear' }">
         <router-link to="all-routes" class="routerLink text-neutral-8">
           <div class="text-h5 text-weight-bold">
@@ -67,7 +68,7 @@
         </router-link>
         <hr class="hr">
       </div>
-      <div class="col-xs-11 col-sm-3 text-neutral-8" v-if="participantTotal >= 10 && openRegistration"
+      <!-- <div class="col-xs-11 col-sm-3 text-neutral-8" v-if="participantTotal >= 10 && openRegistration"
         v-anime="{opacity: { value: ['0', '1'], duration: 500,delay:300 }, translateY: { value: ['100px', '0px'], duration: 1000},  easing: 'linear' }">
         <div class="text-h5 text-weight-bold" @click="openURL(participantUrl)">
           Current Riders
@@ -76,7 +77,7 @@
           {{participantTotal}}
         </div>
         <hr class="hr">
-      </div>
+      </div> -->
     </div>
 
     <div class="row justify-center bg-neutral-2 text-neutral-9">
@@ -95,7 +96,8 @@
               </div>
             </span> -->
             <span v-if="openRegistration">
-              <div class="q-title text-h5">Registration is now open for <i><b>Ride For Hope Idaho 2021 </b></i> Virtual
+              <!-- TODO: 2022 add back in -->
+              <!-- <div class="q-title text-h5">Registration is now open for <i><b>Ride For Hope Idaho 2021 </b></i> Virtual
                 Event!</div>
               <div class="q-title text-h5">Registration Fee: $35.00 —
                 100% donation for Genesis Community Health in Garden City</div>
@@ -104,7 +106,7 @@
                 <b><i><u>“Ride For Hope Idaho 2021”</u></i></b>
               </div>
               <div class="q-title text-h5">For more information, check out the Registration page</div>
-              <q-btn class="cbtnm" @click="$router.push('/register')">Register</q-btn>
+              <q-btn class="cbtnm" @click="$router.push('/register')">Register</q-btn> -->
 
             </span>
           </div>
@@ -122,8 +124,8 @@
                 details.</div>
             </span> -->
             <span v-if="openRegistration">
-              <div class="text-body1 q-title">{{modalCallout1}}</div>
-              <div class="text-body1 q-title">Registration is now open for <i><b>Ride For Hope Idaho 2021 </b></i> Virtual
+            <!-- TODO: 2022 add back in -->
+              <!-- <div class="text-body1 q-title">Registration is now open for <i><b>Ride For Hope Idaho 2021 </b></i> Virtual
                 Event!</div>
               <div class="text-body1 q-title">Registration Fee: $35.00 —
                 100% donation for Genesis Community Health in Garden City</div>
@@ -132,7 +134,7 @@
                 <b><i><u>“Ride For Hope Idaho 2021”</u></i></b>
               </div>
               <div class="text-body1 q-title">For more information, check out the Registration page</div>
-              <q-btn class="cbtnm" @click="$router.push('/register')">Register</q-btn>
+              <q-btn class="cbtnm" @click="$router.push('/register')">Register</q-btn> -->
             </span>
           </div>
         </div>
@@ -237,7 +239,6 @@
             <q-btn class="desktop-only" size="lg" color="accent-4"
               @click="openURL('https://genesiscommunityhealth.com/')">Learn More</q-btn>
           </div>
-
         </div>
       </div>
     </div>
@@ -314,9 +315,17 @@
             {{modal}}
           </span>
         </q-card-section>
+        <h4 class="text-center signature">
+          <em>
+            <b>Team Ride For Hope Idaho</b>
+          </em>
+        </h4>
         <q-card-section class="text-center">
-          <q-btn class="cbtnm" @click="$router.push('/register')">Register</q-btn>
+          <q-btn size="lg" color="accent-4" @click="openURL('https://genesiscommunityhealth.com/donate/')">Donate</q-btn>
         </q-card-section>
+        <!-- <q-card-section class="text-center">
+          <q-btn class="cbtnm" @click="$router.push('/register')">Register</q-btn>
+        </q-card-section> -->
       </q-card>
     </q-dialog>
   </div>
@@ -343,14 +352,9 @@
         slide2: "Lyle Pearson",
         slide3: "Imago Caeli LLC",
         modalCallouts: [
-          "We have made the decision to make this year’s event  a “virtual ride” for all to enjoy at your own pace and distance, wherever you want to ride.  If you choose to ride in Kuna, Ride For Hope Idaho route maps can be printed or downloaded to your bike computer from this website.",
-          "If you would like to participate in a group ride, refer to any of the amazing local bike clubs for details regarding club rides.",
-          "We know this is not the perfect situation — but wanted to be fair to all riders and ensure we are all safe as we progress through our current situations with COVID-19.",
-          "Please feel free to contact us for any questions.  If you would like more information on cycling clubs we can get  you that information too!",
-          "Thank you so much for your support and are looking forward to an awesome event in 2022!",
-          "See you on the road!!",
-          "YOUR RIDE FOR HOPE IDAHO TEAM"
-        ]
+          "We regret that due to COVID-19, the 2021 Ride For Hope Idaho has been canceled",
+        "If you would still like to support the cause, you can donate directly to Genesis Community Health by following the link below. Any donation they recieve will be all the more appreciated during this time of stress on the healthcare system. We look forward to riding with you in 2022!"
+        ],
       };
     },
     components: {
@@ -361,7 +365,7 @@
         return this.$store.state.routes.routes;
       },
       openRegistration() {
-        return this.$store.state.state.openRegistration;
+        return this.$store.state.dates.openRegistration;
       },
       earlyRegistration() {
         return this.$store.state.state.earlyRegistration;
@@ -417,7 +421,7 @@
       }
     },
     mounted() {
-      this.$store.dispatch('state/getParticipantTotal');
+      // this.$store.dispatch('state/getParticipantTotal');
       this.$store.dispatch('sponsors/getSponsors')
       this.animateNumber();
     },

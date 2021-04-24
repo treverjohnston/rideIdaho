@@ -279,11 +279,6 @@
         font-size: 1.25rem;
     }
 
-    .signature {
-        color: rgb(180, 0, 0);
-        font-family: "Niconne", cursive;
-    }
-
     .rider {
         border: 5px solid black;
         /* height: 18rem; */

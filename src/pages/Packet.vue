@@ -5,8 +5,10 @@
                 <h2 class="desktop-only">Packet Pick Up</h2>
                 <h4 class="mobile-only">Packet Pick Up</h4>
                 <hr class="width_90">
+                <h5>Check back in 2022 for packet pick up information.</h5>
             </div>
-            <div class="col-xs-12 col-sm-5">
+            <!-- TODO: 2022 add back in -->
+            <!-- <div class="col-xs-12 col-sm-5">
                 <h5>
                     <b>Date: </b>Friday, June 25, 2021</h5>
                 <h5>
@@ -16,7 +18,7 @@
                 <h4 class="text-bold">Meridian Cycles</h4>
                 <h5>1203 N. Main St.</h5>
                 <h5> Meridian, ID 83642</h5>
-            </div>
+            </div> -->
 
         </div>
     </q-layout>

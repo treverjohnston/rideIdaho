@@ -91,17 +91,20 @@
                 </q-toolbar>
         
                 <q-card-section>
-                    <span class="text-body1">
+                    <!-- TODO: 2022 add back in -->
+                    <!-- <span class="text-body1">
                         Online registration for the 2021 Ride For Hope Idaho is open between {{openReg}} and {{closeReg}}.
-                    </span>
-        
+                    </span> -->
+        <span class="text-body1">
+            Check back in 2022 for when online registration will open.
+        </span>
                 </q-card-section>
-                <q-card-section>
+                <!-- <q-card-section>
                     <span class="text-body1">
                         In-person registration is available at packet pickup on June 25, or on the day of the ride, June 26.
                     </span>
         
-                </q-card-section>
+                </q-card-section> -->
                 <q-card-section>
                     <span class="text-body1">
                         If you are looking to help the cause without riding, you can donate directly to Genesis Community Health with the button below, or contact us to volunteer.

@@ -27,9 +27,9 @@
                                 <!-- <div class="q-pt-sm q-mt-lg text-h5">
                                     Early Registration: {{route.earlyReg}}
                                 </div> -->
-                                <div class="q-pt-sm q-mt-lg q-mb-lg text-h6">
+                                <!-- <div class="q-pt-sm q-mt-lg q-mb-lg text-h6">
                                     Discount offered for teams of 5 or more and for families. Contact for more details.
-                                </div>
+                                </div> -->
                                 <q-btn v-if="openRegistration" no-caps class="q-mb-lg" color="primary-3" size="large"
                                     @click="openURL(registrationUrl)">
                                     Register
@@ -41,7 +41,7 @@
                                 </q-btn>
                             </div>
                         </div>
-                        <div class="row wrap justify-center q-mt-xl">
+                        <!-- <div class="row wrap justify-center q-mt-xl">
                             <div class="text-center col-xs-12 col-md-11 bg-neutral-t-3 router-border">
                                 <div class="q-pt-sm q-mt-lg text-h5">Ride Day Registration opens at 6:00 AM</div>
                                 <hr class="width_90" />
@@ -53,7 +53,7 @@
                                     before posted start time.
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="row justify-center q-mt-xl">
                             <div class="col-xs-12 col-md-11 text-center router-border bg-neutral-t-3">
                                 <div class="row justify-center">

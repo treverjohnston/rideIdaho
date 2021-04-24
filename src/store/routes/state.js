@@ -3,7 +3,7 @@ export default {
     {
       id: 0,
       earlyReg: '$50',
-      reg: '$15',
+      reg: '$35',
       url: '/routes/9-mile',
       length: '9 Mile',
       pic: '',
@@ -13,7 +13,7 @@ export default {
       headline: 'Virtutem Spei - "Hope and Strength"',
       frame: '//snippets.mapmycdn.com/routes/view/embedded/2264365960?width=600&height=400&elevation=true&line_color=E6d90d8e&rgbhex=8e0dd9&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-09-28T15:24:15-05:00',
       frameMobile: '//snippets.mapmycdn.com/routes/view/embedded/2264365960?width=300&height=450&elevation=true&line_color=E6d90d8e&rgbhex=8e0dd9&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-09-28T15:24:15-05:00',
-      startTime: '11:00 AM*',
+      startTime: 'N/A*',
       otherMaps: [
         {
           title: 'Print Map',
@@ -48,7 +48,7 @@ export default {
     {
       id: 1,
       earlyReg: '$65',
-      reg: '$25',
+      reg: '$35',
       url: '/routes/19-mile',
       length: '19 Mile',
       pic: '',
@@ -61,7 +61,7 @@ export default {
       headline: 'Virtutem Spei - "Hope and Strength"',
       frame: '//snippets.mapmycdn.com/routes/view/embedded/996049745?width=600&height=400&elevation=true&line_color=E60400ff&rgbhex=ff0004&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-09-28T15:24:15-05:00',
       frameMobile: '//snippets.mapmycdn.com/routes/view/embedded/996049745?width=300&height=450&elevation=true&line_color=E60400ff&rgbhex=ff0004&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-09-28T15:24:15-05:00',
-      startTime: '11:00 AM*',
+      startTime: 'N/A*',
       otherMaps: [
         {
           title: 'Print Map',
@@ -108,7 +108,7 @@ export default {
       headline: 'Carpe Diem - "Seize The Day"',
       frame: '//snippets.mapmycdn.com/routes/view/embedded/1478990992?width=600&height=400&elevation=true&line_color=E6d9430d&rgbhex=0d43d9&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-09-21T10:32:52-05:00&show_marker_every=3',
       frameMobile: '//snippets.mapmycdn.com/routes/view/embedded/1478990992?width=300&height=450&elevation=true&line_color=E6d9430d&rgbhex=0d43d9&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-09-21T10:32:52-05:00&show_marker_every=3',
-      startTime: '10:30 AM*',
+      startTime: 'N/A*',
       otherMaps: [
         {
           title: 'Print Map',
@@ -143,7 +143,7 @@ export default {
     {
       id: 3,
       earlyReg: '$75',
-      reg: '$55',
+      reg: '$35',
       url: '/routes/metric',
       length: 'Metric Century',
       pic:
@@ -159,7 +159,7 @@ export default {
       headline: 'Semper Fidelis - "Always Faithful"',
       frame: '//snippets.mapmycdn.com/routes/view/embedded/981667107?width=600&height=400&elevation=true&line_color=E60d5ed9&rgbhex=d95e0d&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-12-16T22:22:58-06:00&show_marker_every=6"',
       frameMobile: '//snippets.mapmycdn.com/routes/view/embedded/981667107?width=300&height=450&elevation=true&line_color=E60d5ed9&rgbhex=d95e0d&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2018-12-16T22:22:58-06:00&show_marker_every=6"',
-      startTime: '9:00 AM*',
+      startTime: 'N/A*',
       otherMaps: [
         {
           title: 'Print Map',
@@ -193,7 +193,7 @@ export default {
     {
       id: 4,
       earlyReg: '$75',
-      reg: '$65',
+      reg: '$35',
       url: '/routes/Century',
       length: 'Century',
       pic:
@@ -211,7 +211,7 @@ export default {
       headline: 'Veni Vidi Vici - "I Came. I Saw. I Conquered."',
       frame: '//snippets.mapmycdn.com/routes/view/embedded/1462908562?width=600&height=400&elevation=true&line_color=E636d90d&rgbhex=0dd936&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2020-04-03T18:54:21-06:00&show_marker_every=10',
       frameMobile: '//snippets.mapmycdn.com/routes/view/embedded/1462908562?width=600&height=400&elevation=true&line_color=E636d90d&rgbhex=0dd936&distance_markers=0&unit_type=imperial&map_mode=ROADMAP&last_updated=2020-04-03T18:54:21-06:00&show_marker_every=10',
-      startTime: '7:00 AM*',
+      startTime: 'N/A*',
       otherMaps: [
         {
           title: 'Print Map',
