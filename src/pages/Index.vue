@@ -352,8 +352,9 @@
         slide2: "Lyle Pearson",
         slide3: "Imago Caeli LLC",
         modalCallouts: [
-          "We regret that due to COVID-19, the 2021 Ride For Hope Idaho has been canceled",
-        "If you would still like to support the cause, you can donate directly to Genesis Community Health by following the link below. Any donation they recieve will be all the more appreciated during this time of stress on the healthcare system. We look forward to riding with you in 2022!"
+          "We regret that the 2022 Ride For Hope Idaho will not take place.",
+        "If you would still like to support the cause, you can donate directly to Genesis Community Health by following the link below.",
+        "If you are interested in becoming the Premier Sponsor for the 2023 Ride For Hope Idaho, please send us a message through the Contact page. We would love to hear from you!"
         ],
       };
     },
